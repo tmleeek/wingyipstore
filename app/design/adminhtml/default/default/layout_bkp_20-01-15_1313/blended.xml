@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <!--<sales_email_order_items>       
+        <reference name="order_totals">
+            <block type="blended/sales_order_blended" name="blendedcalculate" />          
+        </reference>        
+    </sales_email_order_items>-->
+    <adminhtml_sales_order_view>
+        <reference name="order_items">
+            <action method="setTemplate"><template>blended/sales/order/view/items.phtml</template></action>
+        </reference>
+    </adminhtml_sales_order_view>
+    <adminhtml_sales_order_invoice_view>
+        <reference name="invoice_items">
+            <action method="setTemplate"><template>blended/sales/order/invoice/view/items.phtml</template></action>
+        </reference>   
+    </adminhtml_sales_order_invoice_view>
+    <adminhtml_sales_order_shipment_view>    
+        <reference name="shipment_items">
+            <action method="setTemplate"><template>blended/sales/order/shipment/view/items.phtml</template></action>
+        </reference>   
+    </adminhtml_sales_order_shipment_view>
+    <adminhtml_sales_order_creditmemo_view>    
+        <reference name="creditmemo_items">
+            <action method="setTemplate"><template>blended/sales/order/creditmemo/view/items.phtml</template></action>
+        </reference>   
+    </adminhtml_sales_order_creditmemo_view>
+</layout>

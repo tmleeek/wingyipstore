@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery-1.10.2.min.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery-noconflict.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery-migrate-1.2.1.js</name><params/></action>
+        </reference>
+    </default>    
+    <recipe_category_index>
+        <reference name="content">
+            <!--<block type="recipe/category" name="recipe" />-->
+            <block type="core/template" name="recipe" template="recipe/category.phtml" />
+        </reference>
+    </recipe_category_index>
+    <recipe_index_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+            <block type="recipe/list" name="recipe_list" template="recipe/list.phtml" />
+        </reference>
+    </recipe_index_index> 
+    <recipe_index_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>fancybox/jquery.fancybox.css</name><params/></action> 
+            <action method="addItem"><type>skin_js</type><name>fancybox/jquery.fancybox.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>fancybox/jquery.fancybox-media.js</name><params/></action>
+        </reference>
+        <reference name="content">
+            <block type="recipe/view" name="recipe_view" template="recipe/view.phtml">
+                <block type="recipe/associated" name="recipe_associated" template="recipe/associated.phtml" />
+            </block> 
+        </reference>
+    </recipe_index_view>  
+    <recipe_index_search>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+            <block type="recipe/search" name="recipe_list" template="recipe/list.phtml" />
+        </reference>
+    </recipe_index_search>
+    <recipe_index_advancesearch>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>jquery_slider/jquery.slider.min.css</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>jquery_slider/jquery.slider.min.js</name><params/></action>       
+        </reference>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="recipe_list" template="recipe/advancesearch.phtml" />
+        </reference>
+    </recipe_index_advancesearch>
+    
+    <recipe_index_result>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+            <block type="recipe/advancedsearch" name="recipe_list" template="recipe/list.phtml" />
+        </reference>
+    </recipe_index_result>
+    
+    <recipe_category_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+            <block type="recipe/list" name="recipe_list" template="recipe/list.phtml" />
+        </reference>
+    </recipe_category_view>
+    
+    <recipe_course_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+            <block type="recipe/list" name="recipe_list" template="recipe/list.phtml" />
+        </reference>
+    </recipe_course_view>
+    
+</layout>

@@ -1,0 +1,86 @@
+<?xml version="1.0"?> 
+<layout>
+    <recipe_adminhtml_recipe_new>
+        <update handle="editor"/>
+    </recipe_adminhtml_recipe_new>
+    
+    <recipe_adminhtml_recipe_edit>
+        <update handle="editor"/>
+    </recipe_adminhtml_recipe_edit>
+
+    <recipe_adminhtml_recipe_associated>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="recipe/adminhtml_recipe_edit_tab_associated" name="recipe.edit.tab.associated"/>
+            <block type="adminhtml/widget_grid_serializer" name="associated_grid_serializer">
+                <reference name="associated_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>recipe.edit.tab.associated</grid_block_name>
+                        <data_callback>getSelectedAssociatedProducts</data_callback>
+                        <hidden_input_name>links[associated]</hidden_input_name>
+                        <reload_param_name>products_associated</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>qty</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </recipe_adminhtml_recipe_associated>
+
+    <recipe_adminhtml_recipe_associatedgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="recipe/adminhtml_recipe_edit_tab_associated" name="recipe.edit.tab.associated"/>
+        </block>
+    </recipe_adminhtml_recipe_associatedgrid>
+    
+    <recipe_adminhtml_recipe_related>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="recipe/adminhtml_recipe_edit_tab_related" name="recipe.edit.tab.related"/>
+            <block type="adminhtml/widget_grid_serializer" name="related_grid_serializer">
+                <reference name="related_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>recipe.edit.tab.related</grid_block_name>
+                        <data_callback>getSelectedRelatedRecipe</data_callback>
+                        <hidden_input_name>links[related]</hidden_input_name>
+                        <reload_param_name>recipe_related</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>sort</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </recipe_adminhtml_recipe_related>
+    
+    <recipe_adminhtml_recipe_relatedgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="recipe/adminhtml_recipe_edit_tab_related" name="recipe.edit.tab.related"/>
+        </block>
+    </recipe_adminhtml_recipe_relatedgrid>
+    
+    <recipe_adminhtml_recipe_recipe>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="recipe/adminhtml_catalog_product_edit_tab_recipe" name="catalog.product.edit.tab.recipe"/>
+            <block type="adminhtml/widget_grid_serializer" name="recipe_grid_serializer">
+                <reference name="recipe_grid_serializer">
+                    <action method="initSerializerBlock">
+                        <grid_block_name>catalog.product.edit.tab.recipe</grid_block_name>
+                        <data_callback>getSelectedAssociatedRecipes</data_callback>
+                        <hidden_input_name>links[recipe]</hidden_input_name>
+                        <reload_param_name>recipe_associated</reload_param_name>
+                    </action>
+                    <action method="addColumnInputName">
+                        <input_name>qty</input_name>
+                    </action>
+                </reference>
+            </block>
+        </block>
+    </recipe_adminhtml_recipe_recipe>
+
+    <recipe_adminhtml_recipe_recipegrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="recipe/adminhtml_catalog_product_edit_tab_recipe" name="catalog.product.edit.tab.recipe"/>
+        </block>
+    </recipe_adminhtml_recipe_recipegrid>
+    
+</layout>

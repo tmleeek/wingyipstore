@@ -1,0 +1,107 @@
+[customerdetails]
+Title=
+Firstname=emailtester
+Surname=teste
+Address1=200, west beach
+Address2=
+Address3=
+Fax=
+Town=Gorgav
+Postcode=DE 56
+County=
+Country=GB
+Email=emailtesterthree@gmail.com
+Telephone=4555255
+Mobilenumber=9898989898
+Customerref=106491
+Webref=48207
+Orderdate=07012015
+Ordertime=142547
+Ipaddress=103.241.233.152
+Deliveryoption=Shipping Option - 2-3 working days after dispatch-DPD
+Recipenewsletter=n
+Keepdetailsonfile=n
+
+
+[deliverydetails]
+locno=79
+accountno=888
+contactname=emailtester teste
+Address1=200, west beach
+Address2=
+Address3=
+Fax=
+Town=Gorgav
+Postcode=DE 56
+County=
+Country=GB
+Telephone=4555255
+Mobilenumber=9898989898
+Email=emailtesterthree@gmail.com
+
+
+[orderdetails]
+Orderlines=3
+Numspecialinstructionlines=
+Specialinstructionsline1=
+goodssubtotalexvat=3.80
+goodssubtotalvat=0.00
+carriagesubtotal=6.97
+grossordervalue=29.62
+
+
+
+[orderline1]
+Productcode=328831
+Recipeindicator=0
+Recipetitle=
+Productdescription=A1 Instant Curry Paste For Meat
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=1.65
+Discountcodes=na
+Qtyordered=2
+Qtysupplied=2
+Sellunit=1
+Linecost=3.30
+vatcode=3 
+vatamount=0
+
+[orderline2]
+Productcode=078915
+Recipeindicator=0
+Recipetitle=
+Productdescription=Yuen Chun Thai Stir Sos Ulam
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=2.15
+Discountcodes=na
+Qtyordered=9
+Qtysupplied=9
+Sellunit=1
+Linecost=19.35
+vatcode=3 
+vatamount=0
+
+[orderline3]
+Productcode=262600
+Recipeindicator=0
+Recipetitle=
+Productdescription=Shipping Option - 2-3 working days after dispatch-DPD
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=6.97
+Discountcodes=na
+Qtyordered=1
+Qtysupplied=1
+Sellunit=1
+Linecost=6.97
+vatcode=3
+vatamount=0.00
+[END]

@@ -1,0 +1,102 @@
+<?php $recipeCollection = $this->getRelatedRecipeCollection() ?>
+<?php $count = $recipeCollection->getSize() ?>
+<?php  $themeConfig = Mage::helper('ves_tempcp/theme')->getCurrentTheme();?>
+<?php  $theme = Mage::helper("ves_tempcp/framework")->getFramework( );?>
+<?php
+$auto_play_mode = 1;
+
+$title_maxchar = 100;
+$interval = 6000;
+
+$auto_play = $auto_play_mode?"true":"false";
+$active = 'latest';
+
+
+
+$cols = $themeConfig->get('product_related_column', 3);
+$cols = !empty($cols)?$cols:3;
+
+$itemsperpage = $cols;
+
+$span = 12/$cols; 
+$item = $count;
+$j = ceil($item/$cols);
+
+?>
+<?php if($count): ?>
+<div id="upsell" class="carousel slide" data-interval="false">	
+	<div class="box-collateral box-up-sell block">
+		<div class="block-title">
+			<h4><?php echo $this->__('Related Recipe') ?></h4>		
+			<!-- Controls -->
+			<?php if($item > $cols):?>
+            <div class="carousel-controls">
+            <a class="carousel-control left fa fa-angle-double-left" href="#upsell" data-slide="prev">
+            </a>				
+            <a class="carousel-control right fa fa-angle-double-right" href="#upsell" data-slide="next">					
+            </a>
+            </div>
+            <?php endif?>
+        </div>
+			
+                <?php $page=0;?>
+                <?php $pagecount=0;?>
+                <?php $cnt=0;?>	
+                    <div class="carousel-inner">        
+                       <?php foreach($recipeCollection as $_recipe):?>       
+                         <?php if($page==0):?><div class="item first <?php if($pagecount==0):?>active<?php endif;?> product-grid no-margin"><?php endif;?>
+            
+                           <?php if($cnt==0):?> <div class="row products-grid"> <?php endif;?>
+                                <div class="col-xs-12 col-lg-4 col-sm-4 col-6 _item <?php if($cnt==0):?>first<?php elseif($cnt==2):?>last <?php endif;?>">
+                					<?php $recipe=Mage::getModel('recipe/recipe')->load($_recipe->getRecipeId());?>
+                                    <div class="product-block" itemtype="http://schema.org/Product" itemscope="">
+                                        <div class="product-content">
+                                            <div class="image ">
+                                                <a href="<?php echo $this->getRecipeUrl($recipe); ?>" itemprop="url" title="<?php echo $_recipe->getName(); ?>" class="product-image"><img src="<?php echo $this->helper('recipe')->resizeImage(300,300,$this->getRecipeImage($_recipe->getRecipeId())); ?>" width="300" height="300" alt="<?php echo $_recipe->getName(); ?>"></a>
+                                            </div>
+                                            <div class="product-info">
+                                                <h2 class="product-name" itemprop="name"><a href="<?php echo $this->getRecipeUrl($recipe); ?>" title="<?php echo $_recipe->getName(); ?>"><?php echo $_recipe->getName(); ?></a>
+                                                </h2>
+                                                <div class="rating">    
+                                    	<div class="ratings">
+                                            <div class="rating-box">
+                                                <div class="rating" style="width:<?php echo Mage::getModel('recipe/review')->getRatingList($_recipe->getId());?>%"></div>
+                                            </div>
+                                           <?php /*?> <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='http://wingyip.staging5.newedge.co.uk/index.php/review/product/list/id/1/'; return false;">1 Review(s)</a></span><?php */?>
+                                        </div>
+                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                              <?php $cnt++;  $page++?>
+                             <?php if($cnt==3):?></div> <?php $cnt=0;; endif;?> 
+            
+                        <?php if($page==6):?></div> <?php  $page=0; $pagecount++; endif;?>    
+                         
+                        
+                        <?php endforeach; ?>
+                        <?php if($cnt>0):?>
+							<?php for(;$cnt <3;$cnt++):?>
+                            
+                                <div class="col-xs-12 col-lg-4 col-sm-4 col-6 _item <?php if($cnt==2):?>last <?php endif;?>">
+                    
+                                </div>
+                                
+                            <?php endfor;?>
+                           <?php endif;?>
+                         <?php if($cnt==3):?></div> </div><?php $cnt=0; endif;?>
+                         
+                    </div>
+           
+	</div>	  
+</div>
+<?php if($item > $cols):?>
+		<script type="text/javascript">	
+			jQuery('.carousel').carousel({
+				interval:<?php echo ( $auto_play_mode?$interval:'false') ;?>,auto:<?php echo $auto_play;?>,pause:'hover', cycle: true
+			});
+		</script>
+	<?php endif?>
+ <?php endif; ?> 

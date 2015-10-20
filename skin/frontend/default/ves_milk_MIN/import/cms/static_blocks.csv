@@ -1,0 +1,61 @@
+Block_Id,Title,Content,Identifier,Creation_Time,Update_Time,Is_Active,Stores
+2,"Cookie restriction notice","<p>This website requires cookies to provide all of its features. For more information on what data is contained in the cookies, please see our <a href=""{{store direct_url=""privacy-policy-cookie-restriction-mode""}}"">Privacy Policy page</a>. To accept cookies from this site, please click the Allow button below.</p>",cookie_restriction_notice_block,"2014-03-31 21:26:13","2014-04-17 04:50:38",1,0
+3,"Footer Top","<div class=""col-lg-4 col-sm-12 col-xs-12 abs"">
+<h4>Latest Blog</h4>
+{{block type=""ves_blog/latest"" name=""ves.latest"" after=""-""}}</div>
+<div class=""col-lg-4 col-sm-12 col-xs-12 abs"">
+<h4>Twitter Feed</h4>
+<a class=""twitter-timeline"" href=""https://twitter.com/VenusTheme"" data-link-color=""#59BD56"" data-theme=""dark"" data-chrome=""noheader noscrollbar nofooter noborders transparent"" data-widget-id=""465171595107913729"">Tweets by @VenusTheme</a>
+<script type=""text/javascript"">// <![CDATA[
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+""://platform.twitter.com/widgets.js"";fjs.parentNode.insertBefore(js,fjs);}}(document,""script"",""twitter-wjs"");
+// ]]></script>
+</div>
+<div class=""col-lg-4 col-sm-12 col-xs-12 abs"">
+<h4>Flickr Widget</h4>
+{{block type=""ves_gallery/file"" name=""ves.gallery"" before=""-"" }}
+<div class=""btn btn-primary btn-sm"">
+<h3><a href=""http://flickr.com"">check out profile</a></h3>
+</div>
+</div>",footer-top,"2014-04-01 03:49:00","2014-07-22 23:39:24",1,0
+4,"Footer Bottom","<div class=""col-lg-4 col-sm-4 col-xs-12 abs"">
+<h4>Company</h4>
+<ul>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""about-magento-demo-store""}}"">About Us</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""#"">Catalog Request</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""catalog/seo_sitemap/category""}}"">Site Map</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""sales/guest/form""}}"">Order and Returns</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""contacts""}}"">Contact Us</a></li>
+</ul>
+</div>
+<div class=""col-lg-4 col-sm-4 col-xs-12 abs"">
+<h4>Customer</h4>
+<ul class=""list"">
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""customer/account""}}"">My Account</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""#"">Order History</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""wishlist""}}"">Wish List</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""customer-service""}}"">Customer Services</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""customer-service""}}"">Customer Assistance</a></li>
+</ul>
+</div>
+<div class=""col-lg-4 col-sm-4 col-xs-12 abs"">
+<h4>Services</h4>
+<ul>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""customer-service""}}"">Customer Services</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""#"">Privacy Policy</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""catalogsearch/term/popular/""}}"">Search Terms</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""catalogsearch/advanced/""}}"">Advanced Search</a></li>
+<li><em class=""fa fa-caret-right""></em><em class=""fa fa-caret-left""></em><a href=""{{store direct_url=""sales/guest/form/""}}"">Orders and Returns</a></li>
+</ul>
+</div>",footer-bottom,"2014-04-01 04:02:52","2014-07-22 23:41:46",1,0
+6,"Category Image","<p><img src=""{{media url=""wysiwyg/images/banner5.jpg""}}"" alt="""" /></p>",category-banner,"2014-04-01 19:54:51","2014-05-10 19:48:19",1,0
+7,"Banner Left","<p><img src=""{{media url=""wysiwyg/images/banner4.jpg""}}"" alt="""" /></p>",banner-left,"2014-04-02 03:38:36","2014-05-20 17:42:17",1,0
+11,"Footer Left","{{block type=""core/template"" name=""contactForm"" template=""footerinfo/form.phtml""}}
+<ul class=""social-icon"">
+<li><a class=""social-twitter"" title=""Twitter"" href=""#""> <em class=""fa fa-twitter""></em> <span>Twitter</span> </a></li>
+<li><a class=""social-google"" title=""Google"" href=""#""> <em class=""fa fa-google-plus""></em> <span>Google</span> </a></li>
+<li><a class=""social-pin"" title=""Pinterest"" href=""#""> <em class=""fa fa-pinterest""></em> <span>Pinterest</span> </a></li>
+<li><a class=""social-rss"" title=""RSS"" href=""#""> <em class=""fa fa-rss""></em> <span>RSS</span> </a></li>
+</ul>",footer-left,"2014-05-09 15:08:51","2014-06-16 21:25:06",1,0
+13,"News Letter","<div class=""newsletter-left"">
+<h4>Newsletter</h4>
+<p>Proin gravida nibh velit auctor aliquet dum auctor, nisi elit consequat ipsum sagittis sem elit.</p> {{block type=""newsletter/subscribe"" template=""newsletter/subscribe.phtml""}}</div>",news-letter,"2014-05-11 04:04:40","2014-05-11 04:20:24",1,0

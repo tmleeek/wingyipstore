@@ -1,0 +1,24 @@
+<div class="block block-recipesearch  sidebar-recipe">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Recipe')?></span></strong>
+    </div>
+    <form id="recipe-validate-detail" method="post" action="<?php echo $this->getUrl('recipe/index/search') ?>">
+        <div class="block-content">
+            <div class="form-recipesearch-header">
+                <label for="searchrecipe"><?php echo $this->__('Recipe Search:') ?></label>
+            </div>
+            <div class="input-box">
+               <input type="text" class="input-text required-entry" title="<?php echo $this->__('Recipe Search:') ?>" id="searchrecipe" name="search">
+            </div>
+            <div class="actions">
+                <a href="<?php echo $this->getUrl('recipe/index/advancesearch') ?>"><?php echo $this->__('Advance Search') ?></a>
+                <button class="button" title="Search" type="submit"><span><span>Search</span></span></button>
+            </div>
+        </div>
+    </form>
+    <script type="text/javascript">
+    //&lt;![CDATA[
+        var recipeSearchrFormDetail = new VarienForm('recipe-validate-detail');
+    //]]&gt;
+    </script>
+</div>

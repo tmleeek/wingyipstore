@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Ecommage_CustomProductAttr>
+      <active>true</active>
+      <codePool>local</codePool>
+      <version>0.1.0</version>
+    </Ecommage_CustomProductAttr>
+  </modules>
+</config>

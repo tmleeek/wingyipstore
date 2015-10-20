@@ -1,0 +1,21 @@
+<?php $categoryCollection = $this->getCollection() ?>
+<?php if($categoryCollection->count()): ?>
+<div class="block sidebar-recipe"> 
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Recipe Category') ?></span></strong>
+    </div>
+    <div class="block-content">
+        <ul>
+            <?php foreach($categoryCollection as $_category):?> 
+                <li>
+                    <a href="<?php echo $this->getRecipeCategoryUrl($_category)?>" title="<?php echo $_category->getName() ?>"><?php echo $_category->getName() ?></a>
+                </li>
+            <?php endforeach?>
+        </ul>
+    </div>
+</div>
+<?php endif ?>
+
+
+
+

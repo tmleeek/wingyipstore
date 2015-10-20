@@ -1,0 +1,213 @@
+/******************************************************
+ * @package Ves Theme Framework for Magento
+ * @version 1.0
+ * @author http://www.venustheme.com
+ * @copyright Copyright (C) Augus 2013 Venustheme.com <@emai:venustheme@gmail.com>.All rights reserved.
+ * @license   GNU General Public License version 2
+*******************************************************/
+.dropdown{display: block !important;}
+.dropdown-menu{
+	border: 0!important;
+	padding: 5px;
+	@include rtl-left(0);
+	.menu-title{
+		font-size: 14px;
+	}
+}
+.caret{
+	border-color: #999999 rgba(0, 0, 0, 0);
+	@include rtl-margin-left(5px);
+}
+.form-language{
+	background: none;
+	@include rtl-margin-right(15px);
+	 a{
+	  	@include rtl-background-position-left (center);
+		@include rtl-padding-left(25px);
+	    background-repeat: no-repeat;
+	 }
+}
+
+/* Topcart */
+.cart-top{
+	@include rtl-float-right(); 
+	@include rtl-padding-right(30px);
+	#cart{ 
+		position: relative; 
+		margin-top: 32px;
+		.cart-inner{@include rtl-text-align-right(); @include rtl-float-left(); @include rtl-margin-right(5px);}
+		.heading{
+			.pull-right{
+				width: 38px;
+				height: 38px;
+				background: $theme-color-secondary;
+				border-radius: 50%;
+				padding-top: 9px;
+				.icon-cart{
+					background: url("#{$image-theme-path-base}cart_top.png") no-repeat scroll center center;
+					text-indent: -9999px;
+				}
+			}
+			h4{
+				font-family: $font-family-museo-500;
+				font-size:16px;
+			}
+			a{
+				color: $theme-color-secondary;
+				span{color: #999999;}
+			}
+		}
+		.content{ 
+			min-width: 275px; position: absolute; @include rtl-right(0); top: 120%; z-index: 1100; visibility: hidden; opacity: 0; 
+			@include transition(all 300ms ease-in-out);
+		}
+		&.active{
+			.content{ visibility: visible; top: 100%; opacity: 1;}
+		}
+	}
+}
+/*
+ * PRODUCT CAROUSEL
+ */ 
+.productcarousel{
+	width: 100%;
+	margin:0!important;
+	@include rtl-float-left();
+	.block-title{
+		padding: 15px;
+		border: 0!important;
+		background: none;
+		h4{color: #000000;}
+	}
+	.block-content{
+		width: 100%;
+		@include rtl-float-left();
+	}
+	.carousel-control{border: none; line-height: 18px;}
+	.wrap-images{
+			background: linear-gradient(to bottom, #F0F0F0 0%, #E9E9E9 64%, #CECECE 100%) repeat scroll 0 0;
+			@include rtl-float-left();
+			padding: 1px;
+			width: 50%;
+		&::before, &::after{
+			bottom: -3px;
+			content:"";
+			display: block;
+			height: 52px;
+			width: 64px;
+			position: absolute;
+			z-index: 0;
+			}
+		&::before{
+			left: -3px;
+			}
+		&::after{
+				right: -3px;
+			}
+	}
+		
+	.product-block{
+		.price-box{padding-top: 6px; float: none!important;}
+		.review{
+			.amount{display: none;}
+			.ratings .rating-box{
+				float: none;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+.productcarousel1{
+	.products-grid{margin: 0;}
+}
+.productcarousel3{
+	padding-bottom: 2px;
+	.products-grid{margin: 0 -2px 0 0;}
+}
+/*
+ * VES BRAND
+ */
+ .ves-brand{
+	.block{
+		border: 0!important;
+		background: none!important;
+		margin: 0 0 10px;
+		.block-title{display: none!important;}
+	}
+	padding-bottom: 20px;
+	.carousel-control.right{margin-top: 8px; margin-right: -22px;}
+	.carousel-control.left{margin-top: 8px; margin-left: -22px;}
+	.carousel-control{
+		background: none!important;
+		color: #A6A7A4;
+		width: 25px;
+		height: 25px;
+		font-size: 22px!important;
+		font-weight: bold;
+	}
+	.img-responsive{
+		background: #ffffff;
+	}
+	.carousel-control:hover, .carousel-control:focus{
+		background: none!important;
+		color: $theme-color-secondary!important;
+	}
+	.carousel-inner{
+		.left, .right{float: none!important;}
+	}
+}
+
+/* News Letter*/
+.newsletter-left{
+	background: $theme-color-secondary;
+	color: #ffffff;
+	padding: 15px;
+	h4{font-size: 18px; margin: 10px 0 20px;}
+	p{margin-bottom: 26px;}
+}
+
+/* swap-images */
+.w-product{
+	.image{
+		@include rtl-float-left();
+		border: 3px solid #E9E4E0;
+		@include rtl-margin-right(8px);
+	}
+	.name{
+		font-weight: bold;
+	}
+}
+
+.s-product{
+.price-box{
+		@include rtl-float-left();
+	}
+	button{
+		float: right;
+		margin: 10px 30px 0 0;
+	}
+}
+.product-block{
+	.ves-quickview{	}
+	.image{ 
+		.hover-image{ 
+			position: absolute;   width: 100%; display: none;
+			height: 100%;
+			line-height: 32px;
+			top: 0;
+		}
+		&:hover{	
+			.hover-image{
+				background: url("#{$image-theme-path-base}bg-product-hover.png") repeat scroll 0 0;
+				display: block;
+			}
+		}
+	}
+}
+.table thead > tr > th, 
+.table thead > tr > td, 
+.table tbody > tr > th, 
+.table tbody > tr > td, 
+.table tfoot > tr > th, 
+.table tfoot > tr > td
+{border-top: none;}

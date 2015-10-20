@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+        
+    <shipping_index_accesspoint>
+        <reference name="content">
+            <!--<block type="recipe/category" name="recipe" />-->
+            <block type="core/template" name="shipping.ups" template="shippingwing/shipping.phtml" />
+        </reference>
+    </shipping_index_accesspoint>
+	
+	  <checkout_onepage_index>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>fancybox/jquery.fancybox.css</name><params/></action> 
+            <action method="addItem"><type>skin_js</type><name>fancybox/jquery.fancybox.js</name><params/></action>
+		</reference>
+	  </checkout_onepage_index>
+
+</layout>

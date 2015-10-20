@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <realex_adminhtml_realex_index>
+        <reference name="content">
+            <block type="realex/adminhtml_realex" name="realex"/>
+        </reference>
+    </realex_adminhtml_realex_index>
+
+    <realex_adminhtml_realex_view>
+        <reference name="content">
+            <block type="ecommage_rewriterealex/adminhtml_realex_detail" name="realex_realex.detail"
+                   template="realex/detail.phtml"/>
+        </reference>
+    </realex_adminhtml_realex_view>
+
+</layout>

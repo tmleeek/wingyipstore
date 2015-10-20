@@ -1,0 +1,8 @@
+<?php $reviewData = Mage::registry('review_data')->getData(); ?>
+<?php if($reviewData['rating']): ?>
+    <div class="rating-box">
+        <div class="rating" style="width:<?php echo ceil($reviewData['rating']*20) ?>%;"></div>
+    </div>
+<?php else: ?>
+    <?php echo Mage::helper('recipe')->__("Rating isn't Available") ?>
+<?php endif; ?>

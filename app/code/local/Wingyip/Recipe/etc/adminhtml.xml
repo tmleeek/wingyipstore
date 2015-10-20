@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<config>
+    <menu>
+        <recipe module="recipe">
+            <title>Recipes</title>
+            <sort_order>71</sort_order>               
+            <children>
+                <recipe module="recipe">
+                    <title>Manage Recipes</title>
+                    <sort_order>0</sort_order>
+                    <action>recipe/adminhtml_recipe</action>
+                </recipe>
+                <recipe_category module="recipe">
+                    <title>Manage Category</title>
+                    <sort_order>1</sort_order>
+                    <action>recipe/adminhtml_category</action>
+                </recipe_category> 
+                <recipe_ingredient module="recipe">
+                    <title>Manage Ingredient</title>
+                    <sort_order>2</sort_order>
+                    <action>recipe/adminhtml_ingredient</action>
+                </recipe_ingredient>
+                <recipe_cupboard module="recipe">
+                    <title>Manage Cupboard Ingredients</title>
+                    <sort_order>3</sort_order>
+                    <action>recipe/adminhtml_cupboard</action>
+                </recipe_cupboard>
+                <recipe_cuisine module="recipe">
+                    <title>Manage Cuisine Type</title>
+                    <sort_order>4</sort_order>
+                    <action>recipe/adminhtml_cuisine</action>
+                </recipe_cuisine>
+                <recipe_cookingmethod module="recipe">
+                    <title>Manage Cooking Method</title>
+                    <sort_order>5</sort_order>
+                    <action>recipe/adminhtml_cooking</action>
+                </recipe_cookingmethod>
+                <recipe_course module="recipe">
+                    <title>Manage Course</title>
+                    <sort_order>6</sort_order>
+                    <action>recipe/adminhtml_course</action>
+                </recipe_course>
+                <recipe_review module="recipe">
+                    <title>Recipes Reviews</title>
+                    <sort_order>7</sort_order>
+                        <children>
+                            <pending module="recipe">
+                                <title>Manage Reviews</title>
+                                <sort_order>0</sort_order>
+                                <action>recipe/adminhtml_review</action>
+                            </pending>
+                            
+                            <all module="recipe">
+                                <title>Pending Reviews</title>
+                                <sort_order>1</sort_order>
+                                <action>recipe/adminhtml_review/pendinggrid</action>
+                            </all>
+                        </children>   
+                </recipe_review>
+            </children>
+        </recipe>
+    </menu>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <recipe_section translate="title">
+                                        <title>Recipes Section </title>
+                                        <sort_order>100</sort_order>
+                                    </recipe_section>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>   
+    </acl>
+</config>

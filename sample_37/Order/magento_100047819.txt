@@ -1,0 +1,89 @@
+[customerdetails]
+Title=
+Firstname=emailtester
+Surname=teste
+Address1=200, west beach
+Address2=
+Address3=
+Fax=
+Town=Gorgav
+Postcode=DE 56
+County=
+Country=GB
+Email=emailtesterthree@gmail.com
+Telephone=4555255
+Mobilenumber=9898989898
+Customerref=106491
+Webref=48195
+Orderdate=24122014
+Ordertime=150836
+Ipaddress=122.15.97.26
+Deliveryoption=Shipping Option - Saturday delivery by 10am-DPD
+Recipenewsletter=n
+Keepdetailsonfile=n
+
+
+[deliverydetails]
+locno=79
+accountno=888
+contactname=emailtester teste
+Address1=200, west beach
+Address2=
+Address3=
+Fax=
+Town=Gorgav
+Postcode=DE 56
+County=
+Country=GB
+Telephone=4555255
+Mobilenumber=9898989898
+Email=emailtesterthree@gmail.com
+
+
+[orderdetails]
+Orderlines=2
+Numspecialinstructionlines=
+Specialinstructionsline1=
+goodssubtotalexvat=1.65
+goodssubtotalvat=0.00
+carriagesubtotal=39.38
+grossordervalue=41.03
+
+
+
+[orderline1]
+Productcode=328831
+Recipeindicator=0
+Recipetitle=
+Productdescription=A1 Instant Curry Paste For Meat
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=1.65
+Discountcodes=na
+Qtyordered=1
+Qtysupplied=1
+Sellunit=1
+Linecost=1.65
+vatcode=3 
+vatamount=0
+
+[orderline2]
+Productcode=262642
+Recipeindicator=0
+Recipetitle=
+Productdescription=Shipping Option - Saturday delivery by 10am-DPD
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=39.38
+Discountcodes=na
+Qtyordered=1
+Qtysupplied=1
+Sellunit=1
+Linecost=39.38
+vatcode=3
+vatamount=0.00
+[END]

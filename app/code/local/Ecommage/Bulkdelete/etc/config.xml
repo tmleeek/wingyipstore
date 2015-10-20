@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Ecommage_Bulkdelete>
+      <version>0.1.0</version>
+    </Ecommage_Bulkdelete>
+  </modules>
+  <global>
+    <helpers>
+      <bulkdelete>
+        <class>Ecommage_Bulkdelete_Helper</class>
+      </bulkdelete>
+    </helpers>
+	<resources>
+	  <bulkdelete_setup>
+		<setup>
+		  <module>Ecommage_Bulkdelete</module>
+		</setup>
+		<connection>
+		  <use>core_setup</use>
+		</connection>
+	  </bulkdelete_setup>
+	  <bulkdelete_write>
+		<connection>
+		  <use>core_write</use>
+		</connection>
+	  </bulkdelete_write>
+	  <bulkdelete_read>
+		<connection>
+		  <use>core_read</use>
+		</connection>
+	  </bulkdelete_read>
+	</resources>
+  </global>
+</config> 

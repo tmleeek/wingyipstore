@@ -1,0 +1,81 @@
+<?php
+class Wingyip_Recipe_Block_Adminhtml_Recipe_Edit_Tabs extends Mage_Adminhtml_Block_Widget_Tabs
+{
+ 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->setId('recipe_tabs');
+        $this->setDestElementId('edit_form');
+        $this->setTitle(Mage::helper('recipe')->__('Recipe Detail'));
+    }
+ 
+    protected function _beforeToHtml()
+    {
+        $this->addTab('form_section', array(
+            'label'     => Mage::helper('recipe')->__('Recipe Detail'),
+            'title'     => Mage::helper('recipe')->__('Recipe Detail'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_form')->toHtml(),
+        ));
+        $this->addTab('meta_section', array(
+            'label'     => Mage::helper('recipe')->__('Meta Information'),
+            'title'     => Mage::helper('recipe')->__('Meta Information'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_meta')->toHtml()
+        ));
+        $this->addTab('categories_section', array(
+            'label'     => Mage::helper('recipe')->__('Categories Information'),
+            'title'     => Mage::helper('recipe')->__('Categories Information'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_categories')->toHtml()
+        ));
+        
+        $this->addTab('ingredients_section', array(
+            'label'     => Mage::helper('recipe')->__('Ingredients Information'),
+            'title'     => Mage::helper('recipe')->__('Ingredients Information'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_ingredients')->toHtml()
+        ));
+        
+        $this->addTab('cupboard_section', array(
+            'label'     => Mage::helper('recipe')->__('Cupboard Ingredients Information'),
+            'title'     => Mage::helper('recipe')->__('Cupboard Ingredients Information'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_cupboard')->toHtml()
+        ));
+        
+        $this->addTab('cuisine_section', array(
+            'label'     => Mage::helper('recipe')->__('Cuisine Type Information'),
+            'title'     => Mage::helper('recipe')->__('Cuisine Type Information'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_cuisine')->toHtml()
+        ));
+        
+        $this->addTab('cookingmethod_section', array(
+            'label'     => Mage::helper('recipe')->__('Cooking Method Information'),
+            'title'     => Mage::helper('recipe')->__('Cooking Method Information'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_cookingmethod')->toHtml()
+        ));
+		$this->addTab('image_section', array(
+            'label'     => Mage::helper('recipe')->__('Image Information'),
+            'title'     => Mage::helper('recipe')->__('Image Information'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_image')->toHtml()
+        ));
+        
+        $this->addTab('media_section', array(
+            'label'     => Mage::helper('recipe')->__('Video Information'),
+            'title'     => Mage::helper('recipe')->__('Video Information'),
+            'content'   => $this->getLayout()->createBlock('recipe/adminhtml_recipe_edit_tab_media')->toHtml()
+        ));
+        
+        $this->addTab('associated_section', array(
+            'label'     => Mage::helper('recipe')->__('Associated Product Information'),
+            'title'     => Mage::helper('recipe')->__('Associated Product Information'),
+            'url'       => $this->getUrl('*/*/associated', array('_current' => true)),
+            'class'     => 'ajax',
+        ));
+        
+        $this->addTab('related_section', array(
+            'label'     => Mage::helper('recipe')->__('Related Recipes'),
+            'title'     => Mage::helper('recipe')->__('Related Recipes'),
+            'url'       => $this->getUrl('*/*/related', array('_current' => true)),
+            'class'     => 'ajax',
+        ));
+        return parent::_beforeToHtml();
+    }
+}

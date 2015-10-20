@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <realex_adminhtml_realex_index>
+        <reference name="content">
+            <block type="realex/adminhtml_realex" name="realex" />
+        </reference>
+    </realex_adminhtml_realex_index>
+    <!--<adminhtml_sales_transactions_grid>
+        <block type="adminhtml/sales_transactions_grid" name="sales_transactions.grid" output="toHtml"></block>
+    </adminhtml_sales_transactions_grid>
+    -->
+    <realex_adminhtml_realex_view>
+        <reference name="content">
+            <block type="realex/adminhtml_realex_detail" name="realex_realex.detail" template="realex/detail.phtml">
+                <block type="realex/adminhtml_realex_detail_grid" name="realex_realex.detail.grid" as="detail_grid"/>
+                <!--<block type="realex/adminhtml_realex_child_grid" name="realex_realex.child.grid" as="child_grid"/>-->
+            </block>
+        </reference>
+    </realex_adminhtml_realex_view>
+</layout>

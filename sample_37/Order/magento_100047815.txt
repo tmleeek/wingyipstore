@@ -1,0 +1,89 @@
+[customerdetails]
+Title=
+Firstname=Emma
+Surname=Lim
+Address1=375 Nechells Park Road
+Address2=Nechells
+Address3=
+Fax=
+Town=Birmingham
+Postcode=B7 5NT
+County=West Midlands
+Country=GB
+Email=emma.lim@wingyip.com
+Telephone=1213276618
+Mobilenumber=0
+Customerref=99925
+Webref=48191
+Orderdate=22122014
+Ordertime=153051
+Ipaddress=213.120.212.98
+Deliveryoption=Shipping Option - 2-3 working days after dispatch-DPD
+Recipenewsletter=n
+Keepdetailsonfile=n
+
+
+[deliverydetails]
+locno=79
+accountno=888
+contactname=Emma Lim
+Address1=123 Street
+Address2=
+Address3=
+Fax=
+Town=City
+Postcode=UB9 5NA
+County=County
+Country=GB
+Telephone=1234567890
+Mobilenumber=0
+Email=
+
+
+[orderdetails]
+Orderlines=2
+Numspecialinstructionlines=
+Specialinstructionsline1=
+goodssubtotalexvat=1.65
+goodssubtotalvat=0.00
+carriagesubtotal=6.97
+grossordervalue=26.77
+
+
+
+[orderline1]
+Productcode=328831
+Recipeindicator=0
+Recipetitle=
+Productdescription=A1 Instant Curry Paste For Meat
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=1.65
+Discountcodes=na
+Qtyordered=12
+Qtysupplied=12
+Sellunit=1
+Linecost=19.80
+vatcode=3 
+vatamount=0
+
+[orderline2]
+Productcode=262600
+Recipeindicator=0
+Recipetitle=
+Productdescription=Shipping Option - 2-3 working days after dispatch-DPD
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=6.97
+Discountcodes=na
+Qtyordered=1
+Qtysupplied=1
+Sellunit=1
+Linecost=6.97
+vatcode=3
+vatamount=0.00
+[END]

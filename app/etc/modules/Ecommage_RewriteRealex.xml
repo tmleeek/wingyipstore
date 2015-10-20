@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecommage_RewriteRealex>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <SF9_Realex/>
+            </depends>
+        </Ecommage_RewriteRealex>
+    </modules>
+</config>

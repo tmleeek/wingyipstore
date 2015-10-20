@@ -1,0 +1,244 @@
+/******************************************************
+ * @package Ves Theme Framework for Magento
+ * @version 1.0
+ * @author http://www.venustheme.com
+ * @copyright Copyright (C) Augus 2013 Venustheme.com <@emai:venustheme@gmail.com>.All rights reserved.
+ * @license   GNU General Public License version 2
+*******************************************************/
+.block {
+	background: $block-module-content-bg;
+	.block-title {
+		background: $theme-color-secondary;
+		line-height: 40px;
+		strong {
+			color: #ffffff;
+			text-transform: uppercase;
+			display: block;
+			font-family: $font-family-monospace;
+			font-size: $block-module-title-fontsize;
+			@include rtl-padding-left(12px);
+		}
+		a { text-decoration:none !important; }
+	}
+	.block-subtitle { 
+		@extend .empty;
+	}
+	.block-content { 
+		li.item { 
+			padding: 10px;
+		}
+		.product-name { 
+			margin-bottom: 0; 
+		}
+	}
+
+	.btn-remove,
+	.btn-edit { 
+		float:right; margin:1px 0 2px 5px;
+	}
+	.actions { 
+		padding: 10px;
+		@include rtl-text-align-right();
+		a { 	
+			background-color: $btn-bg;
+			color: $white;
+		 	padding: 0 10px;
+			line-height: 35px;
+			font-weight: bold;
+			display: inline-block;
+			&:hover{
+		      background-color: $theme-color-secondary;
+		      @include transition(all 0.4s ease 0s);
+		  }
+		}
+	}
+	.empty { 
+		color: #747676;
+		margin:0; padding:5px 5px;
+		font-weight: bold;
+		line-height: 24px;
+		 }
+
+	li{
+		&:first-child {
+			 border-top: none;
+		}
+	}
+}
+
+/* Mini Products List */
+.mini-products-list {
+	font-size: $font-size-base - 2 ;
+	line-height: $theme-line-height - 12;
+	li {
+		overflow: hidden;
+	}
+	.product-image { 
+		float:left; width:50px; padding-left: 5px; 
+	}
+	.product-details { 
+		padding: 0 5px 0 55px;
+		.product-name,.nobr small{ 
+			word-wrap:break-word; 
+		}
+		.nobr { 
+			white-space:normal !important; 
+		}
+	}
+}
+
+/* Block: Cart */
+.block-cart {
+	padding-top: 1px;
+	.summary { background:none; padding:5px; margin:0; position:relative; z-index:1; line-height: 24px; }
+	.amount { 
+		margin:0; 
+		a { font-weight:bold; }
+	}
+	.subtotal {
+		margin:5px 0 0; padding:2px 0; background:#eae5e1; text-align:center; 
+		.label{color: #777777; display: inline-block;}
+		.price { font-weight:bold; }
+	}
+	.actions { 
+		border-bottom:1px solid #c2c2c2; 
+		.paypal-logo { 
+			float:left; width:100%; margin:3px 0 0; text-align:right; 
+			.paypal-or { 
+				clear:both; display:block; padding:0 55px 8px 0; 
+			}
+		}
+	}
+}
+/* Block: Block Account */
+.block-account{
+	.block-content{
+		li{
+			background: url("#{$image-theme-path-base}bg-list-menu.png") repeat-x scroll left bottom;
+			line-height: 32px;
+			padding: 3px 10px 4px 15px !important;
+		}
+	}
+}
+/* Block: Layered Navigation */
+.block-layered-nav { 
+	.block-layered-title{
+		background: none repeat scroll 0 0 #7EB5DA;
+		border-radius: 4px;
+		strong {
+			line-height: 34px;
+			span {
+				color: $block-module-title-color;
+				font-family: $font-family-monospace;
+				font-weight: normal;
+				font-size: 20px;
+				//line-height: 36px;
+				padding:  0 $block-module-padding;
+			}
+		}
+		a { text-decoration:none !important; }
+	}
+	.block-subtitle{
+		font-size: 17px;
+		font-weight: normal;
+		padding:7px 7px 7px 25px;
+		color: #ffffff;
+		&::before{
+			content: "\f061";
+			font-family: "FontAwesome";
+			font-size: 15px;
+			position: absolute;
+			left: 15px;
+		}
+	}
+	.block-content {
+		background: #3598db;
+		padding: 0 10px 5px;
+	}
+	dt { text-transform:uppercase; color: #ffffff; border-bottom: 1px solid rgba(255, 255, 255, 0.4); line-height: 30px;}
+	dd { 
+		color: #ffffff;
+		&.last { background:none; }
+	}
+	li { 
+			padding: 0 0 0 25px;
+			border: none;
+			line-height: 32px;
+		}
+	a, span{
+		color: #ffffff;
+		&:hover{text-decoration: underline;}
+	}
+}
+
+/* Block: Poll */
+.block-poll { 
+	color:#777;
+	li { 
+		@include rtl-padding-left(8px); 
+		padding-top: 5px;
+		line-height: $theme-line-height - 2;
+	}
+}
+/* Block: Orders and Returns */
+.block-gr-search {
+	li { 
+		padding:3px 9px; 
+	}
+	button.button span { 
+		border-color:#406a83; background:#618499; 
+	}
+}
+
+/* Block: Tags */
+.block-tags {
+	.block-title strong {
+	}
+	.block-content {
+		.tags-list {
+			li {
+				border: none;
+			}
+		}
+		a { 
+		}
+	}
+	.actions { 
+		@include rtl-text-align-right (); 
+		padding-bottom: 10px;
+		@include rtl-padding-right (10px);
+		a { 
+			float:none; 
+		}
+	}
+}
+/* Block reorder */
+.block-reorder li input {
+	@include rtl-margin-right(12px);
+}
+/* Block: Banner */
+.block-banner {
+	.block-content { 
+		text-align:center; 
+	}
+}
+.paypal-logo {
+	display: none;
+}
+	.form-list li{
+		padding: 5px 0;
+	}
+	.form-list .wide{
+	    width: 45%;
+	    #comment{
+	    	width: 100%;
+	    }
+	}
+	.form-list .field {
+	    @include rtl-float-left();
+	    @include rtl-margin-right(15px);
+	    width: 48%;
+	}
+.block-banner{
+	p{margin: 0!important;}
+}

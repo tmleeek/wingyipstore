@@ -1,0 +1,1 @@
+dropdown=function(){for(var e=document.getElementById("nav").getElementsByTagName("LI"),n=0;n<e.length;n++)e[n].onmouseover=function(){this.className+=" over"},e[n].onmouseout=function(){this.className=this.className.replace(new RegExp(" over\\b"),"")}},window.attachEvent&&window.attachEvent("onload",dropdown);

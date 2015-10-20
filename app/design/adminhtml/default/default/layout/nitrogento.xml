@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * NBS System
+ */
+-->
+<layout>
+    <default>
+        <reference name="notifications">
+        	<block type="nitrogento/adminhtml_notifications" name="nitrogento_notifications" template="nitrogento/notifications.phtml"/>
+        </reference>
+    </default>
+</layout>

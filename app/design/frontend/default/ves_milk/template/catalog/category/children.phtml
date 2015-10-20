@@ -1,0 +1,43 @@
+
+<?php $children = $this->getChildren(); ?>
+<?php $count = $children->count(); ?>
+<?php $_helper    = $this->helper('catalog/output'); ?>
+
+<?php $_category = $this->getCategory(); ?>
+
+<?php if($_category->getBanner()): ?>
+    <div class="category-wapper">
+        <div class="block category-header">
+            <p class="category-image"><img src="<?php echo $this->getBannerImage($_category) ?>" alt="" /> <span class="category-name"><?php echo $_category->getName() ?></span></p>
+        </div>
+    </div>    
+<?php endif ?>
+<p></p>
+<?php if(!empty($children)):?>
+<div class="category-children">
+    <?php $i=0;foreach($children as $child): ?>
+        <?php $child = Mage::getModel('catalog/category')->load($child->getId()); ?>  
+        <?php if($child->getIsActive()): ?>
+            <?php if ($i++%4==0): ?>
+                <div class="row"> 
+            <?php endif ?>              
+            <div class="col-md-3 col-sm-4 col-xs-6">      
+                <div class="category-child-block">
+                    <div class="title"><a href="<?php echo $child->getURL() ?>"> <?php echo $child->getName() ?></a></div>
+                    <?php if($child->getThumbnail()): ?>
+                        <a href="<?php echo $child->getURL() ?>"> <img src="<?php echo $this->getImageUrl($child) ?>" alt=""></a>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php if ($i%4==0 || $i==$count): ?>
+                </div>
+            <?php endif ?>
+        <?php endif ?>
+    <?php endforeach ?>
+</div>
+<?php endif ?>
+<?php if($_description=$this->getDescription()): ?>
+<div class="category-description std">
+    <?php echo $_description ?>
+</div>
+<?php endif; ?>

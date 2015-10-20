@@ -1,0 +1,24 @@
+Import Report 15-10-2015 07:59:05
+List Product display by SKU/ TITLE / PRICE / STOCK
+
+Newly created products
+
+Updated products
+
+
+
+
+
+
+-------Missing Infomation-------
+Missing Prices
+
+Missing Descriptions
+
+Missing Images
+
+Missing Categorys
+
+Missing Brand
+
+[END]

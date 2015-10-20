@@ -1,0 +1,61 @@
+<?php $recipeCollection = $this->getCollection();
+//var_dump($recipeCollection->getErros());die;?>
+<?php $count = $recipeCollection->count() ?>
+<?php if(!$count): ?>
+    <?php
+    $message = Mage::getSingleton('core/session')->getSearchFalse();
+    if($message !=null){?>
+        <p class="note-msg"><?php echo $message; ?></p>
+    <?php
+        Mage::getSingleton('core/session')->unsSearchFalse();
+    }else{?>
+        <p class="note-msg"><?php echo $this->__('There are no recipes matching the selection.') ?></p>
+    <?php }?>
+<?php else: ?>
+	<?php $page=0;?>
+    <?php $pagecount=0;?>
+    <?php $cnt=0;?>
+        <div class="carousel-inner">
+            <div class="item first active product-grid no-margin">
+                <div class="row products-grid">
+           <?php foreach($recipeCollection as $_recipe):?>
+                <?php $cnt++;
+                $page++;
+                ?>
+                    <div class="col-xs-12 col-lg-4 col-sm-4 col-6 _item <?php if($cnt == 1){echo 'first';}elseif($cnt == 3){echo 'last';} ?>">
+                <div class="product-block" itemtype="http://schema.org/Product" itemscope="">
+                            <div class="product-content">
+                                <div class="image ">
+                                    <a href="<?php echo $this->getRecipeUrl($_recipe); ?>" itemprop="url" title="<?php echo $_recipe->getName(); ?>" class="product-image"><img src="<?php echo $this->helper('recipe')->resizeImage(300,300,$this->getRecipeImage($_recipe->getId())); ?>" width="300" height="300" alt="<?php echo $_recipe->getName(); ?>"></a>
+                                </div>
+                                <div class="product-info">
+                                    <h2 class="product-name" itemprop="name"><a href="<?php echo $this->getRecipeUrl($_recipe); ?>" title="<?php echo $_recipe->getName(); ?>"><?php echo $_recipe->getName(); ?></a>
+                                    </h2>
+                                    <div class="rating">
+                                    	<div class="ratings">
+                                            <div class="rating-box">
+                                                <div class="rating" style="width:<?php echo Mage::getModel('recipe/review')->getRatingList($_recipe->getId());?>%"></div>
+                                            </div>
+                                           <?php /*?> <span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='http://wingyip.staging5.newedge.co.uk/index.php/review/product/list/id/1/'; return false;">1 Review(s)</a></span><?php */?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+               <?php if($cnt % 3 == 0 && $page != count($recipeCollection)){
+               $cnt = 0;
+               ?>
+                    </div><div class="row products-grid">
+                    <?php } ?>
+            <?php endforeach; ?>
+                    </div>
+            </div>
+
+        </div>
+        <div class="toolbar-bottom">
+            <div class="toolbar">
+            <?php echo $this->getPagerHtml() ?>
+            </div>
+        </div>
+<?php endif; ?>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecommage_Rewriteopc>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ecommage_Rewriteopc>
+    </modules>
+</config>

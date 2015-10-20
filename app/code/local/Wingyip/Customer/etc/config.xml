@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Wingyip_Customer>
+            <version>1.0.1</version>
+        </Wingyip_Customer>
+    </modules>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Wingyip_Customer before="Mage_Adminhtml">Wingyip_Customer</Wingyip_Customer>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+	<frontend>
+        <routers>
+            <customer>
+                <args>s
+                    <modules>
+                        <Wingyip_Customer before="Mage_Customer">Wingyip_Customer</Wingyip_Customer>
+                    </modules>
+                </args>
+            </customer>
+        </routers>
+    </frontend>
+</config>

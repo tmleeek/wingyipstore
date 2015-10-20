@@ -1,0 +1,279 @@
+<?php $route = Mage::app()->getRequest()->getRouteName(); ?>
+<?php $_helper = $this->helper('recipe'); ?>
+<?php $_recipe = $this->getRecipe(); ?>
+<?php $recipeImage = $this->getRecipeImage(); ?>
+<?php $themeConfig = Mage::helper('ves_tempcp/theme')->getCurrentTheme(); ?>
+<?php $theme = Mage::helper("ves_tempcp/framework")->getFramework(); ?>
+
+<?php
+
+$main_image_width = (int)$themeConfig->get("main_image_width", 265);
+$main_image_height = (int)$themeConfig->get("main_image_height", 265);
+$additional_image_width = (int)$themeConfig->get("additional_image_width", 80);
+$additional_image_height = (int)$themeConfig->get("additional_image_height", 80);
+
+$popup_image_width = $themeConfig->get("popup_image_width", 600);
+$popup_image_width = !empty($popup_image_width) ? (int)$popup_image_width : 600;
+$popup_image_height = $themeConfig->get("popup_image_height", 600);
+$popup_image_height = !empty($popup_image_height) ? (int)$popup_image_height : 600;
+?>
+
+
+<?php if ($recipeImage != 'no_selection' && $recipeImage): ?>
+    <?php if($themeConfig->get("product_enablezoom, 1") && $this->getRecipeImage() ==null && $this->getVideoUrl()!=null):?>
+        <div itemscope class="image">
+            <div class="image-valign">
+                <div class="show-video">
+                    <div class="video">
+                        <iframe id="iframe-id" width="<?php echo $main_image_width;?>" height="<?php echo $main_image_height;?>" src="https://www.youtube.com/embed/<?php echo $this->getVideoUrl();?>" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <?php elseif ($themeConfig->get("product_enablezoom", 1)): ?>
+        <div itemscope class="image">
+            <div class="image-valign">
+                <div class="show-video">
+                </div>
+                <?php if ($route != "tempcp"): ?>
+                <a href="<?php echo $this->getImageUrl($recipeImage); ?>" title="<?php echo $_recipe->getName(); ?>"
+                   class="colorbox" itemprop="name">
+                    <?php endif; ?>
+                    <?php
+                    $_img = '<img itemprop="image" id="image" src="' . $this->helper('recipe')->resizeImage($main_image_width, $main_image_height, $this->getRecipeImage()) . '" alt="' . $_recipe->getName() . '" title="' . $_recipe->getName() . '" data-zoom-image="' . $this->getImageUrl($recipeImage) . '" class="product-image-zoom"/>';
+                    echo $_img;
+
+                    ?>
+                    <?php if ($route != "tempcp"): ?>
+                </a>
+            <?php endif; ?>
+            </div>
+        </div>
+    <?php else: ?>
+        <p class="product-image product-image-zoom">
+            <?php
+            $_img = '<img id="image" src="' . $this->helper('recipe')->resizeImage($main_image_width, $main_image_height, $this->getRecipeImage()) . '" alt="' . $_recipe->getName() . '" title="' . $_recipe->getName() . '" />';
+            echo $_img;
+            ?>
+        </p>
+        <p class="zoom-notice"
+           id="track_hint"><?php echo $this->__('Double click on above image to view full picture') ?></p>
+        <div class="zoom">
+            <img id="zoom_out" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_out.gif') ?>"
+                 alt="<?php echo $this->__('Zoom Out') ?>" title="<?php echo $this->__('Zoom Out') ?>"
+                 class="btn-zoom-out"/>
+
+            <div id="track">
+                <div id="handle"></div>
+            </div>
+            <img id="zoom_in" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_in.gif') ?>"
+                 alt="<?php echo $this->__('Zoom In') ?>" title="<?php echo $this->__('Zoom In') ?>"
+                 class="btn-zoom-in"/>
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            Event.observe(window, 'load', function () {
+                product_zoom = new Product.Zoom('image', 'track', 'handle', 'zoom_in', 'zoom_out', 'track_hint');
+            });
+            //]]>
+        </script>
+    <?php endif; ?>
+<?php elseif ($this->getVideoUrl() !=null): ?>
+    <div itemscope class="image">
+        <div class="image-valign">
+            <div class="show-video">
+                <div class="video">
+                    <iframe id="iframe-id" width="<?php echo $main_image_width;?>" height="<?php echo $main_image_height;?>" src="https://www.youtube.com/embed/<?php echo $this->getVideoUrl();?>" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php else: ?>
+    <p class="product-image">
+        <?php
+        $_img = '<img src="' . $this->helper('recipe')->resizeImage(265, 265, $this->getRecipeImage()) . '" alt="' . $_recipe->getName() . '" title="' . $_recipe->getName() . '" />';
+        echo $_img;
+        ?>
+    </p>
+
+<?php endif;?>
+<?php if (count($this->getGalleryImages()) > 0): ?>
+    <div id="image-additional" class="image-additional slide carousel more-views">
+        <div class="carousel-inner row" id="image-gallery-zoom">
+            <?php
+            $icols = (int)$themeConfig->get("moreview_cols", 4);
+            $icols = !empty($icols) ? $icols : 4;
+            $col = 12 / $icols;
+
+            $i = 0;
+            $eimages = array();
+            $total_images = count($this->getGalleryImages());
+
+            foreach ($this->getGalleryImages() as $_image) {
+                ?>
+                <?php if ((++$i) % $icols == 1) { ?>
+                    <div class="item">
+                <?php } ?>
+
+                <?php if ($i == 1) { ?>
+                    <div class="col-lg-<?php echo $col; ?> col-sm-<?php echo $col; ?> col-xs-<?php echo $col; ?>">
+                        <div class="thumb-img">
+                            <a href="<?php echo $this->getImageUrl($recipeImage); ?>"
+                               title="<?php echo $_recipe->getName(); ?>" class="colorbox"
+                               data-zoom-image="<?php echo $this->getImageUrl($recipeImage); ?>"
+                               data-image="<?php echo $this->getImageUrl($recipeImage); ?>">
+                                <img
+                                    src="<?php echo $this->helper('recipe')->resizeImage($additional_image_width, $additional_image_height, $this->getRecipeImage()); ?>"
+                                    title="<?php echo $_recipe->getName(); ?>" alt="<?php echo $_recipe->getName(); ?>"
+                                    data-zoom-image="<?php echo $this->getImageUrl($recipeImage); ?>"
+                                    class="product-image-zoom"/>
+                            </a>
+                        </div>
+                    </div>
+
+                    <?php if (!is_null($this->getVideoUrl())): ?>
+                        <div class="col-lg-<?php echo $col; ?> col-sm-<?php echo $col; ?> col-xs-<?php echo $col; ?>">
+                            <div class="thumb-img recipes-video">
+                                    <img id="image-video" width="<?php echo $additional_image_width;?>" height="<?php echo $additional_image_height;?>" src="http://img.youtube.com/vi/<?php echo $this->getVideoUrl();?>/0.jpg"/>
+                                    <div class="old-video" style="display: none">
+                                        <div class="video">
+                                            <iframe id="iframe-id" width="<?php echo $main_image_width;?>" height="<?php echo $main_image_height;?>" src="https://www.youtube.com/embed/<?php echo $this->getVideoUrl();?>" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                    <?php $i++;
+                }?>
+                <div class="col-lg-<?php echo $col; ?> col-sm-<?php echo $col; ?> col-xs-<?php echo $col; ?>">
+                    <div class="thumb-img">
+                        <a href="<?php echo $this->getImageUrl($_image->getImage()); ?>"
+                           title="<?php echo $_recipe->getName(); ?>" class="colorbox"
+                           data-zoom-image="<?php echo $this->getImageUrl($_image->getImage()); ?>"
+                           data-image="<?php echo $this->getImageUrl($_image->getImage()); ?>">
+                            <img
+                                src="<?php echo $this->helper('recipe')->resizeImage($additional_image_width, $additional_image_height, $_image->getImage()); ?>"
+                                title="<?php echo $_recipe->getName(); ?>" alt="<?php echo $_recipe->getName(); ?>"
+                                data-zoom-image="<?php echo $this->getImageUrl($_image->getImage()); ?>"
+                                class="product-image-zoom"/>
+                        </a>
+                    </div>
+                </div>
+                <?php if ($i % $icols == 0 || $i == ($total_images + 1)) { ?>
+                    </div>
+                <?php } ?>
+            <?php } ?>
+        </div>
+
+        <a class="carousel-control left" href="#image-additional" onclick="return false;" data-slide="prev"><i
+                class="fa fa-chevron-left"></i></a>
+        <a class="carousel-control right" href="#image-additional" onclick="return false;" data-slide="next"><i
+                class="fa fa-chevron-right"></i></a>
+    </div>
+    <script type="text/javascript">
+        jQuery('#image-additional .item:first').addClass('active');
+        jQuery('#image-additional').carousel({interval: false});
+    </script>
+
+<?php elseif(count($this->getGalleryImages()) <=0 && $this->getVideoUrl() !=null && $this->getRecipeImage() != null):
+    $icols = (int)$themeConfig->get("moreview_cols", 4);
+    $icols = !empty($icols) ? $icols :4;
+    $col = 12 / $icols;
+    ?>
+
+    <div id="image-additional" class="image-additional slide carousel more-views">
+        <div class="carousel-inner row" id="image-gallery-zoom">
+            <div class="item" style="display: block">
+                <div class="col-lg-<?php   echo $col; ?> col-sm-<?php echo $col; ?> col-xs-<?php echo $col; ?>">
+                    <div class="thumb-img">
+
+                        <a href="<?php echo $this->getImageUrl($recipeImage); ?>"
+                           title="<?php echo $_recipe->getName(); ?>" class="colorbox"
+                           data-zoom-image="<?php echo $this->getImageUrl($recipeImage); ?>"
+                           data-image="<?php echo $this->getImageUrl($recipeImage); ?>">
+
+                               <img src="<?php echo $this->helper('recipe')->resizeImage($additional_image_width, $additional_image_height, $this->getRecipeImage()); ?>"
+                                title="<?php echo $_recipe->getName(); ?>" alt="<?php echo $_recipe->getName(); ?>"
+                                data-zoom-image="<?php echo $this->getImageUrl($recipeImage); ?>"
+                                class="product-image-zoom"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-3 col-xs-3">
+                    <div class="thumb-img recipes-video">
+                        <img id="image-video" width="<?php echo $additional_image_width;?>" height="<?php echo $additional_image_height;?>" src="http://img.youtube.com/vi/<?php echo $this->getVideoUrl();?>/0.jpg"/>
+                        <div class="old-video" style="display: none">
+                            <div class="video">
+                                <iframe id="iframe-id" width="<?php echo $main_image_width;?>" height="<?php echo $main_image_height;?>" src="https://www.youtube.com/embed/<?php echo $this->getVideoUrl();?>" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<?php endif;?>
+
+<?php if ($themeConfig->get("product_enablezoom", 1)) { ?>
+    <script type="text/javascript" src="<?php echo $theme->getJs("elevatezoom/elevatezoom-min.js"); ?>"></script>
+    <script type="text/javascript">
+        <?php if( $themeConfig->get('product_zoomgallery') == 'slider' ) {  ?>
+        jQuery("#image").elevateZoom({gallery: 'image-gallery-zoom', cursor: 'pointer', galleryActiveClass: 'active'});
+        <?php } else { ?>
+        var zoomCollection = '<?php echo $themeConfig->get("product_zoomgallery")=="basic"?".product-image-zoom":"#image";?>';
+        jQuery(zoomCollection).elevateZoom({
+            <?php if( $themeConfig->get('product_zoommode') != 'basic' ) { ?>
+            zoomType: "<?php echo $themeConfig->get('product_zoommode');?>",
+            <?php } ?>
+            lensShape: "<?php echo $themeConfig->get('product_zoomlensshape');?>",
+            lensSize: <?php echo (int)$themeConfig->get('product_zoomlenssize');?>,
+
+        });
+        <?php } ?>
+    </script>
+<?php } else { ?>
+
+    <script type="text/javascript">
+        jQuery("#image-additional .colorbox").click(function () {
+            var image_link = jQuery(this).attr("href");
+            jQuery("#image").attr("src", image_link);
+            return false;
+        })
+    </script>
+
+<?php } ?>
+<?php if ($route != "review" && $route != "tempcp"): ?>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('.colorbox').colorbox({
+                width: '<?php echo $popup_image_width; ?>',
+                height: '<?php echo $popup_image_height; ?>',
+                overlayClose: true,
+                opacity: 0.5,
+                rel: "colorbox"
+            });
+            jQuery('#image-gallery-zoom').find("a").click(function () {
+                jQuery('.zoomContainer').show();
+                jQuery('.product-recipe .product-shop .image-valign .show-video').html('');
+                jQuery('.product-recipe .product-shop .image-valign .colorbox').show();
+                if (jQuery(".product-img-box .image a").length > 0) {
+                    var image_link = jQuery(this).attr("href");
+                    jQuery(".product-img-box .image a").attr("href", image_link);
+                }
+            })
+        });
+        </script>
+<?php endif; ?>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery('.product-recipe .recipes-video').find("#image-video").on('click', function () {
+            jQuery('.zoomContainer').hide();
+            var htmlVideo = jQuery('.product-recipe .recipes-video').find(".old-video").html();
+            jQuery('.product-recipe .product-shop .image-valign .colorbox').hide();
+            jQuery('.product-recipe .product-shop .image-valign .show-video').html(htmlVideo);
+        });
+    });
+</script>

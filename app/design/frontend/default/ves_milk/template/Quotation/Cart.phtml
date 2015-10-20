@@ -1,0 +1,12 @@
+<?php 
+$quote = Mage::getSingleton('checkout/session')->getQuote();
+$shipping = $quote->getShippingAddress();
+$subtotal = $shipping->getSubtotalInclTax();
+?>
+<?php if(!Mage::getModel('checkout/session')->getQuoteItem()):?>
+<?php $allowSubtotal=Mage::getStoreConfig('quotation/quotation_request/minimum_subtotal');?>
+<?php if ($this->allowQuoteRequestFromCart() && $subtotal > $allowSubtotal && !Mage::getModel('checkout/session')->getQuoteAction()): ?>
+        
+        <button class="button" type="button" onclick="document.location.href='<?php echo $this->getQuoteRequestUrl(); ?>';" value="<?php echo $this->__('Create request') ?>"><span><?php echo $this->__('Request a quote') ?></span></button>
+<?php endif; ?>
+<?php endif; ?>

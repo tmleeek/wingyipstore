@@ -1,0 +1,11 @@
+<?php  $Enrollmentdetail = $this->getEnrollmentdetail(); ?>
+<?php  $RealexEnrolledMD = $this->getRealexEnrolledMD(); ?>
+<?php  $TermUrl = Mage::getUrl("")."realex/realmpi/response3dsecure"; ?>
+<?php if($Enrollmentdetail->getAcsUrl() && $RealexEnrolledMD != ''):?>
+    <form action="<?php echo $Enrollmentdetail->getAcsUrl()?>" id="acsform" name="acsform" method="POST">
+    <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey()?>" /></div><input id="PaReq" name="PaReq" value="<?php echo $Enrollmentdetail->getEnrollmentPareq()?>" type="hidden"/>
+    <input id="TermUrl" name="TermUrl" value="<?php echo $TermUrl?>" type="hidden"/>
+    <input id="MD" name="MD" value="<?php echo $RealexEnrolledMD ?>" type="hidden"/>
+    </form>
+    <script type="text/javascript">document.getElementById("acsform").submit();</script>
+<?php endif;?>

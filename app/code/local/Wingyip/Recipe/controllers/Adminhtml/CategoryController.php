@@ -1,0 +1,293 @@
+<?php
+class Wingyip_Recipe_Adminhtml_CategoryController extends Mage_Adminhtml_Controller_Action
+{
+ 
+    protected function _initAction()
+    {
+        $this->loadLayout()
+            ->_setActiveMenu('category/items')
+            ->_addBreadcrumb(Mage::helper('adminhtml')->__('Category Manager'), Mage::helper('adminhtml')->__('Category Manager'));
+        return $this;
+    }   
+   
+    public function indexAction() {
+        $this->_initAction();     
+        $this->_addContent($this->getLayout()->createBlock('recipe/adminhtml_category'));
+        $this->renderLayout();
+    }
+ 
+    public function editAction()
+    {
+        $categoryId     = $this->getRequest()->getParam('id');
+        $categoryModel  = Mage::getModel('recipe/category')->load($categoryId);
+       /* echo '<pre>';
+        print_r($categoryModel);
+        exit; */
+ 
+        if ($categoryModel->getId() || $categoryId == 0) {
+ 
+            Mage::register('category_data', $categoryModel);
+ 
+            $this->loadLayout();
+            $this->_setActiveMenu('category/items');
+           
+            $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Category Manager'), Mage::helper('adminhtml')->__('Category Manager'));
+            $this->_addBreadcrumb(Mage::helper('adminhtml')->__('Category News'), Mage::helper('adminhtml')->__('Category News'));
+           
+            $this->getLayout()->getBlock('head')->setCanLoadExtJs(true);
+           
+            $this->_addContent($this->getLayout()->createBlock('recipe/adminhtml_category_edit'))
+                 ->_addLeft($this->getLayout()->createBlock('recipe/adminhtml_category_edit_tabs'));
+               
+            $this->renderLayout();
+        } else {
+            Mage::getSingleton('adminhtml/session')->addError(Mage::helper('category')->__('Category does not exist'));
+            $this->_redirect('*/*/');
+        }
+    }
+   
+    public function newAction()
+    {
+        $this->_forward('edit');
+    }
+   
+    public function saveAction()
+    {
+        if ( $this->getRequest()->getPost() ) {
+            try {
+                $postData = $this->getRequest()->getPost();  
+                $categoryModel = Mage::getModel('recipe/category');
+                
+                // Check Unique Category Code
+                $code = $postData['code'];
+                $catId = $this->getRequest()->getParam('id');
+                $uniqueCode = Mage::getResourceModel('recipe/category')->getUniqueCode($code);
+                if($uniqueCode != false){
+                if($uniqueCode['recipe_category_id'] != $catId){
+                    Mage::getSingleton('adminhtml/session')->addError(Mage::helper('recipe')->__($code.' Code already exist'));
+                    if($catId){
+                            $this->_redirect('*/*/edit', array('id' => $catId));    
+                        }else{
+                            $this->_redirect('*/*/new');   
+                        }
+                        return;
+                   }
+                }
+				
+			   /// Recipie Category Image Start	
+			   $path   =  Mage::getBaseDir().DS.'media'.DS.'recipe'.DS.'category'.DS;		
+				 if(@$postData['image']['delete']!='1' &&  $_FILES['image']['name']=='')
+					{
+						$postData['image']= $postData['image']['value'];
+					}
+					if((@$postData['image']['delete']=='1'))
+						{
+							/* Remove Book Thumb if check box is ticked */
+							$removeFile = $path.$postData['image']['value'];
+							@unlink($removeFile);
+							$postData['image'] = ""; 
+						}
+						
+					// Set Image
+					if(isset($_FILES['image']['name']) && $_FILES['image']['name'] != '') {  
+						try {    
+					
+							   // Delete Old Image
+								if(($model) && ($model->getImage() != '')) {
+										 @unlink($path.$model->getImage());        
+								}
+								
+							/* Starting upload */    
+							$uploader = new Varien_File_Uploader('image');
+							$uploader->setAllowedExtensions(array('jpg','jpeg','png','gif'));
+							$uploader->setAllowRenameFiles(true);
+		
+							$uploader->setFilesDispersion(false);
+							$ext = strtolower(str_replace('.', '', strrchr($_FILES['image']['name'], '.')));
+							
+							/* Each new uploaed file will renamed with current time*/
+							$newFileTime   = time();
+							$newFileName   = $newFileTime.'.'.$ext;
+							$postData['image'] = "recipe/category/".$newFileName;
+							$uploader->save($path, $newFileName);
+		
+						} catch (Exception $e)
+						{
+							Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+							Mage::getSingleton('adminhtml/session')->setFormData($data);
+							$this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
+							return;
+						}
+					}    
+               
+			   
+			   /// Recipie Category Image End
+				
+				
+				
+                //=========================================================
+                $categoryModel
+				->setData($postData)
+				->setId($catId)
+                ->setName($postData['name'])
+                ->setDescription($postData['description'])
+                ->setLevel($postData['level'])
+                ->setPath($postData['path'])
+                ->setCode($postData['code'])
+				->setImage($postData['image'])
+                ->setStatus($postData['status'])
+                ->setUrlKey($postData['url_key'])
+                ->setSort($postData['sort']) 
+                ->setParentId($postData['parent_id']);
+/*				->setMetaTitle($postData['meta_title'])
+				->setParentId($postData['meta_keyword'])
+				->setParentId($postData['meta_description']);*/
+                
+                if ($catId==0 || $catId==''){
+                    $categoryModel->setCreatedTime(now())
+                    ->setUpdateTime(now());
+                } else {
+                    
+                    $categoryModel->setUpdateTime(now());
+                }
+				
+				//echo "<pre>"; print_r($categoryModel->getData()); exit;
+                $categoryModel->save();
+           
+            Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Category was successfully saved'));
+            Mage::getSingleton('adminhtml/session')->setCategoryData(false);
+
+                if ($this->getRequest()->getParam('back')) {
+                    $this->_redirect(
+                        '*/*/edit',
+                        array(
+                            'id' => $categoryModel->getId(),
+                            'store' => Mage::app()->getStore()->getStoreId()
+                        )
+                    );
+                    return;
+                }
+            } 
+            catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+                Mage::getSingleton('adminhtml/session')->setCategoryData($this->getRequest()->getPost());
+                $this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
+                return;
+            }
+        }
+        $this->_redirect('*/*/');
+    }
+   
+    public function deleteAction()
+    {
+        if( $this->getRequest()->getParam('id') > 0 ) {
+            try {
+                $categoryModel = Mage::getModel('recipe/category');
+               
+                $categoryModel->setId($this->getRequest()->getParam('id'))
+                    ->delete();
+                   
+                Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Category was successfully deleted'));
+                $this->_redirect('*/*/');
+            } catch (Exception $e) {
+                Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+                $this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
+            }
+        }
+        $this->_redirect('*/*/');
+    }
+    /**
+     * Product grid for AJAX request.
+     * Sort and filter result for example.
+     */
+    public function gridAction()
+    {
+        $this->_initAction();     
+        $this->_addContent($this->getLayout()->createBlock('recipe/adminhtml_category_grid'));
+        $this->renderLayout();
+    }
+    
+    public function massDeleteAction()
+    {
+        $categoryIds = $this->getRequest()->getParam('recipe_category_id');
+        if(!is_array($categoryIds)) {
+        Mage::getSingleton('adminhtml/session')->addError(Mage::helper('recipe')->__('Please select tax(es).'));
+        } else {
+        try {
+            $categoryModel = Mage::getModel('recipe/category');
+            foreach ($categoryIds as $categoryId) {
+            $categoryModel->load($categoryId)->delete();
+            }
+            Mage::getSingleton('adminhtml/session')->addSuccess(
+            Mage::helper('recipe')->__(
+            'Total of %d record(s) were deleted.', count($categoryIds)
+            )
+            );
+            } 
+            catch (Exception $e) {
+            Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        }
+        $this->_redirect('*/*/index');
+    }
+    
+    public function massUpdateCategoryUrlAction()
+    {
+        $categoryIds = $this->getRequest()->getParam('recipe_category_id');
+        if(!is_array($categoryIds)) {
+        Mage::getSingleton('adminhtml/session')->addError(Mage::helper('recipe')->__('Please select tax(es).'));
+        } else {
+        try {
+            $module_name = "category"; 
+            $categoryModel = Mage::getModel('recipe/category');
+            foreach ($categoryIds as $categoryId) {
+                 Mage::helper('recipe')->deleteUrlRewrites($categoryId,$module_name);
+            }
+            
+            foreach ($categoryIds as $categoryId) {
+                $categoryModel->load($categoryId);
+                $pathData = $pathData = Mage::helper('recipe')->getRequestPath($module_name,$categoryModel);
+                Mage::helper('recipe')->handleUrlRewrite($module_name,$categoryModel,$pathData[0]);
+            }
+            Mage::getSingleton('adminhtml/session')->addSuccess(
+            Mage::helper('recipe')->__(
+            'Total of %d record(s) url were udated.', count($categoryIds)
+            )
+            );
+            } 
+            catch (Exception $e) {
+            Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+            }
+        }
+        $this->_redirect('*/*/index');
+    }
+    
+    public function massUpdateStatusAction()
+    {
+        $categoryIds = $this->getRequest()->getParam('recipe_category_id');
+        $session    = Mage::getSingleton('adminhtml/session');
+
+        if(!is_array($categoryIds)) {
+             $session->addError(Mage::helper('adminhtml')->__('Please select category(es).'));
+        } else {
+            /* @var $session Mage_Adminhtml_Model_Session */
+            try {
+                $status = $this->getRequest()->getParam('status');
+                foreach ($categoryIds as $categoryId) {
+                    $categoryModel = Mage::getModel('recipe/category')->load($categoryId);
+                    $categoryModel->setStatus($status)->save();
+                }
+                $session->addSuccess(
+                    Mage::helper('adminhtml')->__('Total of %d record(s) have been updated.', count($categoryIds))
+                );
+            } catch (Mage_Core_Exception $e) {
+                $session->addError($e->getMessage());
+            } catch (Exception $e) {
+                $session->addException($e, Mage::helper('adminhtml')->__('An error occurred while updating the selected category(es).'));
+            }
+        }
+
+        $this->_redirect('*/*/' . $this->getRequest()->getParam('ret', 'index'));
+    }
+
+}
