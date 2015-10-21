@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Wingyip_Catalog>
+            <version>0.1.1</version>
+        </Wingyip_Catalog>
+    </modules>
+    <frontend>
+        <routers>
+            <catalog>
+                <args>s
+                    <modules>
+                        <Wingyip_Catalog before="Mage_Catalog">Wingyip_Catalog</Wingyip_Catalog>
+                    </modules>
+                </args>
+            </catalog>
+        </routers>
+    </frontend>
+</config>

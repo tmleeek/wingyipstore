@@ -1,0 +1,63 @@
+<?php
+    $moduleId = rand().time();
+    $cols =  (int)$this->getConfig( "columns" );
+    $cols = !empty($cols)?$cols:1;
+    $span = 12/$cols;
+
+    $c = $this->getGeneralConfig( 'small_imagesize', "" );
+	$tmp = explode( "x", $c );
+	$thumb_width = $thumb_height = "";
+	if( count($tmp) > 0 && (int)$tmp[0] ){
+		$thumb_width = (int)$tmp[0];
+		$thumb_height = (int)$tmp[1];
+	}
+
+?>
+<div class="venus-latest-block" id="module<?php echo $moduleId; ?>">
+	<?php if( $this->getConfig("latestmod_title") ) : ?>
+	<div class="block-title">
+        <strong><?php echo $this->getConfig( "latestmod_title" ); ?></strong>
+	</div>	
+	<?php endif; ?>
+	
+		<div class="block-content">
+			<?php if( $this->getConfig("latestmod_desc") ) :?>
+			<div class="block-description">
+				<p><?php echo $this->getConfig("latestmod_desc"); ?></p>
+			</div>
+			<?php endif; ?>
+			<div class="no-margin">
+			<?php foreach( $posts as $i=> $post ): ?>
+			<?php
+				$i=$i+1;
+			?>
+			<?php if( $cols == 1 || $i%$cols == 1 ) { ?>
+				<div class="row">
+			<?php } ?>
+				<div class="col-lg-<?php echo $span;?> col-sm-<?php echo $span;?> col-xs-12">
+					<div class="post-block">
+						<?php
+							 $image = "";
+							 if($thumb_width && $thumb_height) {
+							 	$image = Mage::helper('ves_blog')->resizeImage($post->getFile(), "custom-s", $thumb_width, $thumb_height);
+							 } else {
+							 	$image = $post->getImageURL( "s" );
+							 }
+						?>
+						<div class="post-image"><a href="<?php echo $post->getURL();?>" title="<?php echo $post->getTitle();?>">
+							<img src="<?php echo $image;?>" class="post-image" alt="" title="<?php echo $post->getTitle();?>"/>
+						</a>
+						</div>
+						<h4><a href="<?php echo $post->getURL();?>" title="<?php echo $post->getTitle();?>"><?php echo $post->getTitle(); ?></a></h4>
+						<div class="latest-description"><?php echo $post->getDescription(); ?></div>
+					</div>		
+				</div>
+				
+			<?php if( $i%$cols == 0 || $i==count($posts) ) { ?>
+				</div>
+			<?php } ?>
+			
+			<?php endforeach; ?>
+		</div>
+	</div>
+</div>

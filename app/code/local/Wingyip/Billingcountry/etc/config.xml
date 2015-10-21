@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Wingyip_Billingcountry>
+            <version>0.1.0</version>
+        </Wingyip_Billingcountry>
+    </modules>
+        <global>
+             <blocks>
+                <billingcountry>
+                    <class>Wingyip_Billingcountry_Block</class>
+                </billingcountry>
+                <checkout>
+                    <rewrite>
+                        <onepage_billing>Wingyip_Billingcountry_Block_Onepage_Billing</onepage_billing>
+                    </rewrite>
+                </checkout>
+                <checkout>
+                    <rewrite>
+                        <onepage_shipping>Wingyip_Billingcountry_Block_Onepage_Shipping</onepage_shipping>
+                    </rewrite>
+                </checkout>
+            </blocks>
+        </global>
+</config>

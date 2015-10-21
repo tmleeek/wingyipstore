@@ -1,0 +1,25 @@
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('recipe_banner')->toHtml(); ?>
+
+<div class="category-wapper">
+	<div class="productcarousel3 block productcarousel" id="module80731414420324">
+        <div class="block-title">
+            <h4><?php echo $this->getRecipeCategory()->getName();?></h4>
+            <div class="pretext"></div>
+        </div>
+        <div class="block-content">
+            <div class="box-products carousel slide" id="productcarousel380731414420324">
+                <?php /* ?>
+                <div class="carousel-controls">
+                    <a class="carousel-control left fa fa-angle-double-left" href="#productcarousel380731414420324" data-slide="prev"></a>
+                    <a class="carousel-control right fa fa-angle-double-right" href="#productcarousel380731414420324" data-slide="next"></a>
+                </div>
+                <?php */ ?>
+ 				<?php echo $this->getChildHtml('recipe_list'); ?>  
+			 </div>
+        </div>
+    </div>
+</div>    
+  <?php //echo $this->getChildHtml('recipie_inspire_banner'); ?>  
+
+
+

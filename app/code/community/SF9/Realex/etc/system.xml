@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SF9_Realex extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   SF9
+ * @package    SF9_Realex
+ * @copyright  Copyright (c) 2011 StudioForty9
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+/**
+ * @category   SF9
+ * @package    SF9_Realex
+ * @author     Alan Morkan <alan@sf9.ie>
+ */
+-->
+      <config>
+         <sections>
+              <payment>
+                  <groups>
+                      <realex translate="label" module="paygate">
+                          <label>Realex</label>
+                          <sort_order>670</sort_order>
+                          <show_in_default>1</show_in_default>
+                          <show_in_website>1</show_in_website>
+                          <show_in_store>1</show_in_store>
+                          <fields>
+                              <active translate="label">
+                                   <label>Enabled</label>
+                                   <frontend_type>select</frontend_type>
+                                   <source_model>adminhtml/system_config_source_yesno</source_model>
+                                   <sort_order>10</sort_order>
+                                   <show_in_default>1</show_in_default>
+                                   <show_in_website>1</show_in_website>
+                                   <show_in_store>1</show_in_store>
+                               </active>
+                              <title translate="label">
+                                  <label>Title</label>
+                                  <frontend_type>text</frontend_type>
+                                  <sort_order>20</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>1</show_in_store>
+                                  <validate>required-entry</validate>
+                                  <comment>Appears in the checkout and in emails sent to the customer.</comment>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </title>
+                              <secure3d translate="label">
+                                  <label>Use 3D Secure?</label>
+                                  <frontend_type>select</frontend_type>
+                                  <source_model>adminhtml/system_config_source_yesno</source_model>
+                                  <sort_order>22</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>0</show_in_store>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </secure3d>
+                              <model translate="label">
+                                  <label>Mode</label>
+                                  <frontend_type>select</frontend_type>
+                                  <source_model>realex/source_paymentMode</source_model>
+                                  <sort_order>25</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>1</show_in_store>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </model>
+                              <login translate="label">
+                                 <label>MerchantID</label>
+                                 <frontend_type>text</frontend_type>
+                                 <sort_order>40</sort_order>
+                                 <show_in_default>1</show_in_default>
+                                 <show_in_website>1</show_in_website>
+                                 <show_in_store>1</show_in_store>
+                                  <validate>required-entry</validate>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </login>
+                             <pwd translate="label">
+                                 <label>Shared Secret</label>
+                                 <frontend_type>password</frontend_type>
+                                 <sort_order>50</sort_order>
+                                 <show_in_default>1</show_in_default>
+                                 <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                 <validate>required-entry</validate>
+                                 <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </pwd>
+                            <refundpwd translate="label">
+                                 <label>Refund Password</label>
+                                 <frontend_type>password</frontend_type>
+                                 <sort_order>50</sort_order>
+                                 <show_in_default>1</show_in_default>
+                                 <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </refundpwd>
+                             <account translate="label">
+                                 <label>Account Name</label>
+                                 <frontend_type>text</frontend_type>
+                                 <sort_order>55</sort_order>
+                                 <show_in_default>1</show_in_default>
+                                 <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                 <validate>required-entry</validate>
+                                 <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </account>
+                              <cctypes translate="label">
+                                  <label>Credit Card Types</label>
+                                  <frontend_type>multiselect</frontend_type>
+                                  <source_model>realex/source_cctype</source_model>
+                                  <sort_order>60</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>1</show_in_store>
+                                  <validate>required-entry</validate>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </cctypes>
+                              <amexAccount translate="label">
+                                 <label>American Express Account</label>
+                                 <frontend_type>text</frontend_type>
+                                 <sort_order>65</sort_order>
+                                 <show_in_default>1</show_in_default>
+                                 <show_in_website>1</show_in_website>
+                                <show_in_store>1</show_in_store>
+                                <comment>This field is required to process American Express</comment>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </amexAccount>
+                              <capture translate="label">
+                                  <label>Settle Immediately?</label>
+                                  <frontend_type>select</frontend_type>
+                                  <source_model>adminhtml/system_config_source_yesno</source_model>
+                                  <sort_order>75</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>1</show_in_store>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </capture>
+                              <order_status translate="label">
+                                  <label>New order status</label>
+                                  <frontend_type>select</frontend_type>
+                                  <source_model>realex/source_orderStatus</source_model>
+                                  <sort_order>80</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>1</show_in_store>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </order_status>
+                              <useccv translate="label">
+                                 <label>Credit Card Verification</label>
+                                 <frontend_type>select</frontend_type>
+                                 <source_model>adminhtml/system_config_source_yesno</source_model>
+                                 <sort_order>90</sort_order>
+                                 <show_in_default>1</show_in_default>
+                                 <show_in_website>1</show_in_website>
+                                 <show_in_store>1</show_in_store>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </useccv>
+                              <currency translate="label">
+                                 <label>Transaction Currency</label>
+                                  <frontend_type>select</frontend_type>
+                                  <source_model>realex/source_currency</source_model>
+                                  <sort_order>95</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>1</show_in_store>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </currency>
+                              <!--<test translate="label">-->
+                                  <!--<label>Test mode</label>-->
+                                  <!--<frontend_type>select</frontend_type>-->
+                                  <!--<source_model>adminhtml/system_config_source_yesno</source_model>-->
+                                  <!--<sort_order>100</sort_order>-->
+                                  <!--<show_in_default>1</show_in_default>-->
+                                  <!--<show_in_website>1</show_in_website>-->
+                                  <!--<show_in_store>1</show_in_store>-->
+                                  <!--<depends>-->
+                                      <!--<active>1</active>-->
+                                  <!--</depends>-->
+                              <!--</test>-->
+                              <debug translate="label">
+                                  <label>Debug</label>
+                                  <frontend_type>select</frontend_type>
+                                  <source_model>adminhtml/system_config_source_yesno</source_model>
+                                  <sort_order>110</sort_order>
+                                  <show_in_default>1</show_in_default>
+                                  <show_in_website>1</show_in_website>
+                                  <show_in_store>1</show_in_store>
+                                  <comment>Logs requests to and responses from Realex to /var/log.system.log provided that logging is enabled.</comment>
+                                  <depends>
+                                      <active>1</active>
+                                  </depends>
+                              </debug>
+                           </fields>
+                       </realex>
+                   </groups>
+               </payment>
+           </sections>
+       </config>

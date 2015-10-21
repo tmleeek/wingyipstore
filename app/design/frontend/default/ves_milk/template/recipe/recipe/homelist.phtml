@@ -1,0 +1,84 @@
+<?php $recipeCollection = $this->getCollection() ?>
+<?php $count = $recipeCollection->count() ?>
+<?php if(!$count): ?>
+    <p class="note-msg"><?php echo $this->__('There are no recipes matching the selection.') ?></p>
+<?php else: ?>
+<section id="ves-promotion" class="ves-promotion">
+    <div class="productcarousel1 block productcarousel" id="module11815270491411642138">
+        <div class="block-title">
+            <h4>Recipes</h4>
+            <div class="pretext"></div>
+        </div>
+        <div class="block-content">
+            <div class="box-products carousel slide" id="recipescarousel">
+                <div class="carousel-controls">
+                    <a class="carousel-control left fa fa-angle-double-left" href="#recipescarousel"   data-slide="prev"></a>
+                    <a class="carousel-control right fa fa fa-angle-double-right" href="#recipescarousel"  data-slide="next"></a>
+                </div>
+                <div class="carousel-inner">
+                    <?php $_collectionSize = $recipeCollection->count() ?>
+                    <?php $_columnCount = 4; ?>
+                    <?php $i=0; foreach ($recipeCollection as $_recipe): ?>
+                        <?php if ($i++%$_columnCount==0): ?>
+                        <div class="item product-grid no-margin <?php if($i==1):?>first active <?php endif; ?>">
+                        <div class="row products-grid">
+                        <?php endif ?>
+                        <div class="col-xs-12 col-lg-3 col-sm-3 col-3 _item <?php if((($i-1)%$_columnCount)==0): ?> first<?php elseif(($i%$_columnCount)==0): ?> last<?php endif; ?>">
+                                <div class="product-block" itemtype="http://schema.org/Product" itemscope>
+                                    <div class="product-content">
+                                        <div class="image ">
+                                            <a href="<?php echo $this->getRecipeUrl($_recipe); ?>" itemprop="url" class="product-image" title="<?php echo $_recipe->getName(); ?>"><img src="<?php echo $this->helper('recipe')->resizeImage(300,300,$this->getRecipeImage($_recipe->getId())); ?>" width="300" height="300" alt="<?php echo $_recipe->getName(); ?>" /></a>
+                                        </div>
+                                        <div class="product-info">
+                                            <h2 class="product-name" itemprop="name"><a href="<?php echo $this->getRecipeUrl($_recipe); ?>" title="<?php echo $_recipe->getName(); ?>"><?php echo $_recipe->getName(); ?></a>
+                                            </h2>
+                                            <div class="rating">    <div class="ratings">
+                                                    <div class="rating-box">
+                                                        <div class="rating" style="width:<?php echo Mage::getModel('recipe/review')->getRatingList($_recipe->getId());?>%"></div>
+                                                    </div>
+                                                    <?php /*?><span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='http://wingyip.staging5.newedge.co.uk/index.php/review/product/list/id/9/'; return false;">1 Review(s)</a></span><?php */?>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+                    </div>
+                    </div>
+                    <?php endif ?>
+                    <?php endforeach ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        jQuery('#recipescarousel').carousel({interval: false, auto: false, pause: 'hover', cycle: true});
+    </script>
+</section>
+<?php endif; ?> 
+
+
+
+<?php /* ?>
+    <div class="category-products">
+        <?php //echo $this->getChildHtml('pager'); ?> 
+        <ol class="products-list" id="products-list">
+            <?php $_iterator = 0?>
+            <?php foreach($recipeCollection as $_recipe):?>    
+                <li class="item<?php if( ++$_iterator == $count ): ?> last<?php endif; ?>">
+                <a href="<?php echo $this->getRecipeUrl($_recipe); ?>" title="<?php echo $_recipe->getName(); ?>"><img src="<?php echo $this->helper('recipe')->resizeImage(135,135,$_recipe->getImage()); ?>" width="135" height="135" alt="<?php echo $_recipe->getName(); ?>" /></a>
+                
+                <div class="product-shop">
+                    <div class="f-fix"> 
+                        <a href="<?php echo $this->getRecipeUrl($_recipe); ?>" title="<?php echo $_recipe->getName(); ?>"><h2 class="product-name"><?php echo $_recipe->getName(); ?></h2></a>
+                        <div class="desc std"><?php echo $_recipe->getDescription(); ?></div>
+                    </div>
+                </div>
+                </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+<?php */ ?>

@@ -1,0 +1,78 @@
+<pre>
+<?php
+
+require_once('app/Mage.php'); //Path to Magento
+umask(0);
+Mage::app();
+
+/*$resource = Mage::getSingleton('core/resource');
+
+$writeConnection = $resource->getConnection('core_write');
+
+//$query = "INSERT INTO `directory_country` (`country_id`, `iso2_code`, `iso3_code`) VALUES ('AC', 'AC', 'ASC');";
+     
+$writeConnection->query($query);*/
+
+
+/* $order = Mage::getModel('sales/order')->load(339)->getData(); 
+print_r($order);   */
+ 
+/* $setup = new Mage_Eav_Model_Entity_Setup('core_setup');
+$setup->removeAttribute('customer', 'mobile_number');*/
+
+echo now()  ;
+
+/*$to = "garvita@kgntechnologies.com";
+$subject = "My subject";
+$txt = "Hello world!";
+$headers = "From: emaitesterone@gmail.com" . "\r\n";
+
+mail($to,$subject,$txt,$headers); */
+
+
+$_ftpDetails = array(
+    "host" => Mage::getStoreConfig('export_section/exportorder_group/ftp_host'),
+    "username" => Mage::getStoreConfig('export_section/exportorder_group/ftp_username'),
+    "password" => Mage::getStoreConfig('export_section/exportorder_group/ftp_password'),
+    "type" => Mage::getStoreConfig('export_section/exportorder_group/ftp_type'),
+    "port" => Mage::getStoreConfig('export_section/exportorder_group/ftp_port'),
+    "folder" => Mage::getStoreConfig('export_section/exportorder_group/ftp_folder')
+);        
+
+$ftpArray = array(
+    'host'      => $_ftpDetails['host'],
+    'user'      => $_ftpDetails['username'],
+    'password'  => $_ftpDetails['password'],
+    'port'      => $_ftpDetails['port'],
+);
+
+echo "<pre>";
+print_r($ftpArray);
+/*$connId = ftp_connect($_ftpDetails['host']); 
+if($connId){
+    $loginResult =ftp_login($connId, $_ftpDetails['username'], $_ftpDetails['password']);   
+    if($loginResult) {
+        echo "done";
+    }
+    else{
+        echo "not done";
+    }
+}  */
+/*
+echo "<pre>";
+print_r($ftpArray);
+$ftp = new Varien_Io_Ftp();
+if($ftp->open($ftpArray)){
+    echo "done";
+}
+else{
+    echo "not done";
+}
+echo "<pre>";
+print_r($ftpArray);
+*/
+$msg = "test test test test test";
+mail("emailtesterthree@gmail.com","My subject",$msg);
+mail("emailtesterone@gmail.com","My subject",$msg);
+?>    
+</pre>

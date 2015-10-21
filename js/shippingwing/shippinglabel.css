@@ -1,0 +1,4 @@
+.print-label > div {height:auto!important;} 
+.print-label-link {margin-left:10px;}
+@media print {.print-label-link {display:none;}}
+.error-msg {    color: #ff0000;}

@@ -1,0 +1,421 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+$helper = Mage::helper("ves_tempcp/framework")->getFramework( );
+$themeConfig = $helper->getConfig();
+$contact_customhtml = $themeConfig->get("contact_customhtml","", true);
+$store = Mage::getStoreConfig('general/store_information/name');
+$address = Mage::getStoreConfig('general/store_information/address');
+$address = !empty($address)?$address:'79-99 Beaver Street, New York, NY 10005, USA';
+$address = $themeConfig->get('location_address', $address);
+$telephone = Mage::getStoreConfig('general/store_information/phone');
+$fax = "";
+?>
+
+<div class="wrapper std">
+                <h1><?php echo Mage::helper('contacts')->__('Our Location'); ?></h1>
+                <?php
+                    $contacts_list = Mage::getModel('core/variable')
+                        ->setStoreId(Mage::app()->getStore()->getId())
+                        ->loadByCode('contacts-list')
+                        ->getValue('text');
+
+                    // echo $contacts_list;
+                ?>
+                <?php //start contact map ?>
+                <?php /*
+                <div class="contact-location hidden-xs">
+                    <div id="contact-map"></div>
+                </div>
+                */ ?>
+
+                <script type="text/javascript">
+
+                    document.contacts_list = <?php echo $contacts_list; ?>
+
+                    jQuery(document).ready(function(){
+
+                        document.contact_grid = jQuery('<div>',{
+                            class: 'contact-grid'
+                        });
+
+                        var item_count = 0;
+                        for( item_name in document.contacts_list){
+
+                            var item = document.contacts_list[item_name];
+
+                            var contact_item = jQuery('<div>',{
+                                class: 'contact-item contact-info'
+                            });
+
+                            if(item_count%2==0){
+                                contact_item.addClass('i_1_2');
+                            }else{
+                                contact_item.addClass('i_2_2');
+                            }
+
+                            var item_html = '';
+                            item_html += '\
+                                <div class="map" data-latlng="'+item['latlng']+'" data-zoom="'+item['zoom']+'" data-title="WingYip"></div>\
+                                <div class="content">\
+                            ';
+                            if(item['address']!=''){
+                                item_html += '\
+                                    <div class="media">\
+                                        <i class="fa fa-home pull-left"></i>\
+                                        <div class="address media-body">\
+                                            '+item['address']+'\
+                                        </div>\
+                                    </div>\
+                                ';
+                            }
+                            if(item['phone']!=''){
+                                item_html += '\
+                                    <div class="media">\
+                                        <i class="fa fa-phone pull-left"></i>\
+                                        <div class="media-body">\
+                                            Phone: <a href="tel:'+item['phone']+'">'+item['phone']+'</a>\
+                                        </div>\
+                                    </div>\
+                                ';
+                            }
+                            if(item['email']!=''){
+                                item_html += '\
+                                    <div class="media">\
+                                        <i class="fa fa-envelope pull-left"></i>\
+                                        <div class="media-body">\
+                                            Email: <a href="mailto:'+item['email']+'">'+item['email']+'</a>\
+                                        </div>\
+                                    </div>\
+                                ';
+                            }
+                            item_html += '\
+                                </div>\
+                                <div class="line"></div>\
+                            ';
+
+                            contact_item.html(item_html);
+
+                            document.contact_grid.append(contact_item);
+
+                            item_count++;
+                        }
+
+                    });
+
+                </script>
+
+                <div class="contact-content">
+                    <div class="jsContactGrid"></div>
+                    <script type="text/javascript">
+                    jQuery(document).ready(function(){
+                        jQuery('.jsContactGrid').append(document.contact_grid);
+                    });
+                    </script>
+                    <?php /*
+                    <?php  if(  $contact_customhtml ){ ?>
+                        <div class="hidden-xs">
+                            <div class="contact-info">
+                                <h3><?php echo Mage::helper("contacts")->__('CONTACT US'); ?></h3>
+                                <div class="content">
+                                    <div class="media">
+                                        <div class="fa fa-home pull-left"></div>
+                                        <div class="media-body">
+                                            <?php echo $store; ?><?php echo $address; ?>
+                                        </div>
+                                    </div>
+
+                                    <?php if ($telephone) { ?>
+                                    <div class="media">
+                                        <i class="fa fa-phone pull-left"></i>
+                                        <div class="media-body">
+                                            <?php echo $telephone; ?>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+
+
+                                    <?php if ($fax) { ?>
+                                        <div class="media">
+                                            <i class="fa fa-envelope-o pull-left"></i>
+                                            <div class="media-body">
+                                                <?php echo $fax; ?>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+
+
+                                </div>
+                            </div>
+                            <div class="contact-customhtml">
+                                <div class="content">
+                                    <?php echo $contact_customhtml; ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    */ ?>
+                    <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
+                    <div class="">
+                        <form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post">
+                            <h3><?php echo Mage::helper('contacts')->__('CONTACT FORM') ?></h3>
+                            <div class="row">
+                                <div class="col-ld-6 col-md-6 col-sm-12">
+                                    <div class="content">
+                                        <div class="form-group">
+                                            <label for="name" class="required hidden-obj"><em>*</em><?php echo Mage::helper('contacts')->__('Name') ?></label>
+                                            <div class="input-box">
+                                                <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" placeholder="<?php echo Mage::helper('contacts')->__('Name') ?>" class="input-text required-entry" type="text" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                           <label for="email" class="required hidden-obj"><em>*</em><?php echo Mage::helper('contacts')->__('Email') ?></label>
+                                            <div class="input-box">
+                                                <input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" placeholder="<?php echo Mage::helper('contacts')->__('Email') ?>" class="input-text required-entry validate-email" type="text" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="telephone" class="hidden-obj"><?php echo Mage::helper('contacts')->__('Telephone') ?></label>
+                                            <div class="input-box">
+                                                <input name="telephone" id="telephone" title="<?php echo Mage::helper('contacts')->__('Telephone') ?>" value="" placeholder="<?php echo Mage::helper('contacts')->__('Telephone') ?>" class="input-text" type="text" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-ld-6 col-md-6 col-sm-12">
+                                    <div class="content">
+                                        <div class="form-group">
+                                            <label for="comment" class="required hidden-obj"><em>*</em><?php echo Mage::helper('contacts')->__('Comment') ?></label>
+                                            <div class="input-box">
+                                                <textarea name="comment" id="comment" title="<?php echo Mage::helper('contacts')->__('Comment') ?>" placeholder="<?php echo Mage::helper('contacts')->__('Comment') ?>" class="required-entry input-text" cols="5" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="buttons">
+                                        <div class="right">
+                                            <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+                                            <button type="submit" title="<?php echo Mage::helper('contacts')->__('Send message') ?>" class="button"><span><span><?php echo Mage::helper('contacts')->__('Send message') ?></span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="left">
+                                    <p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <?php // Jquery googlemap api v3 ?>
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;language=en"></script>
+                <?php /*
+                <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>venustheme/ves_tempcp/gmap/gmap3.min.js"></script>
+                <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);  ?>venustheme/ves_tempcp/gmap/gmap3.infobox.js"></script>
+                */ ?>
+                <script type="text/javascript">
+
+                    var _map_icon = null;
+
+                    function initMaps(){
+
+                        var _maps = jQuery('.map');
+
+                        if(_maps == undefined || _maps.length < 1 || _maps == null) return;
+
+                        _map_icon = new google.maps.MarkerImage("<?php echo $this->getSkinUrl('images/map-pin.png'); ?>", null, null, new google.maps.Point(30, 56));
+
+                        _maps.each(function(){
+                            // var latlngString = "51.5138791,-0.3029649";
+                            var latlngString = jQuery(this).data('latlng');
+                            if(latlngString==undefined) return;
+                            var ll = latlngString.split(",");
+
+                            var zoom = jQuery(this).data('zoom');
+                            if(zoom==undefined) zoom=15;
+                            else zoom = parseInt(zoom);
+
+                            // var _LatLng = new google.maps.LatLng(51.5138791,-0.3029649);
+                            // var title = "Capital Business Links";
+                            var title = jQuery(this).data('title');
+                            if(title==undefined) title="";
+
+
+                            var latlng = new google.maps.LatLng(parseFloat(ll[0]),parseFloat(ll[1]));
+
+                            // console.log(ll[0]+' '+ll[1])
+
+                            _initMap(jQuery(this), latlng, zoom, title);
+                        });
+
+                    }
+
+                    function _initMap(mapObj, latlng, zoom, title){
+
+                        var style = [
+
+                           {
+                             "featureType": "landscape",
+                             "stylers": [
+                               { "color": "#474b50" }
+                             ]
+                           },{
+                             "featureType": "poi",
+                             "stylers": [
+                               { "visibility": "off" }
+                             ]
+                           },{
+                             "featureType": "road",
+                             "elementType": "geometry",
+                             "stylers": [
+                               { "color": "#34343a" }
+                             ]
+                           },{
+                             "featureType": "administrative",
+                             "elementType": "labels.text.fill",
+                             "stylers": [
+                               { "lightness": 100 }
+                             ]
+                           },{
+                             "featureType": "administrative",
+                             "elementType": "labels.text.stroke",
+                             "stylers": [
+                               { "visibility": "off" }
+                             ]
+                           },{
+                             "featureType": "road",
+                             "elementType": "labels",
+                             "stylers": [
+                               { "visibility": "off" }
+                             ]
+                           },{
+                             "featureType": "transit",
+                             "stylers": [
+                               { "visibility": "off" }
+                             ]
+                           },{
+                             "featureType": "water",
+                             "elementType": "geometry",
+                             "stylers": [
+                               { "hue": "#ffc300" },
+                               { "color": "#55b8e2" }
+                             ]
+                           },{
+                           }
+
+                    ];
+
+                    var _mapOptions = {
+                        zoom: zoom,
+                        center: latlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        panControl: false,
+                        zoomControl: false,
+                        // zoomControl: true,
+                        // zoomControlOptions: {
+                        //    style: google.maps.ZoomControlStyle.SMALL,
+                        //    position: google.maps.ControlPosition.RIGHT_BOTTOM
+                        // },
+                        mapTypeControl: false,
+                        scaleControl: false,
+                        streetViewControl: false,
+                        overviewMapControl: false,
+                        scrollwheel: false,
+                        styles: style
+                    };
+
+                    var _map = new google.maps.Map(mapObj[0], _mapOptions);
+
+                    var _placeMarker = new google.maps.Marker({
+                        position: latlng,
+                        map: _map,
+                        title: title,
+                        icon: _map_icon,
+                        animation: google.maps.Animation.DROP
+                    });
+
+                }
+
+                jQuery(document).ready(function(){
+                    initMaps();
+                });
+                </script>
+                <?php /*
+                <script type="text/javascript">
+                    var mapDiv, map, infobox;
+                    var lat = <?php echo $themeConfig->get('location_latitude', '40.705423'); ?>;
+                    var lon = <?php echo $themeConfig->get('location_longitude', '-74.008616'); ?>;
+                    jQuery(document).ready(function($) {
+                        mapDiv = $("#contact-map");
+                        mapDiv.height(400).gmap3({
+                            map:{
+                                options:{
+                                    center:[lat,lon],
+                                    zoom: 15
+                                }
+                            },
+                            marker:{
+                                values:[
+                                    {latLng:[lat, lon], data:"<?php echo $themeConfig->get('location_address', $address); ?>"},
+                                ],
+                                options:{
+                                    draggable: false
+                                },
+                                events:{
+                                      mouseover: function(marker, event, context){
+                                        var map = $(this).gmap3("get"),
+                                            infowindow = $(this).gmap3({get:{name:"infowindow"}});
+                                        if (infowindow){
+                                            infowindow.open(map, marker);
+                                            infowindow.setContent(context.data);
+                                        } else {
+                                            $(this).gmap3({
+                                            infowindow:{
+                                                anchor:marker,
+                                                options:{content: context.data}
+                                            }
+                                          });
+                                        }
+                                    },
+                                    mouseout: function(){
+                                        var infowindow = $(this).gmap3({get:{name:"infowindow"}});
+                                        if (infowindow){
+                                            infowindow.close();
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    });
+                </script>
+                */ ?>
+                <?php //end contact map ?>
+            </div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+//]]>
+</script>

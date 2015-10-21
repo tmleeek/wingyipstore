@@ -1,0 +1,32 @@
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <autoinvoice translate="title" module="ecommage_autoinvoice">
+                                        <title>Auto Invoice Section</title>
+                                        <sort_order>1600</sort_order>
+                                    </autoinvoice>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <ecommage>
+                        <title>Ecommage</title>
+                        <sort_order>80</sort_order>
+                        <children>
+                            <autoinvoice>
+                                <title>Auto Invoice</title>
+                                <sort_order>270</sort_order>
+                            </autoinvoice>
+                        </children>
+                    </ecommage>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

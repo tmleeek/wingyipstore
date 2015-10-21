@@ -1,0 +1,118 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+
+<form
+    action="<?php echo Mage::helper('adminhtml')->getUrl('shipping/adminhtml_order/saveUps', array('order_id' => $this->getRequest()->getParam('order_id'))); ?>"
+    id="upsShipmentForm" method="post" enctype="multipart/form-data">
+    <input name="form_key" type="hidden" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>"/>
+    <?php echo $this->getLayout()->createBlock('rewritewingyip/adminhtml_ups_form')->toHtml(); //code to display form in color tab ?>
+    <div class="buttons-set" style="display: none">
+        <div class="export-xml">
+            <button type="button" id="export_xml" title="<?php echo $this->__('Export Xml') ?>" class="button">
+                <span>
+                    <span>
+                        <?php echo $this->__('Export Xml') ?>
+                    </span>
+                </span>
+            </button>
+        </div>
+        <div style="display: none">
+            <p class="back-link">
+                <a href="<?php echo Mage::helper('adminhtml')->getUrl('adminhtml/sales_order/view', array('order_id' => $this->getRequest()->getParam('order_id'))); ?>">
+                    <small>&laquo; </small><?php echo $this->__('Back') ?>
+                </a>
+            </p>
+            <p class="required">
+                <?php echo $this->__('* Required Fields') ?>
+            </p>
+
+            <button id="submit_form_ups" type="submit" title="<?php echo $this->__('Submit') ?>" class="button">
+                <span><span><?php echo $this->__('Submit') ?></span></span>
+            </button>
+        </div>
+    </div>
+</form>
+<?php
+$url ="shipping/adminhtml_order/exportUps/order_id/".$this->getRequest()->getParam('order_id');
+?>
+<script type="text/javascript">
+
+    $('export_xml').observe('click',function(){
+
+        new Ajax.Request('<?php echo  Mage::helper('adminhtml')->getUrl($url);?>',{
+            method: 'post',
+            parameters: {
+                company_or_name : $$('[name="company_or_name"]')[0].value,
+                attention : $$('[name="attention"]')[0].value,
+                telephone : $$('[name="telephone"]')[0].value,
+                address1 : $$('[name="address1"]')[0].value,
+                address2 : $$('[name="address2"]')[0].value,
+                country_territory : $$('[name="country_territory"]')[0].value,
+                postal_code : $$('[name="postal_code"]')[0].value,
+                city_or_town : $$('[name="city_or_town"]')[0].value,
+                location_id : $$('[name="location_id"]')[0].value,
+                service_type : $$('[name="service_type"]')[0].value,
+                description_of_goods : $$('[name="description_of_goods"]')[0].value,
+                bill_transportation_to : $$('[name="bill_transportation_to"]')[0].value,
+                profile_name : $$('[name="profile_name"]')[0].value,
+                shipper_number : $$('[name="shipper_number"]')[0].value,
+                package_type : $$('[name="package_type"]')[0].value,
+                weight : $$('[name="weight"]')[0].value,
+                reference1 : $$('[name="reference1"]')[0].value,
+                reference2 : $$('[name="reference2"]')[0].value,
+                reference3 : $$('[name="reference3"]')[0].value,
+                reference5     : $$('[name="reference5"]')[0].value,
+            },
+            onSuccess: function(data){
+                $$('#anchor-content #messages').each(function(el){
+                    $(el).update();
+                });
+                if(data.responseText=='true'){
+                    $$('#anchor-content #messages').each(function(el){
+                        $(el).insert('<ul class="messages"><li class="success-msg"><ul><li><span><?php echo $this->__('Export xml file success.');?></span></li></ul></li></ul>');
+                    });
+                }else{
+                    $$('#anchor-content #messages').each(function(el){
+                        $(el).insert('<ul class="messages"><li class="error-msg"><ul><li><span><?php echo $this->__('Export xml file false.');?></span></li></ul></li></ul>');
+                    });
+                }
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+    $j(document).ready(function(){
+        $j('div.submit-UPS button.submit-button').click(function(){
+            $j('#export_xml').click();
+        });
+
+    });
+
+</script>

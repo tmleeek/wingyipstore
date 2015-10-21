@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecommage_Rewriteopc>
+            <version>0.1.0</version>
+        </Ecommage_Rewriteopc>
+    </modules>
+    <global>
+        <helpers>
+            <ecommage_rewriteopc>
+                <class>Ecommage_Rewriteopc_Helper</class>
+            </ecommage_rewriteopc>
+        </helpers>
+    </global>
+</config>

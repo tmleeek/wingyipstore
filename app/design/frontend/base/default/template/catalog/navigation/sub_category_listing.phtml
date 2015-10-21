@@ -1,0 +1,43 @@
+<?php $_category = Mage::getSingleton('catalog/layer')->getCurrentCategory();
+    $children = $_category->getCollection()
+    ->addAttributeToSelect(array('name', 'thumbnail'))
+    ->addAttributeToFilter('is_active', 1)
+    ->addIdFilter($_category->getChildren());
+    $count = $children->count();
+?>
+<?php if($_category->getBanner()): ?>
+    <div class="category-wapper" style="margin-top: -10px;">
+        <div class="block category-header">
+            <p class="category-image"><img src="<?php echo Mage::getBaseUrl('media') . 'catalog/category/' . $_category->getBanner() ?>" alt="" /> <span class="category-name"><?php echo $_category->getName() ?></span></p>
+        </div>
+    </div>
+<?php endif ?>
+    <p></p>
+<?php if(!empty($children)):?>
+    <div class="category-children">
+        <?php $i=0;foreach($children as $child): ?>
+            <?php $child = Mage::getModel('catalog/category')->load($child->getId()); ?>
+            <?php if($child->getIsActive()): ?>
+                <?php if ($i++%4==0): ?>
+                    <div class="row">
+                <?php endif ?>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <div class="category-child-block">
+                        <div class="title"><a href="<?php echo $child->getURL() ?>"> <?php echo $child->getName() ?></a></div>
+                        <?php if($child->getThumbnail()): ?>
+                            <a href="<?php echo $child->getURL() ?>"> <img src="<?php echo Mage::getBaseUrl('media') . 'catalog/category/' . $child->getThumbnail() ?>" alt=""></a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <?php if ($i%4==0 || $i==$count): ?>
+                    </div>
+                <?php endif ?>
+            <?php endif ?>
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
+<?php if($_description=$this->getDescription()): ?>
+    <div class="category-description std">
+        <?php echo $_description ?>
+    </div>
+<?php endif; ?>

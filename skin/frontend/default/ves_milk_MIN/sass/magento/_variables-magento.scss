@@ -1,0 +1,150 @@
+/******************************************************
+ * @package Ves Theme Framework for Magento
+ * @version 1.0
+ * @author http://www.venustheme.com
+ * @copyright Copyright (C) Augus 2013 Venustheme.com <$emai:venustheme@gmail.com>.All rights reserved.
+ * @license   GNU General Public License version 2
+*******************************************************/
+
+// Global values
+// --------------------------------------------------
+
+// Variables
+// --------------------------------------------------
+
+
+/**
+ * Heading Page
+ */
+$heading-line-height            : 30px;
+
+
+$mainnav-color-hover    : $theme-color-hover;
+/* 
+ * product block
+ */
+$rtl-left : left;
+$rtl-right : right;
+
+$product-name-font-size		        : $font-size-base; 
+$product-name-color  		        : #000000;
+$product-name-color-hover  		    : $theme-color-default;
+$product-name-font-family			: $font-family-monospace;
+$product-price-old-color 			: #999999;
+$product-price-old-size				: $font-size-small;
+$product-price-font-size    		: $font-size-base+4;
+$product-price-color				: #DB4A38;
+$product-price-tax                  : #bbb;
+
+$list-product-name-font-size		    : $font-size-large;
+$list-product-name-color  		        : #000;
+$list-product-name-color-hover  		: $theme-color-default;
+$list-product-name-font-family			: $font-family-monospace;
+$list-product-price-font-size    		: $font-size-large;
+
+
+ 
+/* buttons */
+$btn-wrap-border:   #CCC ;
+$btn-bg    : #A6A7A4; 
+
+/* 
+ * htab module 
+ */
+$htab-border-color 	     : $nav-tabs-border-color; 
+$htab-border 		     : $nav-tabs-border-color; 
+$htab-nav-padding	     : 7px 25px 7px 25px;
+$htab-nav-color		     : $gray;
+$htab-bg    		     : $white;
+$htab-bg-selected     	 : $theme-color-default;
+$htab-nav-selected-color : $white;
+
+
+
+/* 
+ * Default Menu
+ */
+
+$menu-bg					:$gray-darker;
+$menu-height				:50px;
+
+
+$menu-lvtop-font-size		:14px;
+$menu-lvtop-font-family		:$font-family-monospace;
+$menu-lvtop-line-height		:$menu-lvtop-font-size * 1.5;
+$menu-lvtop-color			:#fff;
+$menu-lvtop-color-hover     :$theme-color-secondary;
+$menu-lvtop-padding         : ($menu-height - $menu-lvtop-line-height)/2  10px;
+
+$menu-lvnd-height			: 30px;
+$menu-lvnd-font-size		: 14px;
+$menu-lvnd-font-family		: $font-family-base;
+$menu-lvnd-line-height		: $menu-lvnd-font-size * 1.5;
+$menu-lvnd-padding          : ($menu-lvnd-height - $menu-lvnd-line-height)/2  15px;
+$menu-lvnd-color			: $menu-lvtop-color;
+$menu-lvnd-color-hover   	: $theme-color-default;
+$menu-lvnd-bg				: $gray;
+$menu-lvnd-bg-hover			: $gray-dark;
+/* 
+ * Mega Menu Module
+ */
+$megamenu-bg: #000;
+$megamenu-border-color:#999;
+/* 
+ * Block Modules 
+ */
+$block-module-title-font   	 	: $font-family-base;
+$block-module-title-color    	: #4C4D4E;
+$block-module-title-bg			: #F9F9F9;
+$block-module-title-border   	: $gray-lighter;
+$block-module-title-fontsize 	: $font-size-base + 2;
+$block-module-title-lineheight  : $heading-line-height;
+$block-module-content-bg        : #ffffff;
+$block-module-padding           : $theme-padding;
+$block-module-margin	        : 0 0 20px;
+$block-module-border     		: 1px solid #EAEAEA;
+$block-module-badge            : $theme-color;
+ /* 
+  * LAYOUTS VAIRABLES 
+  */
+
+// topbar  
+$topbar-bg				: $browndark; 
+$topbar-color			: $gray-light;
+$topbar-font-size  		: $font-size-base - 1;
+$topbar-link-color      : #777777;
+$topbar-link-hover-color: $theme-color-secondary;
+
+//header-main
+$header-main-bg				: $lightbrown; 
+$header-main-padding        : auto;
+$header-main-height 		: 115px;
+
+//Pav-mainnav
+$mainnav-bg				: $lightbrown; 
+$mainnav-wrap-bg		: $brown;
+
+//Offcanvas
+$offcanvas-bg           : $theme-color-secondary;
+
+// footer position
+$footer-bg 				: $white;
+$footer-color 				: #3b3b3b;
+$footer-heading-font-size  : $font-size-base + 4;
+$footer-heading-color		: #ffffff;
+$footer-heading-boder-color: 2px solid transparent;
+$footer-link-color         : $footer-color;
+$footer-link-hover-color   : $theme-color-hover;
+$footer-padding            : $line-height-computed + 13;
+$footer-margin             : $line-height-computed + 13;
+//footer-top
+$footertop-bg 			: #f8f8f8;
+$footertop-link         : $footer-link-hover-color;
+
+// powered by
+$power-bg              : $gray;
+$power-text-color      : $white;
+$power-link-color      : $theme-color;
+$power-link-color-hover: $theme-color-hover;
+$power-padding         : $footer-padding;
+$power-margin          : $footer-margin;

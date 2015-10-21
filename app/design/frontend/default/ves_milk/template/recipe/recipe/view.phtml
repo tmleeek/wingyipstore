@@ -1,0 +1,93 @@
+<?php $_helper = $this->helper('recipe'); ?>  
+<?php $_recipe = $this->getRecipe(); ?>      
+
+<div class="product-view product-recipe">
+    <div class="product-essential row">
+        <div class="product-shop col-xs-12">
+            <div class="row">
+                <div class="product-img-box col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                 <?php echo $this->getChildHtml('media') ?>
+                </div>
+                <div class="product-name col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                	<div class="product-bookmarks">
+                        <!-- AddThis Button BEGIN -->
+                        <div class="addthis_toolbox addthis_default_style ">
+                        <a fb:like:layout="button_count" class="addthis_button_facebook_like"></a>
+                        <a class="addthis_button_tweet"></a>
+                        <a class="addthis_counter addthis_pill_style"></a>
+                        </div>
+                        <script type="text/javascript" src="https://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f28f42055a2f497"></script>
+                        <!-- AddThis Button END -->
+                     </div>
+                     
+                     <div class="product-name">
+                    	<h4><?php echo $_recipe->getName() ?></h4>
+                    </div>
+                    
+                    <div class="product-detail">
+                    	<p class="email-friend">
+	                       	<a class="addthis_button_email"><?php echo $this->__('Email to a Friend');?></a><?php /*?> <a href="<?php echo $this->helper('recipe')->getEmailFriendUrl($_recipe);?>"><?php echo $this->__('Email to a Friend');?></a><?php */?>
+                        </p>	
+                   		<?php echo $this->getChildHtml('rating.link') ?>
+						<script type="text/javascript">
+							function clickTab(id_tab) {
+								if(jQuery('#tabs a').length > 0) {
+									jQuery('#tabs a').each( function(){
+										if( jQuery(this).attr("href") ==  id_tab ){
+											jQuery(this).click();
+											jQuery('html, body').animate({
+												scrollTop: parseInt(jQuery(id_tab).offset().top)
+											}, 700);
+											return ;
+										}
+									} );
+									return false;
+								}
+							}
+						</script>
+                    	<div style="clear:both"></div>
+                    	<div class="short-description">
+                            <h2><?php echo $this->__('Quick Overview') ?></h2>
+                            <div class="std"><?php echo $_recipe->getShortDescription() ?></div>
+                        </div>
+                        
+                       <div class="clearer" style="clear:both"></div>
+	                    <?php echo $this->getChildHtml('addtofavourite') ?>
+                        <?php echo $this->getChildHtml('extralink') ?>
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="clearer"></div>
+        </div>
+    </div>
+    <div class="tabs-group product-collateral">
+       <?php echo $this->getChildHtml("recipe.tab") ?>
+       <?php echo $this->getChildHtml("additional_data") ?> 
+    <div>
+     <div class="clearer"></div> 
+    <div class="associated">
+        <?php echo $this->getChildHtml("recipe_associated") ?>
+    </div>  
+     <?php echo $this->getChildHtml('related_recipe') ?>
+</div>
+<script type="text/javascript">
+
+jQuery(document).ready(function() {  
+
+    jQuery('.fancybox-media').fancybox({  
+    'width'                : '75%',
+    'height'            : '75%',
+    'autoScale'         : false,
+    'transitionIn'        : 'none',
+    'transitionOut'        : 'none',
+    'type'                : 'iframe'
+    });
+});
+</script>
+
+
+
+
+
+

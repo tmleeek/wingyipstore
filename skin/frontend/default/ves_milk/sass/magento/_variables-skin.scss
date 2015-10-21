@@ -1,0 +1,57 @@
+/******************************************************
+ * @package Ves Theme Framework for Magento
+ * @version 1.0
+ * @author http://www.venustheme.com
+ * @copyright Copyright (C) Augus 2013 Venustheme.com <$emai:venustheme@gmail.com>.All rights reserved.
+ * @license   GNU General Public License version 2
+*******************************************************/
+
+// Global values
+// --------------------------------------------------
+
+// Variables
+// --------------------------------------------------
+$image-theme-path-base:'../images/';
+$image-theme-path : '../images/default/';
+
+// themes colors
+// -------------------------
+$brown:					#b39770;
+$browndark: 			#e4dcd2;
+$lightbrown:			#f6eee3;	
+$blue:                  #049cdb;
+$bluedark:              #0064cd;
+$yellow:                #ffc40d;
+$orange:                #f89406;
+$pink:                  #c3325f;
+$purple:                #7a43b6;
+$white :			 	#FFFFFF;
+$black :				#000000;
+$cyandark:   			#4e4d49;
+$green:                 #7db641;
+$red:                   #c83a3a;
+
+
+
+$theme-color-default   : $green; // using for default color of all pages such as background color for top menu, block header
+$theme-color-primary   : $gray-lighter; // for hightligh block header, button as default it is  color
+$theme-color-secondary : #59BD56 ;
+$nav-tabs-border-color : #E2728C #CB5162 #CB5162;
+$nav-text-shadow	   : #C25E65;
+$carousel-color			: #3598DB;
+$carousel-title-color	: #2C8AC8;
+
+
+$theme-color 			: $theme-color-default;
+$theme-color-hover      : #41A63E;
+
+$theme-padding           : $line-height-computed - 5;
+$theme-margin            : $line-height-computed - 5;
+$theme-line-height            : 30px;
+
+$btn-theme-primary       : $theme-color ;
+$btn-theme-primary-hover : $theme-color-hover ;
+
+$text-primary-theme : $theme-color;
+$text-danger-theme : $theme-color-secondary;
+

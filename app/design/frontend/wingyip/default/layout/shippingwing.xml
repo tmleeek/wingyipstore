@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+        
+    <shipping_index_accesspoint>
+        <reference name="content">
+            <!--<block type="recipe/category" name="recipe" />-->
+            <block type="core/template" name="shipping.ups" template="shippingwing/shipping.phtml" />
+        </reference>
+    </shipping_index_accesspoint>
+
+</layout>

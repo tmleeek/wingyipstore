@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS).'shippingwing/shippinglabel.css'; ?>" />
+<?php $shipmentId = Mage::registry('shipment_id'); ?>
+<?php if(!$shipmentId): ?>
+    <div class="error-msg">
+        <span><?php echo $this->__('Shipment of the Order is not created yet') ?></span>
+    </div>
+    <?php else: ?>
+    <?php $html = $this->getShippingLabel($shipmentId); ?>
+    <?php $jsonResultVal = json_decode($html); 
+    //echo '<pre>';print_r($jsonResultVal);exit;
+    ?>    
+    <?php if(!$jsonResultVal->error): ?>
+        <button href="#" class="print-label-link"  onclick="window.print(); return false;"><?php echo $this->__('Print'); ?></button>
+        <div class="print-label">
+            <?php echo $html;  ?>
+        </div>
+        <?php else: ?>
+        <div class="error-msg">
+            <span><?php echo $this->__('Shipment Label data not Found for Shipment Id %s on DPD Server',$shipmentId) ?></span>
+        </div>
+        <?php endif; ?>
+    <?php endif; ?>

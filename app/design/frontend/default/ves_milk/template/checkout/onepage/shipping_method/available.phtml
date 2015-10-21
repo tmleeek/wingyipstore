@@ -1,0 +1,203 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php /** @var $this Mage_Checkout_Block_Onepage_Shipping_Method_Available */ ?>
+<?php $_shippingRateGroups = $this->getShippingRates(); ?>
+<?php
+if (array_key_exists('large_order_shipping', $_shippingRateGroups)) {
+    $_shippingRateGroups = array('large_order_shipping' => $_shippingRateGroups['large_order_shipping']);
+}
+?>
+<?php if (!$_shippingRateGroups): ?>
+    <p><?php echo $this->__('Unfortunately your Post Code has not been recognized. Please ensure that you have entered your Post Code in the standard format. If you think that this is incorrect, please contact Customer Services. An example of a UK Post Code: AB12 3CD and for Central London EC1A 1AA.') ?></p>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#shipping-method-buttons-container .save_shipping_method").remove();
+            jQuery("#shipping-method-buttons-container .request_button_shipping").remove();
+            jQuery("#shipping-method-buttons-container .back-link").after('<button onclick="set_request()" class="request_button_shipping button" title="Create request" type="button"><span><span><?php echo $this->__("Request a quote") ?></span></span></button>');
+        });
+    </script>
+<?php else: ?>
+    <dl class="sp-methods">
+        <?php $shippingCodePrice = array(); ?>
+        <?php $_sole = count($_shippingRateGroups) == 1;
+        foreach ($_shippingRateGroups as $code => $_rates): ?>
+            <dt><?php echo $this->escapeHtml($this->getCarrierName($code)) ?></dt>
+            <dd>
+                <ul>
+                    <?php $_sole = $_sole && count($_rates) == 1;
+                    foreach ($_rates as $_rate): ?>
+                        <?php $shippingCodePrice[] = "'" . $_rate->getCode() . "':" . (float)$_rate->getPrice(); ?>
+                        <li>
+                            <?php if ($_rate->getErrorMessage()): ?>
+                                <ul class="messages">
+                                    <li class="error-msg">
+                                        <ul>
+                                            <li><?php echo $this->escapeHtml($_rate->getErrorMessage()) ?></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            <?php else: ?>
+                            <?php if ($_sole) : ?>
+                                <span class="no-display"><input name="shipping_method" type="radio"
+                                                                value="<?php echo $_rate->getCode() ?>"
+                                                                id="s_method_<?php echo $_rate->getCode() ?>"
+                                                                checked="checked"/></span>
+                            <?php else:
+                            $nameMethodShipping = $_rate->getMethodTitle();
+                            ?>
+                            <input name="shipping_method" data-name="<?php echo $nameMethodShipping; ?>" type="radio"
+                                   value="<?php echo $_rate->getCode() ?>"
+                                   id="s_method_<?php echo $_rate->getCode() ?>"<?php if ($_rate->getCode() === $this->getAddressShippingMethod()) echo ' checked="checked"' ?>
+                                   class="radio"/>
+
+                            <?php if ($_rate->getCode() === $this->getAddressShippingMethod()): ?>
+                                <script type="text/javascript">
+                                    //<![CDATA[
+                                    lastPrice = <?php echo (float)$_rate->getPrice(); ?>;
+                                    //]]>
+                                </script>
+                            <?php endif; ?>
+
+                            <?php endif; ?>
+                                <label for="s_method_<?php echo $_rate->getCode() ?>"><?php
+                                    $nameMethodShipping = $_rate->getMethodTitle();
+                                    if (strpos($nameMethodShipping, '-DPD')) {
+                                        $nameMethodShipping = str_replace('-DPD', '', $_rate->getMethodTitle());
+                                    } else if (strpos($nameMethodShipping, '-UPS')) {
+                                        $nameMethodShipping = str_replace('-UPS', '', $_rate->getMethodTitle());
+                                    }
+                                    echo $this->escapeHtml($nameMethodShipping) ?>
+                                    <?php $_excl = $this->getShippingPrice($_rate->getPrice(), $this->helper('tax')->displayShippingPriceIncludingTax()); ?>
+                                    <?php $_incl = $this->getShippingPrice($_rate->getPrice(), true); ?>
+                                    <?php echo $_excl; ?>
+                                    <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
+                                        (<?php echo $this->__('Incl. Tax'); ?><?php echo $_incl; ?>)
+                                    <?php endif; ?>
+                                </label>
+                            <?php endif ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </dd>
+        <?php endforeach; ?>
+    </dl>
+    <script type="text/javascript">
+        //<![CDATA[
+        <?php if (!empty($shippingCodePrice)): ?>
+        var shippingCodePrice = {<?php echo implode(',',$shippingCodePrice); ?>};
+        <?php endif; ?>
+
+        $$('input[type="radio"][name="shipping_method"]').each(function (el) {
+            Event.observe(el, 'click', function () {
+                if (el.checked == true) {
+                    var getShippingCode = el.getValue();
+                    <?php if (!empty($shippingCodePrice)): ?>
+                    var newPrice = shippingCodePrice[getShippingCode];
+                    if (!lastPrice) {
+                        lastPrice = newPrice;
+                        quoteBaseGrandTotal += newPrice;
+                    }
+                    if (newPrice != lastPrice) {
+                        quoteBaseGrandTotal += (newPrice - lastPrice);
+                        lastPrice = newPrice;
+                    }
+                    <?php endif; ?>
+                    checkQuoteBaseGrandTotal = quoteBaseGrandTotal;
+                    return false;
+                }
+            });
+        });
+        jQuery(document).ready(function () {
+            if (jQuery('input:radio[name=shipping_method]').is(':checked')) {
+                if (jQuery('input:radio[name=shipping_method]:checked').attr("data-name").indexOf("-UPS") != -1) {
+                    jQuery("#ap_button").trigger("click");
+                }
+            }
+            jQuery('.radio').click(function () {
+                if (jQuery(this).attr("data-name").indexOf("-UPS") != -1) {
+                    jQuery("#ap_button").trigger("click");
+                }
+                if (jQuery(this).attr("data-name").indexOf("-DPD") != -1) {
+                    var company = $('shipping:company').value;
+                    var useBillingForShipping = $('shipping:same_as_billing').checked;
+                    var use_for_shipping_no = $('billing:use_for_shipping_no').checked;
+                    if (useBillingForShipping == true && GetParameterValues('APid') === company) {
+                        ajaxLoad();
+                    }else if(useBillingForShipping == false && GetParameterValues('APid') === company && use_for_shipping_no == true){
+                        jQuery("#checkout-step-shipping #co-shipping-form").trigger('reset');
+                        billing.save();
+                        alert('Please enter Delivery Information.');
+                    }
+                }
+            });
+        });
+        function ajaxLoad() {
+            var city = $('billing:city').value;
+            var company = $('billing:company').value;
+            var postcode = $('billing:postcode').value;
+            if (!postcode) {
+                postcode = $('billing:postcode').value;
+            }
+            var street1 = $('billing:street1').value;
+            var street2 = $('billing:street2').value;
+            var countryCode = $('billing:country_id').value;
+            jQuery("#shipping-method-buttons-container .save_shipping_method").hide();
+            jQuery('#shipping-method-please-wait').show();
+            new Ajax.Request('<?php echo Mage::getUrl('shipping/index/accesspoint'); ?>', {
+                method: 'POST',
+                parameters: {
+                    action: 'dpd',
+                    company: company,
+                    city: city,
+                    zip: postcode,
+                    street1: street1,
+                    street2: street2,
+                },
+                onComplete: function () {
+                    jQuery('[id="shipping:company"]').val(company);
+                    jQuery('[id="shipping:city"]').val(city);
+                    jQuery('[id="shipping:postcode"]').val(postcode);
+                    jQuery('[id="shipping:street1"]').val(street1);
+                    jQuery('[id="shipping:street2"]').val(street2);
+                    jQuery('[id="shipping:country_id"]').val(countryCode);
+                    jQuery('#shipping-address-select').val('');
+                    jQuery('#shipping-address-select').trigger('change');
+                    new Ajax.Updater('shipping-progress-opcheckout', '<?php echo $this->getUrl('checkout/onepage/progress') ?>?prevStep=shipping', {
+                        method: 'get',
+                        onComplete: function () {
+                            this.checkout.resetPreviousSteps();
+                        }
+                    });
+                    jQuery('#shipping-method-please-wait').hide();
+                    jQuery("#shipping-method-buttons-container .save_shipping_method").show();
+                }
+            });
+        }
+
+        //]]>
+    </script>
+<?php endif; ?>

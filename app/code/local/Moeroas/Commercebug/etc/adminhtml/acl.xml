@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<config><acl><resources><resource id="Moeroas_Commercebug::admin"><resource id="Moeroas_Commercebug::system"><resource id="Moeroas_Commercebug::config"><resource id="Moeroas_Commercebug::commercebug" title="Configuration for Advanced Debugger"/></resource></resource></resource></resources></acl></config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecommage_Rewritewingyip>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Wingyip_Shipping/>
+            </depends>
+        </Ecommage_Rewritewingyip>
+    </modules>
+</config>

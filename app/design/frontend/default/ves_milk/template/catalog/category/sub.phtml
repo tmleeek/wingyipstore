@@ -1,0 +1,87 @@
+<?php
+
+
+function get_category_grid_item_html($category){
+    ?>
+    <div class="product-cat-block">
+        <a href="<?php echo $category->getUrl() ?>">
+            <div class="image" style="background-image: url(<?php echo Mage::getBaseUrl('media') . 'catalog' . '/' . 'category' . '/' . $category->getThumbnail() ?>);"></div>
+            <div class="name"><span><?php echo $category->getName() ?></span></div>
+        </a>
+    </div>
+    <?php
+}
+
+
+?>
+<div class="category-wapper">
+    <?php
+        $category = Mage::getSingleton('catalog/layer')->getCurrentCategory();
+        $categories = $category->getCollection()
+            ->addAttributeToSelect(array('name', 'thumbnail'))
+            ->addAttributeToFilter('is_active', 1)
+            ->addIdFilter($category->getChildren())
+    ?>
+
+    <div class="category-products">  
+        <div class="products-block" id="products-grid">
+
+            <?php
+                $row_open = false;
+                $item_count = 0;
+                foreach ($categories as $category):
+                    if($item_count%3==0):
+                        if(!$row_open):
+                            $row_open = true;
+                    ?>
+                        <div class="row products-grid">   
+                    <?php
+                        else:
+                    ?>
+                        </div>
+                        <div class="row products-grid">   
+                    <?php
+                        endif;
+                    endif;
+
+
+
+                    if($item_count%3==0):
+                    ?>
+                        <div class="col-xs-12 col-lg-4 col-sm-4 col-6 _item first">
+                            <?php get_category_grid_item_html( $category ); ?>
+                        </div>
+                    <?php
+                    endif;
+
+                    if($item_count%3==1):
+                    ?>
+                        <div class="col-xs-12 col-lg-4 col-sm-4 col-6 _item">
+                            <?php get_category_grid_item_html( $category ); ?>
+                        </div>
+                    <?php
+                    endif;
+
+                    if($item_count%3==2):
+                    ?>
+                        <div class="col-xs-12 col-lg-4 col-sm-4 col-6 _item last">
+                            <?php get_category_grid_item_html( $category ); ?>
+                        </div>
+                    <?php
+                    endif;
+
+
+                    $item_count++;
+                endforeach;
+
+                if($row_open):
+                ?>
+                    </div>
+                <?php
+                endif;
+             ?>
+        
+        </div>
+    </div>
+
+</div>

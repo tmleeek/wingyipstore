@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Wingyip_Rewritecheckout>
+      <version>0.1.0</version>
+    </Wingyip_Rewritecheckout>
+  </modules>
+  <frontend>
+    <routers>
+      <rewritecheckout>
+        <use>standard</use>
+          <args>
+            <module>Wingyip_Rewritecheckout</module>
+            <frontName>rewritecheckout</frontName>
+          </args>
+      </rewritecheckout>
+    </routers>
+  </frontend>
+  <global>
+		<rewrite>        
+            <wingyip_rewritecheckout_checkout_cartcontroller>
+                <from><![CDATA[#^/checkout/cart/#]]></from> <!-- Mage_Checkout_CartController  -->
+                <to>/rewritecheckout/checkout_cart/</to> <!-- Wingyip_RewriteCheckout_Checkout_CartController  -->
+            </wingyip_rewritecheckout_checkout_cartcontroller>
+		</rewrite>
+    <helpers>
+      <rewritecheckout>
+        <class>Wingyip_Rewritecheckout_Helper</class>
+      </rewritecheckout>
+    </helpers>
+  </global>
+  <admin>
+	<routers>
+	  <rewritecheckout>
+	    <use>admin</use>
+		<args>
+		  <module>Wingyip_Rewritecheckout</module>
+		  <frontName>admin_rewritecheckout</frontName>
+		</args>
+	  </rewritecheckout>
+	</routers>
+  </admin>
+</config> 

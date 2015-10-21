@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+         <wingyip translate="label" module="importproducts">
+            <label>Wingyip</label>
+            <sort_order>200</sort_order>
+        </wingyip>
+    </tabs>
+    <sections>
+         <export_section translate="label">
+            <label>Export Order</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>wingyip</tab>
+            <groups>
+                <exportorder_group translate="label">
+                    <label>Ftp Configuration</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <ftp_host translate="Hostname">
+                            <label>Hostname</label>
+                            <comment>Enter Ftp hostname</comment>
+                             <sort_order>100</sort_order>
+                            <show_in_default>100</show_in_default>
+                            <show_in_website>100</show_in_website>
+                            <show_in_store>100</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </ftp_host>
+                        <ftp_username translate="Username">
+                            <label>Username</label>
+                            <comment>Enter Ftp username</comment>
+                             <sort_order>200</sort_order>
+                            <show_in_default>200</show_in_default>
+                            <show_in_website>200</show_in_website>
+                            <show_in_store>200</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </ftp_username>
+                        <ftp_password translate="Password">
+                            <label>Password</label>
+                            <comment>Enter Ftp password</comment>
+                             <sort_order>300</sort_order>
+                            <show_in_default>300</show_in_default>
+                            <show_in_website>300</show_in_website>
+                            <show_in_store>300</show_in_store>
+                            <frontend_type>password</frontend_type>
+                        </ftp_password>
+                        <ftp_type translate="Type">
+                            <label>Ftp Type </label>
+                            <comment>Select Ftp Type ftp/sftp</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>400</sort_order>
+                            <show_in_default>400</show_in_default>
+                            <show_in_website>400</show_in_website>
+                            <show_in_store>400</show_in_store>
+                            <source_model>Wingyip_Exportorder_Model_Ftparray</source_model>
+                        </ftp_type>
+                        <ftp_port translate="Port">
+                            <label>Port</label>
+                            <comment>Enter Ftp port</comment>
+                             <sort_order>500</sort_order>
+                            <show_in_default>500</show_in_default>
+                            <show_in_website>500</show_in_website>
+                            <show_in_store>500</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </ftp_port>
+                        <ftp_folder translate="Folder">
+                            <label>Folder</label>
+                            <comment>Enter Uploaded Folder</comment>
+                             <sort_order>600</sort_order>
+                            <show_in_default>600</show_in_default>
+                            <show_in_website>600</show_in_website>
+                            <show_in_store>600</show_in_store>
+                            <frontend_input>text</frontend_input>
+                       </ftp_folder>
+                       <admin_email translate="Email">
+                            <label>Admin notification email</label>
+                            <comment>Enter Admin Notification Email</comment>
+                            <sort_order>700</sort_order>
+                            <show_in_default>700</show_in_default>
+                            <show_in_website>700</show_in_website>
+                            <show_in_store>700</show_in_store>
+                            <frontend_input>text</frontend_input>
+                       </admin_email>
+                    </fields>
+                </exportorder_group>
+            </groups>
+        </export_section>
+    </sections>
+</config>

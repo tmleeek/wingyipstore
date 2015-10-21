@@ -1,0 +1,28 @@
+<?php $rad = rand();?>
+<?php 
+	$style = "";
+	if( $this->getConfig("moduleHeight") !="auto" ){
+		$style .=";height:".(int) $this->getConfig("moduleHeight")."px";
+	}
+	if( $this->getConfig("moduleWidth") !="auto" ){
+		$style .=";width:".(int) $this->getConfig("moduleWidth")."px";
+	}
+?>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <?php foreach( $images as $i => $image) :   ?>
+    <div class="item<?php if($i == 0) { ?> active<?php } ?>">
+      <img src="<?php echo $image->thumbnailURL;?>" alt="<?php echo $image->title;?>">
+    </div>
+	 <?php endforeach;?>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>

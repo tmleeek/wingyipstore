@@ -1,0 +1,209 @@
+<div class="page-title">
+    <h1><?php echo $this->__('Recipe Advanced Search') ?></h1>
+</div>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<form action="<?php echo $this->getUrl('recipe/index/result') ?>" method="get" id="form-validate">
+    <div class="fieldset advanced-search">
+        <h2 class="legend"><?php echo $this->__('Search Settings') ?></h2>
+        <ul class="form-list" id="advanced-search-list">
+            
+            <?php $categories = Mage::helper('recipe')->getCategories(); ?>
+            <?php if(count($categories)>0): ?>
+            <li>
+                <label for="categories"><?php echo $this->__('Categories')?></label> 
+                <div class="input-box categories">  
+                    <ul>
+                        <?php $cnt=0;foreach($categories as $_category):$cnt++; ?>
+                        <li>
+                            <input id="categories_<?php echo $cnt ?>" name="categories[]" value="<?php echo $_category['value']  ?>" type="checkbox"> 
+                            <label for="categories_<?php echo $cnt ?>"><?php echo $_category['label']  ?></label>                     
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </li>
+            <?php endif; ?>
+        
+            <?php $ingredients = Mage::helper('recipe')->getIngredients(); ?>
+            <?php if(count($ingredients)>0): ?>
+            <li>
+                <label for="ingredients"><?php echo $this->__('Ingredients')?></label> 
+                <div class="input-box ingredients">  
+                    <ul>
+                        <?php $cnt=0;foreach($ingredients as $_ingredient):$cnt++; ?>
+                        <li>
+                            <input id="ingredients_<?php echo $cnt ?>" name="ingredients[]" value="<?php echo $_ingredient['value']  ?>" type="checkbox"> 
+                            <label for="ingredients_<?php echo $cnt ?>"><?php echo $_ingredient['label']  ?></label>                     
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </li>
+            <?php endif; ?>
+            
+            <?php $cupboardIngredients = Mage::helper('recipe')->getCupboardIngredients(); ?>
+            <?php if(count($cupboardIngredients)>0): ?>
+            <li>
+                <label for="cupboard_ingredients"><?php echo $this->__('Cupboard Ingredients')?></label> 
+                <div class="input-box cupboard_ingredients"> 
+                    <ul>
+                        <?php $cnt=0;foreach($cupboardIngredients as $cupboard):$cnt++; ?>
+                        <li>
+                            <input id="cupboard_ingredients_<?php echo $cnt ?>" name="cupboard_ingredients[]" value="<?php echo $cupboard['value']  ?>" type="checkbox"> 
+                            <label for="cupboard_ingredients_<?php echo $cnt ?>"><?php echo $cupboard['label']  ?></label>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </li>
+            <?php endif; ?>
+            
+            <?php $min = Mage::getStoreConfig('recipe_section/recipe_group/cooking_time_min'); ?>
+            <?php $max = Mage::getStoreConfig('recipe_section/recipe_group/cooking_time_max');?>
+            
+            <li>
+                <label for="cooking_time"><?php echo $this->__('Cooking Time')?></label>
+                <div class="input-box cooking_time">
+                    <div class="layout-slider">
+                      <input id="cooking_time" type="slider" name="cooking_time" value="<?php echo $min.';'.$max ?>" />
+                    </div>
+                    <script type="text/javascript" charset="utf-8">
+                        jQuery("#cooking_time").slider({ from: <?php echo $min ?>, to: <?php echo $max ?>, scale: [<?php echo implode(',',range($min,$max,10))?>], limits: false, step: 10, dimension: '', skin: "blue", callback: function( value ){ console.dir( this ); } });
+                    </script>
+                </div>
+            </li>
+            
+            <?php $cookingMethods = Mage::helper('recipe')->getCookingMethod(); ?>
+            <?php if(count($cookingMethods)>0): ?>
+            <li>
+                <label for="cooking_method"><?php echo $this->__('Cooking Method')?></label> 
+                <div class="input-box cooking_method">
+                    <select id="cooking_method" name="cooking_method">
+                        <option value=""><?php echo $this->__('Please select') ?></option>
+                        <?php foreach($cookingMethods as $_method): ?>
+                            <option value="<?php echo $_method['value'] ?>">
+                                <?php echo $_method['label']  ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </li>
+            <?php endif ?>
+            
+            <?php $cuisineType = Mage::helper('recipe')->getCuisineType()?>
+            <?php if(count($cuisineType)>0): ?>
+            <li>
+                <label for="cuisine_type"><?php echo $this->__('Cuisine Type')?></label> 
+                <div class="input-box cuisine_type">
+                    <select id="cuisine_type" name="cuisine_type">
+                        <option value=""><?php echo $this->__('Please select') ?></option>
+                        <?php foreach($cuisineType as $_cuisine): ?>
+                            <option value="<?php echo $_cuisine['value'] ?>">
+                                <?php echo $_cuisine['label']  ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>       
+                </div>
+            </li>
+            <?php endif ?>
+            
+            <?php echo $minInd = Mage::getResourceModel('recipe/recipe')->getMinIngredientsCount()  ?>
+            <?php echo $maxInd = Mage::getResourceModel('recipe/recipe')->getMaxIngredientsCount()  ?>
+            <?php echo $indRange = implode(',',range($minInd,$maxInd,1)) ?>
+            <li>
+                <label for="no_of_ingredients"><?php echo $this->__('Number of Ingredients')?></label> 
+                <div class="input-box no_of_ingredients">
+                    <div class="layout-slider">
+                      <input id="no_of_ingredients" type="slider" name="no_of_ingredients" value="<?php echo $maxInd ?>" />
+                    </div>
+                    <script type="text/javascript" charset="utf-8">
+                        jQuery("#no_of_ingredients").slider({ from: <?php echo $minInd ?>, to: <?php echo $maxInd ?>, scale: [<?php echo $indRange ?>], limits: false, step: 1, dimension: '', skin: "round" });
+                    </script>                    
+                </div>
+            </li>
+                      
+            <?php $tags = Mage::helper('recipe')->getAllSpecialDietTags()?>
+            <?php if(count($tags)>0): ?>
+            <li>
+                <label for="special_diet_tag"><?php echo $this->__('Special Diet Tags')?></label>
+                <div class="input-box special_diet_tag">
+                    <select id="special_diet_tag" name="special_diet_tag">
+                        <option value=""><?php echo $this->__('Please select') ?></option>
+                        <?php foreach($tags as $_tag): ?>
+                            <option value="<?php echo $_tag ?>">
+                                <?php echo $_tag  ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </li>
+            <?php endif ?>
+            
+            <?php $courseData = Mage::helper('recipe')->getCourseData()?>
+            <?php if(count($courseData)>0): ?>
+            <li>
+                <label for="course"><?php echo $this->__('Course')?></label>
+                <div class="input-box course">
+                    <select id="course" name="course">
+                        <option value=""><?php echo $this->__('Please select') ?></option>
+                        <?php foreach($courseData as $_course): ?>
+                            <option value="<?php echo $_course['value'] ?>">
+                                <?php echo $_course['label']  ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </li>
+            <?php endif ?>
+            
+            <?php $occasionData = Mage::helper('recipe')->getOccasionData()?>
+            <?php if(count($occasionData)>0): ?>
+            <li>
+                <label for="occasion"><?php echo $this->__('Occasion')?></label>
+                <div class="input-box occasion">
+                    <select id="occasion" name="occasion">
+                        <option value=""><?php echo $this->__('Please select') ?></option>
+                        <?php foreach($occasionData as $_occasion): ?>
+                            <option value="<?php echo $_occasion['value'] ?>">
+                                <?php echo $_occasion['label']  ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            </li>
+            <?php endif; ?>
+            
+            <li>
+                <label for="serving_size"><?php echo $this->__('Serving Size')?></label> 
+                <div class="input-box serving_size">
+                    <div class="layout-slider">
+                      <input id="serving_size" type="slider" name="serving_size" value="5" />
+                    </div>
+                    <script type="text/javascript" charset="utf-8">
+                        jQuery("#serving_size").slider({ from: 1, to: 5, scale: [1, 2, 3, 4, 5], limits: false, step: 1, dimension: '', skin: "round" });
+                    </script>
+                </div>
+            </li>
+            <li>
+                <label for="heat_spice_level"><?php echo $this->__('Heat/Spice Level')?></label> 
+                <div class="input-box heat_spice_level">
+                    <div class="layout-slider">
+                      <input id="heat_spice_level" type="slider" name="heat_spice_level" value="5" />
+                    </div>
+                    <script type="text/javascript" charset="utf-8">
+                        jQuery("#heat_spice_level").slider({ from: 1, to: 5, scale: [1, 2, 3, 4, 5], limits: false, step: 1, dimension: '', skin: "round" });
+                    </script>
+                </div>
+            </li>
+        </ul>
+        <script type="text/javascript">decorateList('advanced-search-list')</script>
+    </div>
+    <div class="buttons-set">
+        <button type="submit" title="<?php echo $this->__('Search') ?>" class="button"><span><span><?php echo $this->__('Search') ?></span></span></button>
+    </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var dataForm = new VarienForm('form-validate', true);
+//]]>
+</script>

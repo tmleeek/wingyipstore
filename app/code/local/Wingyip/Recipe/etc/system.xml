@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+         <wingyip translate="label">
+            <label>Wingyip</label>
+            <sort_order>200</sort_order>
+        </wingyip>
+    </tabs>
+    <sections>
+         <recipe_section translate="label">
+            <label>Recipes Configuration</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>wingyip</tab>
+            <groups>
+                <recipe_group translate="label">
+                    <label>Cooking Time</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <cooking_time_min translate="label">
+                            <label>Minimum Cooking time</label>
+                            <comment>Enter in Min like (10,20,30)</comment>
+                            <sort_order>100</sort_order>
+                            <show_in_default>100</show_in_default>
+                            <show_in_website>100</show_in_website>
+                            <show_in_store>100</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </cooking_time_min>
+                        <cooking_time_max translate="label">
+                            <label>Maximum Cooking time</label>
+                            <comment>Enter in Min like (10,20,30)</comment>
+                            <sort_order>200</sort_order>
+                            <show_in_default>200</show_in_default>
+                            <show_in_website>200</show_in_website>
+                            <show_in_store>200</show_in_store>
+                            <frontend_input>text</frontend_input>
+                        </cooking_time_max>
+                    </fields>
+                </recipe_group>
+            </groups>
+        </recipe_section>
+    </sections>
+</config>

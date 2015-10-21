@@ -1,0 +1,247 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Attribute options control
+ *
+ * @see Mage_Eav_Block_Adminhtml_Attribute_Edit_Options_Abstract
+ * @var $this Mage_Eav_Block_Adminhtml_Attribute_Edit_Options_Abstract
+ */
+?>
+<style>
+.dynamic-grid th,td {
+    padding: 2px;
+    width: 300px;
+}
+.dynamic-grid td input {
+    width: 200px;
+}
+.calender th,td {
+    width: auto;
+}
+</style>
+<script type="text/javascript">
+    function deleteImage(imageId)
+    {
+        var rowId;
+        url = "<?php echo Mage::helper('adminhtml')->getUrl('recipe/adminhtml_recipe/imagedelete'); ?>";
+        new Ajax.Request(url, {
+          method: 'post',
+          parameters: { imageId: imageId },
+          onSuccess: function(transport) {      
+               try {
+                if (transport.responseText.isJSON()) {
+                    var response = transport.responseText.evalJSON()
+                    
+                    if (response.error) {
+                        alert(response.message);
+                    }
+                    else
+                    {
+                        idArr = imageId.split('_');
+                        $('imageRow_'+idArr[1]).hide();
+                    }
+                } else {
+                    $(tabContentElementId).update(transport.responseText);
+                }
+            }
+            catch (e) {
+                $(tabContentElementId).update(transport.responseText);
+            }
+          }
+        });
+       
+    }
+</script>
+
+<div class="entity-edit" id="matage-options-panel">
+    <div class="entry-edit-head">
+    <h4 class="icon-head head-edit-form fieldset-legend"><?php echo $this->__('Manage Recipe Images') ?></h4>
+    </div>
+    <div class="box">
+        <div class="hor-scroll">
+            <table class="dynamic-grid" cellspacing="0"  cellpadding="0">
+                <tr>
+                    <th><?php echo $this->__('Image') ?></th>
+                    <th><?php echo $this->__('Is Default') ?></th>
+                    <th><?php echo $this->__('Action') ?></th>
+                </tr>
+                <?php 
+                    $recipeId = $this->getRequest()->getParam('id');
+                    if($recipeId != ''):
+                        //$recipeCollection = Mage::getModel('recipe/recipe')->getCollection();
+                        //$recipeCollection->getSelect()->join( array('im'=>'recipe_image'),"main_table.press_id = im.recipe_id and main_table.recipe_id = $recipeId","im.*"); 
+                        $imgData = $this->getRecipeImage();//$recipeCollection->getData();
+                        if(!empty($imgData)):
+                            foreach($imgData as $image):
+                            ?>  
+                            	<tr id="imageRow_<?php echo $image['image_id'];?>" class="image-grid">       
+                                <td><img src="<?php echo Mage::getBaseUrl("media").$image['image'];?>" width="100" height="75"></td>
+                                 <td><input class="input-radio" type="radio" name="default[]" value="<?php echo $image['image_id'];?>" <?php if($image->getIsDefault()):?> checked="checked"<?php endif;?> <?php if ($this->getReadOnly()):?> disabled="disabled"<?php endif;?>/></td>
+                                <td class="a-left">
+                                    <button type="button" class="scalable delpermanent" id="<?php echo 'imgid_'.$image['image_id']?>" onclick="deleteImage(this.id);">
+                                        <span><?php echo $this->__('Delete Image') ?></span>
+                                    </button>
+                                </td>
+                            </tr>
+                            <?php endforeach;?>
+                        <?php endif; ?>
+                        <tr class="no-display template" id="row-template">
+                            <td><input name="image[{{id}}]"  class="input-text" type="file" /></td>
+							 <td><input class="input-radio" type="radio" name="default[]" value="{{id}}" <?php if ($this->getReadOnly()):?> disabled="disabled"<?php endif;?>/></td>
+                            <td class="a-left">
+                                <input type="hidden" class="delete-flag" name="image[delete][{{id}}]" value="" />
+                                    <?php echo $this->getDeleteButtonHtml() ?>
+                            </td>
+                        </tr>
+                    <?php endif; ?>
+                <tr id="attribute-options-table">
+                    <th colspan="2">&nbsp;</th>
+                    <th><?php echo $this->getAddNewButtonHtml() ?></th>
+                </tr>
+            </table>
+        </div>
+        <input type="hidden" id="option-count-check" value=""  />
+    </div>
+</div>
+<script type="text/javascript">
+var optionDefaultInputType = 'radio';
+
+// IE removes quotes from element.innerHTML whenever it thinks they're not needed, which breaks html.
+var templateText =
+        '<tr class="option-row">'+
+            '<td><input name="image[{{id}}]" class="input-text" type="file" id="image{{id}}"/><\/td>'+
+          //  '<td><input class="input-text" type="text" name="option[order][{{id}}]" value="{{sort_order}}"/><\/td>'+
+		   '<td class="a-center"><input class="input-radio" type="{{intype}}" name="default[]" value="{{id}}" {{checked}} <?php if ($this->getReadOnly()):?> disabled="disabled"<?php endif;?>/><\/td>'+
+            '<td class="a-left" id="delete_button_container_{{id}}">'+
+                '<input type="hidden" class="delete-flag" name="image[delete][{{id}}]" value="" />'+
+                    '<?php echo $this->getDeleteButtonHtml() ?>'+
+            '<\/td>'+
+        '<\/tr>';
+
+var attributeOption = {
+    table : $('attribute-options-table'),
+    templateSyntax : /(^|.|\r|\n)({{(\w+)}})/,
+    templateText : templateText,
+    itemCount : 0,
+    totalItems : 0,
+    isReadOnly: <?php echo (int)$this->getReadOnly(); ?>,
+    add : function(data) {
+        this.template = new Template(this.templateText, this.templateSyntax);
+        var isNewOption = false;
+        if(!data.id){
+            data = {};
+            data.id  = 'option_'+this.itemCount;
+            isNewOption = true;
+        }
+        if (!data.intype)
+            data.intype = optionDefaultInputType;
+        Element.insert(this.table, {after: this.template.evaluate(data)});
+        if (isNewOption && !this.isReadOnly) {
+            this.enableNewOptionDeleteButton(data.id);
+        }
+        this.bindRemoveButtons();
+        this.itemCount++;
+        this.totalItems++;
+        this.updateItemsCountField();
+    },
+    remove : function(event){ 
+        var element = $(Event.findElement(event, 'tr')); // !!! Button already
+                                                               // have table parent in safari
+        // Safari workaround
+        element.ancestors().each(function(parentItem){
+           if (parentItem.hasClassName('option-row')) {
+               element = parentItem;
+               throw $break;
+           } else if (parentItem.hasClassName('box')) {
+               throw $break;
+           }
+        });
+
+
+        if(element){
+            var elementFlags = element.getElementsByClassName('delete-flag');
+            if(elementFlags[0]){
+                elementFlags[0].value=1;
+            }
+
+            element.addClassName('no-display');
+            element.addClassName('template');
+            element.hide();
+            this.totalItems--;
+            this.updateItemsCountField();
+        }
+    },
+    updateItemsCountField: function() {
+        if (this.totalItems > 0) {
+            $('option-count-check').value = '1';
+        } else {
+            $('option-count-check').value = '';
+        }
+    },
+    enableNewOptionDeleteButton: function(id) {
+        $$('#delete_button_container_' + id + ' button').each(function(button) {
+            button.enable();
+            button.removeClassName('disabled');
+        });
+    },
+    bindRemoveButtons : function(){ 
+        var buttons = $$('.delete-image');
+        for(var i=0;i<buttons.length;i++){
+            if(!$(buttons[i]).binded){
+                $(buttons[i]).binded = true;
+                Event.observe(buttons[i], 'click', this.remove.bind(this));
+            }
+        }
+    }
+
+}
+if($('row-template')){
+    $('row-template').remove();
+}
+attributeOption.bindRemoveButtons();
+
+if($('add_new_defined_image')){
+    Event.observe('add_new_defined_image', 'click', attributeOption.add.bind(attributeOption));
+}
+Validation.addAllThese([
+    ['required-option', '<?php echo $this->__('Failed') ?>', function(v) {
+        return !Validation.get('IsEmpty').test(v);
+}]]);
+Validation.addAllThese([
+    ['required-options-count', '<?php echo $this->__('Options is required') ?>', function(v) {
+        return !Validation.get('IsEmpty').test(v);
+}]]);
+
+<?php foreach ($this->getOptionValues() as $_value): ?>
+    //attributeOption.add(<?php echo $_value->toJson() ?>);
+<?php endforeach; ?>
+
+//]]>
+
+</script>
+

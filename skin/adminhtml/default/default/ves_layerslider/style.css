@@ -1,0 +1,46 @@
+
+#themepanel  .heading h1 {
+	color:#000000;
+	margin:0px;
+    float: left;
+    font-size: 28px;
+    margin: 0;
+    padding: 0px 0 0;
+}
+#themepanel .heading {
+   /* Fallback Color */
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#e8e8e8));
+        /* Saf4+, Chrome */
+        background-image: -webkit-linear-gradient(top, #fcfcfc, #e8e8e8);
+        /* Chrome 10+, Saf5.1+, iOS 5+ */
+        background-image: -moz-linear-gradient(top, #fcfcfc, #e8e8e8);
+        /* FF3.6 */
+        background-image: -ms-linear-gradient(top, #fcfcfc, #e8e8e8);
+        /* IE10 */
+        background-image: -o-linear-gradient(top, #fcfcfc, #e8e8e8);
+        /* Opera 11.10+ */
+        background-image: linear-gradient(top, #fcfcfc, #e8e8e8);
+    border: 1px solid #DBDBDB;
+    border-radius: 5px 4px 4px 4px;
+    height: 38px;
+    padding: 12px;
+    margin:0px;
+    font-size:28px;
+}
+#themepanel .heading .buttons {
+    float: right;
+    margin-right: 5px;
+    padding-top: 7px;
+}
+#themepanel  .content {	
+	border:none; 
+	padding:0; 
+}
+.nav-tabs{
+	padding-bottom:10px!important;
+}
+#tab-general{
+	margin-left: auto;
+	margin-right: auto;
+	color:#000000;
+}

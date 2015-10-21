@@ -1,0 +1,11 @@
+.payment-img-opc{
+	display: block;
+	float: left;
+}
+.payment-img-opc img{
+	width: 100%;
+	height: auto;
+	display: block;
+	max-width: 420px;
+	float: right;
+}

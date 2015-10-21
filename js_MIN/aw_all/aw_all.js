@@ -1,0 +1,1 @@
+function initAwall(){"awall"==_section&&$("awall_extensions").update($("awall_extensions_table").innerHTML),"awstore"==_section&&$("awstore_extensions").update($("awall_store_response").innerHTML)}Event.observe(window,"load",function(){initAwall()});

@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Wingyip_Exportorder>
+            <version>0.1.2</version>
+        </Wingyip_Exportorder>
+    </modules>
+    <frontend>
+        <events>
+            <checkout_onepage_controller_success_action>
+                <observers>
+                    <wingyip_exportorder_observer>
+                        <type>singleton</type>
+                        <class>Wingyip_Exportorder_Model_Observer</class>
+                        <method>exportOrder</method>
+                    </wingyip_exportorder_observer>
+                </observers>
+            </checkout_onepage_controller_success_action>
+        </events>
+    </frontend> 
+    <admin>
+        <routers>
+            <exportorder>
+                <use>admin</use>
+                <args>
+                    <module>Wingyip_Exportorder</module>
+                    <frontName>exportorder</frontName>
+                </args>
+            </exportorder>
+        </routers>
+    </admin>
+    
+    <adminhtml>
+          <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <export_section translate="export">
+                                            <title>Export Order</title>
+                                            <sort_order>100</sort_order>
+                                        </export_section>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                     </children>
+                </admin>
+            </resources>
+         </acl>
+    </adminhtml>
+     
+    <global>
+         <models>
+            <exportorder>
+                <class>Wingyip_Exportorder_Model</class>
+            </exportorder>
+        </models>
+        <resources>
+                <exportorder_setup>
+                    <setup>
+                        <module>Wingyip_Exportorder</module>
+                        <class>Mage_Sales_Model_Mysql4_Setup</class>
+                    </setup>
+                    <connection>
+                        <use>core_setup</use>
+                    </connection>
+                </exportorder_setup>
+        </resources>
+        <blocks>
+            <exportorder>
+                <class>Wingyip_Exportorder_Block</class>
+            </exportorder>
+            <adminhtml>
+                <rewrite>
+                    <sales_order>Wingyip_Exportorder_Block_Adminhtml_Exportorder</sales_order>
+                </rewrite>
+                <rewrite>
+                    <sales_order_grid>Wingyip_Exportorder_Block_Adminhtml_Sales_Order_Grid</sales_order_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <exportorder>
+                <class>Wingyip_Exportorder_Helper</class>
+            </exportorder>
+        </helpers> 
+        <template>
+           <email>
+                <exportproducts_error_email_template module="exportorder">
+                     <label>Admin Notification Export Email</label>
+                     <file>exportproducts_error_email_template.html</file>
+                     <type>html</type>
+                </exportproducts_error_email_template>
+           </email>
+        </template>
+        
+    </global>
+    <!-- This cron executed on every 15min -->
+    <crontab>
+        <jobs>
+            <Wingyip_Exportorder>
+                <schedule>
+                    <cron_expr>*/15 * * * *</cron_expr>
+                </schedule>
+                <run>
+                   <!-- <model>wingyip_exportorder/exportorder::exportOrderData</model>-->
+                   <model>exportorder/exportorder::exportOrderData</model>
+                </run>
+            </Wingyip_Exportorder>
+        </jobs>
+    </crontab>
+</config>

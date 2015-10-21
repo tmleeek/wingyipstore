@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+         <!-- <reference name="head">
+          <action method="addItem"><type>skin_js</type><name>js/lib/jquery-1.10.2.min.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery-noconflict.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery-migrate-1.2.1.js</name><params/></action>
+        </reference>-->
+    </default>    
+    <recipe_category_index>
+        <reference name="content">
+            <!--<block type="recipe/category" name="recipe" />-->
+            <block type="core/template" name="recipe" template="recipe/category.phtml" />
+        </reference>
+    </recipe_category_index>
+
+    <recipe_index_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left"> 
+            <remove name="news_letter"/>                         
+            <!--<block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />-->
+			<block type="cms/block" name="banner-left">
+                <action method="setBlockId"><block_id>banner-left</block_id></action>
+            </block>
+            <block type="cms/block" name="new_news_letter" after="-">
+                <action method="setBlockId"><block_id>news-letter</block_id></action>
+            </block>
+          
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+			<block type="cms/block" name="recipie_banner"  before="-">
+                <action method="setBlockId"><block_id>recipe_banner</block_id></action>
+            </block>
+			<block type="core/template" name="search" template="recipe/search/form.phtml" />
+			<block type="recipe/category" name="recipe.category" template="recipe/category/list.phtml" />
+			<!--<block type="core/template" name="recipie_inspire_banner"  after="-"  template="recipe/banner/inspire-banner.phtml" />-->
+        </reference>
+    </recipe_index_index> 
+
+    <recipe_index_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>fancybox/jquery.fancybox.css</name><params/></action> 
+            <action method="addItem"><type>skin_js</type><name>fancybox/jquery.fancybox.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>fancybox/jquery.fancybox-media.js</name><params/></action>
+        </reference>
+        <reference name="content">
+            <block type="recipe/view" name="recipe_view" template="recipe/recipe/view.phtml">
+				<block type="recipe/view" name="media" template="recipe/recipe/view/media.phtml" />
+				<block type="recipe/view" name="addtofavourite" template="recipe/recipe/view/addtofavourite.phtml" />
+				<block type="recipe/review_list" name="rating.link" template="recipe/rating/recipe/link.phtml" />
+				<block type="recipe/view" name="recipe.tab" template="recipe/recipe/view/tabs.phtml" />
+                <block type="recipe/associated" name="recipe_associated" template="recipe/associated.phtml" />
+				<block type="recipe/view_related" name="related_recipe" template="recipe/recipe/view/related.phtml" />
+            </block> 
+        </reference>
+    </recipe_index_view>  
+	
+	<recipe_review_list translate="label">
+        <label>Recipe Reviews List</label>
+		<reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>fancybox/jquery.fancybox.css</name><params/></action> 
+            <action method="addItem"><type>skin_js</type><name>fancybox/jquery.fancybox.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>fancybox/jquery.fancybox-media.js</name><params/></action>
+        </reference>
+        <reference name="content">
+            <block type="recipe/view" name="recipe_view" template="recipe/recipe/view.phtml">
+				<block type="recipe/view" name="media" template="recipe/recipe/view/media.phtml" />
+				<block type="recipe/view" name="addtofavourite" template="recipe/recipe/view/addtofavourite.phtml" />
+				<block type="core/template" name="extralink" template="recipe/rating/recipe/extralink.phtml" />
+				<block type="recipe/review_list" name="rating.link" template="recipe/rating/recipe/link.phtml" />
+				<block type="recipe/review_list" name="additional_data" template="recipe/rating/recipe/list.phtml" >
+					<block type="recipe/review_form" name="review_form" template="recipe/rating/form.phtml" />
+				</block>
+				<!--<block type="recipe/view" name="recipe.tab" template="recipe/recipe/view/tabs.phtml" />
+                <block type="recipe/associated" name="recipe_associated" template="recipe/associated.phtml" />-->
+            </block> 
+        </reference>
+	</recipe_review_list>
+	
+    <recipe_index_search>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <remove name="news_letter"/>
+            <!--<block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />-->
+            <block type="cms/block" name="banner-left">
+                <action method="setBlockId"><block_id>banner-left</block_id></action>
+            </block>
+            <block type="cms/block" name="new_news_letter" after="-">
+                <action method="setBlockId"><block_id>news-letter</block_id></action>
+            </block>
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+            <block type="recipe/search" name="recipe_search" template="recipe/search/search.phtml" >
+                <block type="recipe/search_list" name="recipe_list" template="recipe/recipe/list.phtml" />
+			    <!--<block type="core/template" name="recipie_inspire_banner"  after="-"  template="recipe/banner/inspire-banner.phtml" />-->
+            </block>                
+        </reference>
+    </recipe_index_search>
+    <recipe_index_advancesearch>
+        <reference name="head">
+		   <action method="addItem"><type>skin_js</type><name>js/lib/jquery-1.10.2.min.js</name><params/></action>
+            <!--<action method="addItem"><type>skin_js</type><name>js/lib/jquery-noconflict.js</name><params/></action>-->
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery-migrate-1.2.1.js</name><params/></action>
+            <action method="addItem"><type>skin_css</type><name>jquery_slider/jquery.slider.min.css</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>jquery_slider/jquery.slider.min.js</name><params/></action>       
+        </reference>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="recipe_list" template="recipe/advancesearch.phtml" />
+        </reference>
+    </recipe_index_advancesearch>
+    
+    <recipe_index_result>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <remove name="news_letter"/> 
+            <!--<block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />-->
+            <block type="cms/block" name="banner-left">
+                <action method="setBlockId"><block_id>banner-left</block_id></action>
+            </block>
+            <block type="cms/block" name="new_news_letter" after="-">
+                <action method="setBlockId"><block_id>news-letter</block_id></action>
+            </block>
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+            <block type="recipe/search" name="recipe_search" template="recipe/search/search.phtml" >
+                <block type="recipe/advancedsearch" name="recipe_list" template="recipe/recipe/list.phtml" />
+			    <!--<block type="core/template" name="recipie_inspire_banner"  after="-"  template="recipe/banner/inspire-banner.phtml" />-->
+            </block>
+        </reference>
+    </recipe_index_result>
+    
+    <recipe_category_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <!--<block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />
+            <remove name="left.permanent.callout" />-->
+  		    <remove name="news_letter"/>                         
+			<block type="cms/block" name="banner-left">
+                <action method="setBlockId"><block_id>banner-left</block_id></action>
+            </block>
+            <block type="cms/block" name="new_news_letter" after="-">
+                <action method="setBlockId"><block_id>news-letter</block_id></action>
+            </block>
+            <remove name="left.permanent.callout" />
+        </reference>
+        <reference name="content">
+			<block type="recipe/category_view" name="recipe_category.view" template="recipe/category/view.phtml" >
+				<block type="recipe/list" name="recipe_list" template="recipe/recipe/list.phtml" />
+				<!--<block type="core/template" name="recipie_inspire_banner"  after="-"  template="recipe/banner/inspire-banner.phtml" />-->
+			</block>	
+            
+        </reference>
+    </recipe_category_view>
+    
+    <recipe_course_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="left">
+            <block type="recipe/category" before="-" name="recipe.category" template="recipe/category.phtml" />
+            <block type="recipe/course" after="recipe.category"  name="course" template="recipe/course.phtml" />
+            <block type="core/template" after="recipe.search"  name="search" template="recipe/recipesearch.phtml" />
+            <remove name="left.permanent.callout" /> 
+        </reference>
+        <reference name="content">
+            <block type="recipe/list" name="recipe_list" template="recipe/list.phtml" />
+        </reference>
+    </recipe_course_view>
+    
+	<!--<recipe_sendfriend_recipesend translate="label">
+        <label>Catalog Product Email to a Friend</label>
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+        <reference name="head">
+            <action method="addJs"><script>varien/product.js</script></action>
+        </reference>
+        <reference name="content">
+            <block type="recipe/sendfriend_send" name="recipe.sendfriend.send" template="recipe/sendfriend/send.phtml" />
+        </reference>
+    </recipe_sendfriend_recipesend>-->
+	
+</layout>
