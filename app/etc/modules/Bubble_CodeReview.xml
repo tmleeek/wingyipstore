@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bubble_CodeReview>
+            <active>false</active>
+            <codePool>local</codePool>
+            <depends>
+                <Bubble_Debug/>
+            </depends>
+        </Bubble_CodeReview>
+    </modules>
+</config>

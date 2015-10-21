@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+		<reference name="content">	
+			<block type="core/text_list" name="gallery" as="gallery" translate="label">
+				<block type="ves_gallery/file" name="ves.gallery" before="-" />
+				<!-- demo custom gallery
+				<block type="ves_gallery/image" name="ves.gallery2" before="-" >
+					<action method="setConfig">
+						<key>title</key>
+						<value>My Gallery</value>
+					</action>
+					<action method="setConfig">
+						<key>theme</key>
+						<value>style2</value>
+					</action>
+					<action method="setConfig">
+						<key>thumbHeight</key>
+						<value>100</value>
+					</action>
+					<action method="setConfig">
+						<key>thumbWidth</key>
+						<value>100</value>
+					</action>
+					<action method="setConfig">
+						<key>source</key>
+						<value>image</value>
+					</action>
+					<action method="setConfig">
+						<key>image_folder</key>
+						<value>my_gallery</value>
+					</action>
+				</block> -->
+			</block>			
+		</reference>
+	</default>
+</layout>

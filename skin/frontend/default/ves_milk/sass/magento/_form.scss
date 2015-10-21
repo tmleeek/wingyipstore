@@ -1,0 +1,169 @@
+/******************************************************
+ * @package Ves Theme Framework for Magento
+ * @version 1.0
+ * @author http://www.venustheme.com
+ * @copyright Copyright (C) Augus 2013 Venustheme.com <@emai:venustheme@gmail.com>.All rights reserved.
+ * @license   GNU General Public License version 2
+*******************************************************/
+
+/* Forms */
+form          { display:inline; }
+fieldset      { border:0; }
+legend        { display:none; }
+
+/* Table */
+table         { border:0; border-spacing:0; empty-cells:show; font-size:100%; width: 100%; }
+caption,th,td { text-align:left; font-weight:normal; }
+
+/* Global Styles ========================================================================= */
+/* Form Elements */
+.radio{@include rtl-float-left(); height: 32px!important; border: 0!important;}
+.checkbox{@include rtl-float-left();}
+.block-reorder{
+  .checkbox{height: 20px!important;}
+}
+input,select,textarea,button {
+  font-size: $font-size-base;
+  line-height: 35px!important;
+  color: $input-color;
+  background-color: $input-bg;
+  border: 1px solid $input-border;
+  //border-radius: $border-radius-small!important;
+  padding: 0 10px;
+}
+#login-form{
+  p.required{
+    @include rtl-text-align-left();
+    padding: 5px 5px 10px;
+  }
+  .f-right{@include rtl-float-right(); line-height: 32px;}
+}
+.registered-users{
+  .buttons-set{
+    @include rtl-text-align-left();
+    padding: 5px 15px 0 0;
+  }
+}
+input {
+  height:  35px!important;
+}
+.button, input.button {
+	background-color: $btn-bg; 
+	border: none;
+	color: $white;
+  font-weight: bold;
+  @include transition(all 0.4s ease 0s);
+  &:hover{
+      background-color: $theme-color-secondary;
+      @include transition(all 0.4s ease 0s);
+  }
+}
+select,textarea {
+	padding: 3px;
+}
+input.qty,input[title="Qty"] {
+    display: inline;
+    text-align: center;
+    width: 45px;
+    padding: 0 3px;
+}
+input[type="radio"], input[type="checkbox"] {
+    float:left;
+    margin: 0;
+}
+label {
+	padding: 4px;
+	font-weight: normal;
+  	color: #444444;
+    margin: 4px 0 0;
+}
+.label {
+	display: table-cell;
+}
+#contactForm{
+  .required{padding: 0 0 10px;}
+}
+/* Data Table */
+table { 
+	.odd  {}
+	.even {}
+	td.last, th.last { border-right:0; }
+	tr.last th,tr.last td { border-bottom:0 !important; }
+	th { padding:3px 8px; font-weight:bold; border-right:1px solid #E9E4E0;}
+	td { padding:3px 8px; }
+
+/* Bundle products tables */
+	tbody.odd tr { background:#f8f7f5 !important; }
+	tbody.even tr { background:#f6f6f6 !important; }
+	tbody.odd tr td,
+	tbody.even tr td { border-bottom:0; }
+	tbody.odd tr.border td,
+	tbody.even tr.border td {  }
+
+	tbody td .option-label { font-weight:bold; font-style:italic; }
+	tbody td .option-value { padding-left:10px; }
+ 
+}
+
+.data-table {
+    width: 100%;
+  th, td {
+      padding: 10px;
+      @include rtl-text-align-left();
+  }
+  thead {
+      background: $theme-color-secondary;
+      color: #FFFFFF;
+      text-align: center;
+    th {
+        font-weight: bold;
+        vertical-align: bottom;
+        &.wrap {
+          white-space: normal;
+      }
+    }
+  }
+  tfoot{
+    tr{ background: none repeat scroll 0 0 #F0E5E6 !important;}
+  }
+  tr.odd td, tr.odd th {
+      border-right: 1px solid #F5F5F5;
+      color: #777;
+  }
+  tr.odd td.last {
+      border-right: medium none;
+  }
+  tr.odd.last {
+      border-bottom: 1px solid #EEEEEE;
+  }
+  tr.even td,  tr.even th {
+      border-right: 1px solid #EEEEEE;
+      color: #777;
+  }
+  tr.even td.last {
+      border-right: medium none;
+  }
+  tbody {
+    tr.product-shop-row:hover {
+      background-color: #FFFFFF;
+    }
+    &.odd td {
+        border-width: 0 1px;
+    }
+    &.odd tr.last {
+       border-bottom: 1px solid #E5E5E5;
+    }
+    &.even {
+        background-color: #F5F5F5;
+    }
+    &.even td {
+        border-width: 0 1px;
+    }
+  }
+  th .tax-flag {
+      font-weight: normal;
+  }
+  .cell-label {
+      display: none;
+  }
+}

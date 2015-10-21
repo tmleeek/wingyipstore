@@ -1,0 +1,32 @@
+<?php
+?>
+<?php
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+    $productId = (int) $this->getRequest()->getParam('product');
+    $sessionAddSuccess = Mage::getSingleton('catalog/session')->getSuccess();
+    $isValid = Mage::getSingleton('catalog/session')->getValid();
+?>
+<?php if($sessionAddSuccess && $isValid == "false"){?>
+    <div id="messages_product_view">
+        <ul class="messages">
+            <li class="success-msg">
+                <ul>
+                    <li>
+                        <span><?php echo $sessionAddSuccess ?></span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+<?php Mage::getSingleton('catalog/session')->setValid("true");}?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+    <?php if($product_collection_path = Mage::helper("ves_tempcp/framework")->getLayoutPath("product_collection.phtml")) { ?>
+    <?php require ($product_collection_path); ?>
+    <?php } ?>
+
+<?php endif; ?>

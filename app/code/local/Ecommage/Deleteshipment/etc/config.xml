@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecommage_Deleteshipment>
+            <version>0.1.0</version>
+        </Ecommage_Deleteshipment>
+    </modules>
+    <global>
+        <blocks>
+            <ecommage_deleteshipment>
+                <class>Ecommage_Deleteshipment_Block</class>
+            </ecommage_deleteshipment>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_shipment_view>Ecommage_Deleteshipment_Block_Adminhtml_Sales_Order_Shipment_View</sales_order_shipment_view>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <ecommage_deleteshipment after="Mage_Adminhtml">Ecommage_Deleteshipment</ecommage_deleteshipment>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

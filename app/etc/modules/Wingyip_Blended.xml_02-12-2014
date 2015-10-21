@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Wingyip_Blended>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Wingyip_Blended>
+    </modules>
+</config> 

@@ -1,0 +1,65 @@
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+                <action method="addItem"><type>js</type><name>realex/realex.js</name></action>
+        </reference>
+    </default>
+	<realex_redirect_success>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>	
+		<reference name="content">
+			<block type="core/template" name="realex.redirect.success" template="realex/redirect/success.phtml" />
+		</reference>
+	</realex_redirect_success>
+	
+	<realex_redirect_failure>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<block type="core/template" name="realex.redirect.failure" template="realex/redirect/failure.phtml" />
+		</reference>				
+	</realex_redirect_failure>
+    <checkout_onepage_review>
+        <reference name="checkout.onepage.review.info.items.after">
+            <block type="realex/iframe" name="realex.iframe" />
+        </reference>
+        <reference name="checkout.onepage.review.button">
+            <action method="setTemplate"><template helper="realex/hss/getReviewButtonTemplate"><name>realex/realmpi3dsecure/review/button.phtml</name><block>checkout.onepage.review.button</block></template></action>
+        </reference>
+    </checkout_onepage_review>   
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addItem"><type>js</type><name>prototype/window.js</name></action>
+            <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+            <action method="addCss"><name>lib/prototype/windows/themes/magento.css</name></action>
+        </reference>
+    </checkout_onepage_index>    
+   <!-- <realex_realmpi_postacs>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="realex/realmpi3dsecure_redirectacs" name="realex.realmpi.postacs" template="realex/realmpi3dsecure/postredirect.phtml"  />
+        </reference>
+    <realex_realmpi_postacs>  
+    -->
+    
+    
+   <!--
+   <realex_realmpi_enrollcard>
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="realex/realmpi3dsecure_redirectacs" name="realex.realmpi.postacs" template="realex/realmpi3dsecure/postredirect.phtml"/>
+        </reference>
+    </realex_realmpi_enrollcard>  
+    
+    <realex_realmpi_response3dsecure>    
+        <block type="core/template" name="root" output="toHtml" template="realex/realmpi3dsecure/iframeout.phtml"/>
+    </realex_realmpi_response3dsecure>
+    -->
+    
+    </layout>

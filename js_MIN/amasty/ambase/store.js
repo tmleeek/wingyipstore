@@ -1,0 +1,1 @@
+Event.observe(window,"message",function(t){if("setHeight"==t.data.action){var e=t.data.height;$("amasty_store").setStyle({height:e+"px"})}});

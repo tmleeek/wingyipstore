@@ -1,0 +1,108 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+
+
+<!-- --><?php //echo $this->getLayout()->createBlock('shipping/adminhtml_dpd_billingform')->toHtml(); //code to display form in color tab ?>
+<!-- --><?php //echo $this->getLayout()->createBlock('shipping/adminhtml_dpd_deliveryform')->toHtml(); //code to display form in color tab ?>
+ <?php echo $this->getLayout()->createBlock('shipping/adminhtml_dpd_form')->toHtml(); //code to display form in color tab ?>
+
+
+<div class="buttons-set" style="display: none;">
+    <p class="back-link"><a href="<?php  echo Mage::helper('adminhtml')->getUrl('adminhtml/sales_order/view',array('order_id'=>$this->getRequest()->getParam('order_id'))); ?>"><small>&laquo; </small><?php echo $this->__('Back') ?></a></p>
+
+        <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+        <button id="submit_form_dpd" type="button" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+    </div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+    var dpdShipmentForm = new varienForm('dpdShipmentForm', true);
+
+//]]>
+</script>
+
+
+<script type="text/javascript">
+    $j = jQuery.noConflict();
+    $j(document).ready(function(){
+        $j('div.submit-DPD').empty();
+        $j('div.submit-DPD').html('<div class="scalable save submit-button" type="text" title="Submit Delivery" id="submit_delivery"><span><span><span>Submit Delivery</span></span></span></div>');
+        $j('div.submit-DPD #submit_delivery').click(function(){
+            var collection_on_delivery=$j('#collection_on_delivery').val();
+            var total_parcel=$j('#total_parcel').val();
+            var total_weight =$j('#total_weight').val();
+            var delivery_instruction=$j('#delivery_instruction').val();
+            var collection_date=$j('#collection_date').val();
+            var shippingref1=$j('#shippingref1').val();
+            var shippingref2=$j('#shippingref2').val();
+            var shippingref3=$j('#shippingref3').val();
+
+            var orderId=<?php echo $this->getRequest()->getParam('order_id');?>;
+            if(collection_on_delivery== ""){
+                return false;
+            }
+            if(total_weight == "" || Number(total_weight) <1){
+                alert('Total Weight must be greater than 1');
+                $j('#total_weight').focus();
+                return false;
+            }
+            if(total_parcel == ""){
+                return false;
+            }
+            $j('div.submit-DPD').html('<div id="loading-mask" style="display: block;"><div class="loader" id="loading-mask-loader"><img src="<?php echo str_replace("index.php/","",$this->getUrl()) ?>skin/adminhtml/default/default/images/ajax-loader-tr.gif""/><br>Please wait...</div> <div id="loading-mask"></div> </div>');
+            $j.ajax({
+                url : '<?php echo Mage::helper('adminhtml')->getUrl('shipping/adminhtml_order/insertShipment',array('order_id'=>$this->getRequest()->getParam('order_id')));?>',
+                data: {form_key: '<?php echo Mage::getSingleton('core/session')->getFormKey() ?>',
+                    collection_on_delivery: collection_on_delivery,
+                    total_parcel : total_parcel,
+                    total_weight: total_weight,
+                    delivery_instruction: delivery_instruction,
+                    collection_date: collection_date,
+                    order_id: orderId,
+                    shippingref1: shippingref1,
+                    shippingref2: shippingref2,
+                    shippingref3: shippingref3
+                },
+                type: "POST",
+                showLoader: true,
+                success: function(data){
+                    if(data.consignmentNumber != "" && data.success==true){
+                        $j('#edit_form').submit();
+                    }else{
+                        setLocation('<?php  echo Mage::helper('adminhtml')->getUrl('*/sales_order_shipment/new/',array('order_id'=>$this->getRequest()->getParam('order_id'))); ?>');
+                    }
+                },
+            }).fail(function(){
+                alert('There has been an error\nTry again or refresh the page.');
+            });
+        });
+
+    });
+
+</script>

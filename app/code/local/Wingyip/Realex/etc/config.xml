@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Wingyip_Realex extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Wingyip
+ * @package    Wingyip_Realex
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+/**
+ * @category   Wingyip
+ * @package    Wingyip_Realex
+ * @author     Wingyip
+ */
+-->
+<config>
+	<modules>
+		<Wingyip_Realex>
+			<version>2.0.2</version>
+		</Wingyip_Realex>
+	</modules>
+	<global>
+		<models>
+			<realex>
+				<class>Wingyip_Realex_Model</class>
+                <resourceModel>realex_mysql4</resourceModel>
+			</realex>
+            <realex_mysql4>
+                <class>Wingyip_Realex_Model_Mysql4</class>
+                <entities>
+                    <realex>
+                        <table>realex</table>
+                    </realex>
+                </entities>
+            </realex_mysql4>
+		</models>
+		<blocks>
+			<realex>
+				<class>Wingyip_Realex_Block</class>
+			</realex>
+		</blocks>
+		<helpers>
+			<realex>
+				<class>Wingyip_Realex_Helper</class>
+			</realex>
+		</helpers>
+		<resources>
+			<realex_setup>
+				<setup>
+					<module>Wingyip_Realex</module>
+					<class>Wingyip_Realex_Model_Setup</class>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</realex_setup>
+			<realex_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</realex_write>
+			<realex_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</realex_read>
+		</resources>
+		<payment>
+			<cc>
+				<types>
+					<VI>
+						<code>VI</code>
+						<name>Visa</name>
+						<order>0</order>
+					</VI>
+					<MC>
+						<code>MC</code>
+						<name>MasterCard</name>
+						<order>100</order>
+					</MC>
+					<AM>
+						<code>AM</code>
+						<name>American Express</name>
+						<order>200</order>
+					</AM>
+					<SS>
+						<code>SS</code>
+						<name>Switch/Solo</name>
+						<order>300</order>
+					</SS>
+					<MA>
+						<code>LA</code>
+						<name>Laser</name>
+						<order>400</order>
+					</MA>
+				</types>
+			</cc>
+		</payment>
+        <events>
+            <realex_payment_failed>
+                <observers>
+                    <realex_send_failed_email>
+                        <class>realex/observer_checkout</class>
+                        <method>sendPaymentFailedEmail</method>
+                    </realex_send_failed_email>
+                </observers>
+            </realex_payment_failed>
+        </events>   
+	</global>
+	<frontend>
+		<routers>
+			<realex>
+				<use>standard</use>
+				<args>
+					<module>Wingyip_Realex</module>
+					<frontName>realex</frontName>
+				</args>
+			</realex>
+		</routers>
+		
+		<layout>
+			<updates>
+				<realex>
+					<file>realex.xml</file>
+				</realex>
+			</updates>
+		</layout>
+        <!--<events>
+            <sales_order_payment_place_end>
+                <observers>
+                    <onepage_realex_enrollcard3d>
+                        <class>realex/observer</class>
+                        <method>enrollcard3d</method>
+                    </onepage_realex_enrollcard3d>
+                </observers>
+            </sales_order_payment_place_end>
+         </events> --> 
+        
+	</frontend>
+	<adminhtml>
+		<menu>
+			<sales module="sales">
+				<children>
+					<realex module="realex">
+						<title>Realex Transactions</title>
+						<sort_order>300</sort_order>
+						<action>realex/adminhtml_realex</action>
+					</realex>
+				</children>
+			</sales>
+		</menu>
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<sales>
+							<children>
+								<realex>
+									<title>Realex Transactions</title>
+									<sort_order>10</sort_order>
+								</realex>
+							</children>
+						</sales>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<realex>
+					<file>realex.xml</file>
+				</realex>
+			</updates>
+		</layout>
+	</adminhtml>
+	<default>
+		<payment>
+			<realex>
+				<active>0</active>
+				<title>Credit Card (Realex)</title>
+				<model>realex/realmpi3dsecure</model>
+				<account>internet</account>
+				<cctypes>VI,MC,LA</cctypes>
+				<order_status>processing</order_status>
+				<useccv>1</useccv>
+				<payment_action>authorize</payment_action>
+                <enrollmenturl>https://epage.payandshop.com/epage-3dsecure.cgi</enrollmenturl>
+                <verifysigurl>https://epage.payandshop.com/epage-3dsecure.cgi</verifysigurl>
+                <authurl>https://epage.payandshop.com/epage-3dsecure.cgi</authurl>
+			</realex>
+		</payment>
+	</default>
+</config>

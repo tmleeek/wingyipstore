@@ -1,0 +1,17 @@
+.carousel-control .icon-prev, .carousel-control .icon-next{ position: static; margin: 0; width: auto; height: auto; float: right; color: #666;}
+.carousel-control{
+	opacity : 1;
+	width: auto;
+	position: static;
+	color: #777;
+	text-shadow: 0px 0px 0px #000000;
+    filter: dropshadow(color=#000000, offx=0, offy=0);
+    float: right;
+    height: 24px;
+    line-height: 20px;
+    padding: 0 5px;
+}
+.carousel-control.right,
+.carousel-control.left{
+	background: none;
+}

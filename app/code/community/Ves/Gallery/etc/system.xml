@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <ves translate="label" module="ves_gallery">
+            <label>Venus Theme</label>
+            <sort_order>211</sort_order>
+        </ves>
+    </tabs>
+	<sections>
+        <ves_gallery>
+            <label>Ves Gallery</label>
+            <tab>ves</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+				<ves_gallery translate="label">
+                    <label>General Setting</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>     
+						<last_update translate="label">
+							<label>Current Update Time</label>
+							<frontend_type>label</frontend_type>
+							<frontend_model>ves_gallery/system_config_form_field_notification</frontend_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</last_update> 
+						<show translate="label" module="core">
+							<label>Enabled</label>
+							<sort_order>10</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show>							
+						<title translate="label">
+                            <label>Module Title </label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>15</sort_order>
+                            <comment>Empty for hide</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title> 
+								<theme translate="label">
+                            <label>Select Template</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ves_gallery/system_config_source_listTheme</source_model>
+                            <sort_order>20</sort_order>
+							<comment>Choose Template for your module</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </theme>
+						<moduleHeight translate="label">
+                            <label>Module Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </moduleHeight>
+						<moduleWidth translate="label">
+                            <label>Module Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </moduleWidth>
+						<thumbnailMode translate="label">
+                            <label>Render Thumbnail</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>32</sort_order>
+                            <comment>Whether to render thumbnail with cropping-resizing function</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbnailMode>
+						<thumbHeight translate="label">
+                            <label>Thumbnail Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>33</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbHeight>
+						<thumbWidth translate="label">
+                            <label>Thumbnail Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>34</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </thumbWidth>
+						
+						
+						
+						 
+						<spacer_source translate="label">
+							<label>Select Source Data</label>
+							<frontend_type>label</frontend_type>
+							<frontend_model>ves_gallery/system_config_form_field_spacer</frontend_model>
+							<sort_order>209</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</spacer_source> 
+						
+						<source translate="label">
+                            <label>From Source</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ves_gallery/system_config_source_listSource</source_model>
+                            <sort_order>210</sort_order>
+                            <comment>Choose Source to render image and content in the slideshow</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </source>
+					</fields>
+				</ves_gallery>
+				<!-- Catagory -->
+				<image_source_setting>
+					<label>Image Folder Path Setting(this folder put in media/)</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1999</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<image_folder translate="label">
+							<label>Image Folder Path</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+						</image_folder>
+				
+
+					</fields>
+				</image_source_setting>
+				<!-- File -->
+				<file_source_setting>
+					<label>File Group Setting - (Manage source via menu Vess/Gallery)</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+						<imagecategory translate="label">
+                            <label>Images group </label>
+                            <frontend_type>select</frontend_type>
+							<source_model>ves_gallery/system_config_source_listImagegroup</source_model>
+                            <sort_order>15</sort_order>
+                            <comment>Group of images</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </imagecategory> 
+					</fields>
+				</file_source_setting>
+				<!-- effect setting -->
+				
+				<!-- Information -->
+				<advanded_parameter>
+					<label>Information - Support</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>6001</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields> 
+						<module_information translate="label">
+							<label>Set Module Visable On Pages, Position</label>
+							<frontend_type>label</frontend_type>
+							<frontend_model>ves_gallery/system_config_form_field_information</frontend_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</module_information>                        
+					</fields>
+				</advanded_parameter>	
+            </groups>
+        </ves_gallery>
+    </sections>    
+</config>

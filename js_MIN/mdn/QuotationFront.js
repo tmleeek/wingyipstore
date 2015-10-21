@@ -1,0 +1,1 @@
+function requestQuoteForProduct(t){document.getElementById("product_addtocart_form").action=quoteRequestUrl,productAddToCartForm.submit(t)}

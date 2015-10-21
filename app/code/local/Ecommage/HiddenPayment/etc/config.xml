@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecommage_HiddenPayment>
+            <version>0.1.0</version>
+        </Ecommage_HiddenPayment>
+    </modules>
+    <global>
+        <helpers>
+            <ecommage_hiddenpayment>
+                <class>Ecommage_HiddenPayment_Helper</class>
+            </ecommage_hiddenpayment>
+        </helpers>
+    </global>
+    <frontend>
+        <events>
+            <payment_method_is_active>
+                <observers>
+                    <ecommage_hiddenpayment_payment_method_is_active>
+                        <type>singleton</type>
+                        <class>Ecommage_HiddenPayment_Model_Observer</class>
+                        <method>paymentMethodIsActive</method>
+                    </ecommage_hiddenpayment_payment_method_is_active>
+                </observers>
+            </payment_method_is_active>
+        </events>
+    </frontend>
+</config>

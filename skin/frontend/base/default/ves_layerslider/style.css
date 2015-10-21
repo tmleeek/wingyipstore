@@ -1,0 +1,61 @@
+/* Slider Demo
+------------------*/
+
+.bg-sky,
+.bg-dark  {
+
+}
+
+.bg-sky { background-color: #20c4b8; }
+.bg-dark { background-color: #303030; }
+
+.t-white {
+  background: white;
+  color: #303030;
+  text-shadow: 0 5px 0 rgba(204,204,204,0.75) !important;
+}
+
+.t-red {
+  background: #f05c58;
+  color: white;
+  text-align: center;
+}
+
+.t-orange {
+  background: #ec8723;
+  color: #eee;
+}
+
+.t-yellow {
+  background: #face0d;
+  color: #eee;
+}
+
+.t-yellow-b {
+  color: #face0d;
+}
+
+.t-white-b {
+  color: #fff;
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+.bg-black {
+  background: rgba(0,0,0,0.5);
+}
+
+.t-bold-title {
+  background-color: #7cc152; color: #fff; font-size: 42px; font-weight: bold; line-height: 1; padding: 10px; border-radius: 5px;  
+}
+
+.t-bold-text,
+.t-bold-plus {
+  font-size: 24px; line-height: 1; color: #353535; font-weight: bold;
+}
+
+.t-bold-plus {
+ color: #7cc152; 
+}

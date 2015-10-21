@@ -1,0 +1,1058 @@
+<?php
+/**
+ * @see Mage_Adminhtml_Block_Widget_Form_Container
+ */
+ ?>
+ <?php
+
+ 	$element = Mage::helper("ves_layerslider/element");
+
+ 	$banner = $this->getBannerData();
+
+ 	$params = $this->getParamsJSON();
+
+ 	$yesno_options= array(1 => Mage::helper('ves_layerslider')->__('Yes'),
+ 				  0 => Mage::helper('ves_layerslider')->__('No'));
+
+ 	$disable_options= array(1 => Mage::helper('ves_layerslider')->__('Enabled'),
+ 				  0 => Mage::helper('ves_layerslider')->__('Disabled'));
+
+ 	$stores = $banner->getStoreId();
+ 	
+ 	$stores = $element->getElementStores("store_id", "stores[]", $stores);
+
+ 	$effects = array('slideUp','slideDown','slideLeft',
+					'slideRight','slideExpandUp','expandUp','fadeIn',
+					'expandOpen','bigEntrance','hatch','bounce',
+					'pulse','floating','tossing','pullUp','pullDown','stretchLeft','stretchRight'
+					);
+
+ 	$skins = array(
+ 					"" => Mage::helper('ves_layerslider')->__('default'),
+ 					"lush-skin-dark" => Mage::helper('ves_layerslider')->__('dark'),
+ 					"lush-skin-silver" => Mage::helper('ves_layerslider')->__('silver'),
+ 					"lush-skin-flat" => Mage::helper('ves_layerslider')->__('flat'),
+ 					"lush-skin-default-mini" => Mage::helper('ves_layerslider')->__('default-mini'),
+ 					"lush-skin-dark-mini" => Mage::helper('ves_layerslider')->__('dark-mini'),
+ 					"lush-skin-silver-mini" => Mage::helper('ves_layerslider')->__('silver-mini'),
+ 					"lush-skin-borderless" => Mage::helper('ves_layerslider')->__('no border'));
+
+ 	$shadows = array(
+ 					"shadow-a" => Mage::helper('ves_layerslider')->__('shadow-a'),
+ 					"shadow-b" => Mage::helper('ves_layerslider')->__('shadow-b'),
+ 					"shadow-c" => Mage::helper('ves_layerslider')->__('shadow-c'),
+ 					"shadow-d" => Mage::helper('ves_layerslider')->__('shadow-d'),
+ 					"" => Mage::helper('ves_layerslider')->__('no-shadow'));
+
+ 	$base_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+ 	$id = $banner->getData("banner_id");
+ 	$title = $banner->getData("title");
+ 	$is_active = $banner->getData("is_active");
+ 	$is_flexslider = $banner->getData("is_flexslider");
+ 	$position = $banner->getData("position");
+ ?>
+
+<?php echo $this->getFormInitScripts() ?>
+<!-- Bootstrap -->
+<link type="text/css" rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/css/bootstrap.min.css">
+<!-- Interface styles -->
+<link type="text/css" rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/css/jquery-ui-1.10.3.custom.min.css" />
+<link type="text/css" rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/css/lush.builder.css" />
+<!-- Google prettify -->
+<link type="text/css" rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/js/google-code-prettify/prettify.css" />
+
+<!-- Layer slider styles -->
+
+<!-- Items styles -->
+<link type="text/css" rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/css/lush.items.css" id='lush-items-css'/>
+
+
+<!-- Lush styles -->
+<link type="text/css" rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/css/lush.animations.min.css">
+<link type="text/css" rel="stylesheet" href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/css/lush.min.css">
+
+
+<style type="text/css">
+ 	button, .form-button {
+ 		background:transparent;
+ 	}
+	#page-content{
+		min-height: 1200px;
+		width: 100%;
+		padding-bottom: 100px
+	}
+	.layerslider-adminhtml-banner-edit .header, .layerslider-adminhtml-banner-edit .notification-global, .layerslider-adminhtml-banner-edit .footer{
+		/*display: none;*/
+	}
+</style>
+<?php echo $element->initTextEditor(); ?>
+<div id="themepanel" class="">
+<form id="form" action="<?php echo $this->getFormActionUrl() ?>" method="post" id="product_edit_form" enctype="multipart/form-data">
+    <input type="hidden" name="banner_id" value="<?php echo $id; ?>"/>
+    <input type="hidden" name="action" value="" id="action"/>
+    <div class="heading">
+      <h1><b style="font-size:18	px;color:#E8481B"><?php echo $this->getHeaderText(); ?></b></h1>
+	  
+      <div class="buttons">
+      	<a href="#" class="btn btn-success save-slider" id="save-slide"><?php echo Mage::helper('ves_layerslider')->__('Save Slider');?></a> &nbsp;
+
+      	<a href="#" class="btn btn-info save-stay-slider" id="save-stay-slide"><?php echo Mage::helper('ves_layerslider')->__('Save & Stay');?></a> &nbsp;
+
+	  	<a href="<?php echo $this->getCancelLink(); ?>" class="btn btn-primary"><?php echo Mage::helper('ves_layerslider')->__('Cancel');?></a>
+	  </div>
+    </div>
+    <br/>
+    <ul class="nav nav-tabs" id="myTab">
+		 <li class="active"><a class="selected" href="#tab-general" data-toggle="tab"><?php echo Mage::helper('ves_layerslider')->__('General');?></a></li>
+		  <li><a href="#tab-banner-images" data-toggle="tab"><?php echo Mage::helper('ves_layerslider')->__('Manage Sliders');?></a></li>
+	</ul>
+<div class="general mytab" id="tab-general">
+	<div class="container bar">
+		<h4><?php echo Mage::helper('ves_layerslider')->__('Slider Group Form');?></h4>
+			<table class="form">
+				<tr>
+					<td>ID: #<?php echo $id?$id:"0";?></td>
+				<tr>
+				<tr>
+					<td><?php echo Mage::helper('ves_layerslider')->__('Slide Group Title');?></th>
+					 <td><input type="text" name="slider[title]" size="" value="<?php echo $title;?>"/></td>
+				</tr>
+				<tr>
+					<td><?php echo Mage::helper('ves_layerslider')->__('Is Flexslider?');?></td>
+					<td>
+				 		<select name="slider[is_flexslider]">
+							<?php foreach( $yesno_options as $key => $value ) { ?>
+							<option value="<?php echo $key;?>" <?php if( $is_flexslider == $key){ ?> selected="selected" <?php } ?> ><?php echo $value; ?></option>
+							 <?php } ?>
+							
+						</select>	
+					</td>
+				</tr>
+				<tr>
+					<td><?php echo Mage::helper('ves_layerslider')->__('Is Active?');?></td>
+					<td>
+				 		<select name="slider[is_active]">
+							<?php foreach( $yesno_options as $key => $value ) { ?>
+							<option value="<?php echo $key;?>" <?php if( $is_active == $key){ ?> selected="selected" <?php } ?> ><?php echo $value; ?></option>
+							 <?php } ?>
+							
+						</select>	
+					</td>
+				</tr>
+				<tr>
+					<td><?php echo Mage::helper('ves_layerslider')->__('Position');?></td>
+					<td>
+						<input type="text" name="slider[position]" value="<?php echo $position;?>"/>
+					</td>
+				</tr>
+				<tr>
+					<td><b><?php echo Mage::helper('ves_layerslider')->__('Store views');?></b></td>
+					<td class="value">
+						<?php echo $stores; ?>
+					</td>
+				</tr>
+			</table>
+	</div>
+</div>
+<div class="slider_preview mytab" id="tab-banner-images" style="display:none">
+	<div class="container bar">
+		<div class="minimize" ><em class="icon icon-angle-up"></em> </div>
+			<!-- start controls bar -->
+
+		<div class="row" style="padding-top: 20px">
+				<div class="span1">
+					<label>Element</label>
+					<div class="btn-group">
+						<button data-toggle="dropdown" class="btn btn-info dropdown-toggle">
+							Add <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="javascript:;" id="add-image">Image</a>
+							</li>
+							<li>
+								<a href="javascript:;" id="add-text">Text</a>
+							</li>
+							<li>
+								<a href="javascript:;" id="add-link">Link</a>
+							</li>
+							<li>
+								<a href="javascript:;" id="add-imglink">Image Link</a>
+							</li>
+							<li>
+								<a href="javascript:;" id="add-block">Block</a>
+							</li>
+							<li>
+								<a href="javascript:;" id="add-video">Video</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span2">
+					<label>Slider size</label>
+					<input type="text" class="span1" placeholder="Width" id="slider-width" value="1140"/>
+					x
+					<input type="text" class="span1" placeholder="Height" id="slider-height" value="450"/>
+				</div>
+				<div class="span1">
+					<label>Grid size</label>
+					<div class="input-append">
+						<input type="text" id="grid-size" style="width: 40px;" value="30">
+						<div class="btn-group">
+							<button data-toggle="dropdown" class="btn dropdown-toggle">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li>
+									<div class="dd-item no-bubble">
+										<span class="checkbox">
+											<input type="checkbox" id="snap-grid" />Snap to grid </span> 
+									</div>
+								</li>
+								<li>
+									<div class="dd-item no-bubble">
+										<span class="checkbox">
+										<input type="checkbox" id="snap-item" />Snap to elements </span> 
+									</div>
+								</li>
+								<li>
+									<div class="dd-item no-bubble"> <span class="checkbox">
+										<input type="checkbox" id="show-grid" />
+										Show grid </span> </div>
+								</li>
+								<li>
+									<div class="dd-item no-bubble"> <span class="checkbox">
+										<input type="checkbox" id="drag-x" />
+										Drag X</span> </div>
+								</li>									
+								<li>
+									<div class="dd-item no-bubble"> <span class="checkbox">
+										<input type="checkbox" id="drag-y" />
+										Drag Y</span> </div>
+								</li>									
+							</ul>
+						</div><!-- /btn-group -->
+					</div>
+				</div>
+				<div class="span1"></div>
+				<div class="span2">
+						<label>Preview Slider</label>
+						<a href="#" class="btn btn-warning preview"><?php echo Mage::helper("ves_layerslider")->__("Preview");?></a>
+				</div>
+				<div class="span4 ">
+					<label>Actions</label>
+					<a href="#" class="btn btn-info" id="add-slide">New Slide</a> &nbsp; <a href="#" class="btn btn-danger" id="remove-slide">Remove Slide</a>
+				</div>
+			</div>
+			<!-- end controls bar -->
+
+			<div class="row subbar">
+				<div class="span2" style="">
+					<label>Path to image folder</label>
+					<input type="text" placeholder="images/location" value="<?php echo Mage::helper("ves_layerslider")->getImageBaseDir(); ?>" class="span2" id="image-location">
+				</div>
+				<div class="span2">
+					<label>Skin</label>
+					<select class="span2" id="skin-class">
+						<?php 
+							foreach($skins as $key=>$val){
+								echo '<option value="'.$key.'">'.$val.'</option>';
+							}
+						?>
+					</select>						
+				</div>
+				<div class="span2">
+					<label>Shadow</label>
+					<select class="span2" id="shadow-class">
+						<?php 
+							foreach($shadows as $key=>$val){
+								echo '<option value="'.$key.'">'.$val.'</option>';
+							}
+						?>
+					</select>						
+				</div>
+				
+				<div class="span1">
+					<label>Fullwidth</label>
+					<button class="btn btn-block"  data-toggle="button" id="do-fw" >Toggle</button>
+				</div>
+				
+				<div class="span2">
+					<label>Slider background</label>
+					<div class="fileupload fileupload-new" data-provides="fileupload" style="margin-bottom: 0">
+						<span class="fileupload-preview thumbnail " style="display: none;"></span>
+						<div>
+							<div class="btn btn-file pull-left">
+								<span class="fileupload-new">Select Image</span>
+								<span class="fileupload-exists">Select Image</span>
+								<input type="file" class="fileup" id="bg-image" style="cursor: pointer;"/>
+							</div>
+						</div>
+					</div>
+					<a title=""
+					data-id="#pover-bgimage"
+					data-placement="bottom"
+					data-toggle="popover"
+					class="btn"
+					href="#"
+					data-original-title="Settings"><em class="icon-cog"></em></a>	
+				</div>
+				<div class="span1">
+                    <label>Flexslider</label>
+						<a title="Flexslider Settings"
+						data-id="#pover-flexslider"
+						data-placement="bottom"
+						data-toggle="popover"
+						class="btn"
+						href="#"
+						data-original-title="Settings">Settings</a>	
+				</div>					
+				<div class="span2" style="display:none">
+					<label> Slide data</label>
+					<button class="btn" id="ieport">Import / Export</button>
+				</div>
+			</div>
+
+		</div>
+		<div class="container tabs">
+
+			<ul class="nav nav-tabs sortable" id="slide-tabs">
+				<!-- Slide tabs will be created here -->
+			</ul>
+		</div>
+		<div class="container slider">
+			<!-- The slider -->
+			<div class="tab-content" id="slide-content">
+				<!-- Slide content with elements will be created here -->
+			</div>
+
+			<!-- Image popover content -->
+			<div id="pover-image" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<div class="fileupload fileupload-new" data-provides="fileupload">
+					<span class="fileupload-preview thumbnail " style="display: none;"></span>
+					<div>
+						<div class="btn btn-file">
+							<span class="fileupload-new">Select Image</span>
+							<span class="fileupload-exists">Select Image</span>
+							<input type="file" class="fileup" />
+						</div>
+					</div>
+				</div>
+				<label>Width x Height</label>
+				<input type="text" placeholder="Width" value=""  class="span1" data-bind='width'/>
+				<input type="text" placeholder="Height" value="" class="span1" data-bind='height'/>
+				<label class="checkbox">
+					<input type="checkbox" data-bind="ignore" />
+					Flexslider background </label>
+				<label class="checkbox">
+					<input type="checkbox" data-bind="clip" id="image-clip"/>
+					Clip Image </label>
+				<label>Extras</label>
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Text popover content -->
+
+			<div id="pover-text" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<label>Content</label>
+				<textarea class="span2" data-bind='content' data-trigger="focusout"></textarea>
+
+				<label class="control-label">Class</label>
+				<div class="controls">
+					<select data-bind='clase' class="span2 text-classes">
+						<option value="">Select</option>
+					</select>
+				</div>
+
+				<label>Extras</label>
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Anchor popover content -->
+			<div id="pover-link" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<label>Content</label>
+				<textarea class="span2" data-bind='content' data-trigger="focusout"></textarea>
+				<label>URL</label>
+				<input type="text" placeholder="" class="span2" data-bind="href"/>
+				<label class="control-label">Class</label>
+				<div class="controls">
+					<select data-bind='clase' class="span2 link-classes">
+						<option value="">Select</option>
+					</select>
+				</div>
+				<label class="control-label">Taget</label>
+				<div class="controls">
+					<select data-bind='target' class="span2">
+						<option>_top</option>
+						<option>_blank</option>
+						<option>_self</option>
+						<option>_parent</option>
+					</select>
+				</div>
+				<label>Extras</label>
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Anchor Image popover content -->
+			<div id="pover-imglink" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<div class="fileupload fileupload-new" data-provides="fileupload">
+					<span class="fileupload-preview thumbnail " style="display: none;"></span>
+					<div>
+						<div class="btn btn-file">
+							<span class="fileupload-new">Select Image</span>
+							<span class="fileupload-exists">Select Image</span>
+							<input type="file" class="fileup" />
+						</div>
+					</div>
+				</div>
+				<label>Width x Height</label>
+				<input type="text" placeholder="Width" value=""  class="span1" data-bind='width'/>
+				<input type="text" placeholder="Height" value="" class="span1" data-bind='height'/>
+
+				<label>URL</label>
+				<input type="text" placeholder="" class="span2" data-bind="href"/>
+				<label class="control-label">Taget</label>
+				<div class="controls">
+					<select data-bind='target' class="span2">
+						<option>_top</option>
+						<option>_blank</option>
+						<option>_self</option>
+						<option>_parent</option>
+					</select>
+				</div>
+				<label>Extras</label>
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Solid Block popover content -->
+
+			<div id="pover-block" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<label class="control-label">Class</label>
+				<div class="controls">
+					<select class="span2 block-classes" data-bind='clase' >
+						<option value="">Select</option>
+					</select>
+				</div>
+				<label>Opacity</label>
+				<!--<input type="range" min="0" max="1" step="0.1" data-bind="opacity" class="span2" />-->
+				<div class="ui-slider"></div>
+				
+				<label>Width x Height</label>
+				<input type="text" placeholder="Width" value=""  class="span1" data-bind='width'/>
+				<input type="text" placeholder="Height" value="" class="span1" data-bind='height'/>
+
+				<!--<label>Style</label>
+				<input type="text" placeholder="Class1 Class2..." class="" id="pref-text-style"/> -->
+				<label>Extras</label>
+
+
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Image popover content -->
+			<div id="pover-video" class="hidden">
+				<a class="remove-item-quick" href="#">Remove</a>
+				<label>Video Id</label>
+				<input type="text" placeholder="Video Id" value=""  class="span2" data-bind='videoid' data-trigger="focusout" />
+				<label>Video Source</label>
+				<label class="radio" for="videotype1">
+				  <input type="radio" name="videotype" id="videotype1" value="youtube" data-bind='videotype' checked="checked">
+				  Youtube
+				</label>
+				<label class="radio" for="videotype2">
+				  <input type="radio" name="videotype" id="videotype2" value="vimeo" data-bind='videotype'>
+				  Vimeo
+				</label>
+				<label>Width x Height</label>
+				<input type="text" placeholder="Width" value=""  class="span1" data-bind='width'/>
+				<input type="text" placeholder="Height" value="" class="span1" data-bind='height'/>
+
+				<label>Extras</label>
+				<a
+				data-id="#pover-style"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn"
+				href="#"
+				title="Custom CSS"
+				data-original-title="Custom CSS"><em class="icon-tint"></em> </a>
+
+				<a title=""
+				data-id="#tools"
+				data-placement="bottom"
+				data-toggle="popover"
+				class="btn "
+				href="#"
+				data-original-title="Tools"><em class="icon icon-cog"></em> </a>
+			</div>
+
+			<!-- Animation in popover -->
+			<div id="animation-in" class="hidden">
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label inline" >at</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='at'>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label inline">plus</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='plus'>
+						</div>
+					</div>
+					<div class="control-group">
+
+						<!-- Select Basic -->
+						<label class="control-label">from</label>
+						<div class="controls">
+							<select class="input-small effect-list" data-bind='from'>
+							</select>
+						</div>
+
+					</div>
+
+					<div class="control-group">
+
+						<!-- Select Basic -->
+						<label class="control-label">use</label>
+						<div class="controls">
+							<select class="input-small easing-list" data-bind='use'>
+							</select>
+						</div>
+
+					</div>
+					<div class="control-group">
+
+						<label class="control-label" >during</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='during'>
+						</div>
+					</div>
+					<div class="control-group only-element">
+						<label class="control-label" >override global </label>
+						<div class="controls">
+							<input type="checkbox" data-bind="override" />
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Animation out popover -->
+			<div id="animation-out" class="hidden">
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label inline" >at</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='at'>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label inline" >plus</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='plus'>
+						</div>
+					</div>
+					<div class="control-group">
+
+						<!-- Select Basic -->
+						<label class="control-label">to</label>
+						<div class="controls">
+							<select class="input-small effect-list" data-bind='to'>
+							</select>
+						</div>
+
+					</div>
+
+					<div class="control-group">
+
+						<!-- Select Basic -->
+						<label class="control-label">use</label>
+						<div class="controls">
+							<select class="input-small easing-list" data-bind='use'>
+							</select>
+						</div>
+
+					</div>
+					<div class="control-group">
+
+
+						<label class="control-label" >during</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='during'>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" >force </label>
+						<div class="controls">
+							<input type="checkbox" data-bind="force" />
+						</div>
+					</div>					
+					<div class="control-group only-element">
+						<label class="control-label" >override global </label>
+						<div class="controls">
+							<input type="checkbox" data-bind="override" />
+						</div>
+					</div>
+										
+				</div>
+			</div>
+
+			<!-- Current Slide setting popover  -->
+			<div id="pover-slide" class="hidden" >
+				<a class="clone-slide" href="#">Clone</a>
+				<div class="form-horizontal" style="margin-bottom: 9px;">
+					<div class="control-group">
+						<label class="control-label inline">Deadtime</label>
+						<div class="controls">
+							<input type="text" placeholder="(ms)" class="input-mini" data-bind='deadtime'>
+						</div>
+					</div>
+					<!--
+					<div class="control-group">
+						<label class="control-label">Use globals</label>
+						<div class="controls">
+							<input type="checkbox" data-bind="globals" />
+						</div>
+					</div>
+					-->
+				</div>
+			</div>
+
+
+			<!-- Background image setting popover  -->
+			<div id="pover-bgimage" class="hidden">
+				<a id="remove-bg"  href="#">Remove</a>
+				<label>Position</label>
+				<input type="text" placeholder="0 0" value=""  class="span2" data-bind='position'/>
+				<label>Repeat</label>
+				<input type="text" placeholder="no-repeat" value=""  class="span2" data-bind='repeat'/>
+				<label>Size</label>
+				<input type="text" placeholder="100% auto" value=""  class="span2" data-bind='size'/>
+			</div>
+
+
+			<!-- Flexslider setting popover  -->
+			<div id="pover-flexslider" class="hidden">
+
+				<div class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label">Animation</label>
+						<div class="controls">
+							<select data-bind="animation" class="input-small ">
+								<option>slide</option>
+								<option>fade</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" >Direction</label>
+						<div class="controls">
+							<select data-bind="direction" class="input-small">
+								<option>horizontal</option>
+								<option>vertical</option>
+							</select>
+						</div>
+					</div>
+					<div class="control-group">
+						<label  class="control-label">Speed</label>
+						<div class="controls">
+							<input type="text" data-bind="speed" class="input-mini" placeholder="(ms)" value="600">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label">Easing</label>
+						<div class="controls">
+							<select class="input-small easing-list" data-bind='easing'>
+							</select>
+						</div>
+
+					</div>					
+					<div class="control-group">
+						<label  class="control-label">pausable</label>
+						<div class="controls">
+							<input type="checkbox" data-bind="pauseonhover">
+						</div>
+					</div>					
+										
+				</div>				
+			</div>
+			<!-- Custom CSS popover  -->
+			<div id="pover-style" class="hidden">
+				<textarea class="span2 custom-css" rows="6" data-bind='style' placeholder="Write your custom rules..."></textarea>
+			</div>
+
+			<!-- Tools popover -->
+			<div id="tools" class="hidden">
+
+				<label>Resize</label>
+				<div class="text-center">
+					<a class="btn" id="tool-resize-h" title="Full Width" ><em class="icon icon-resize-horizontal"></em> </a>
+					<a class="btn" id="tool-resize-v" title="Full Height" ><em class="icon icon-resize-vertical"></em> </a>
+					<a class="btn" id="tool-resize-f" title="Full Size" ><em class="icon icon-fullscreen"></em> </a>
+					<a class="btn" id="tool-resize-r" title="Restore" ><em class="icon icon-undo"></em> </a>
+				</div>
+				<label>Position</label>
+				<div class="tool-position text-center">
+					<a class="btn btn-mini" id="tool-align-tl" title="Top Left corner" ><em class="icon-2x icon-caret-left icon-rotate-45"></em></a>
+					<a class="btn btn-mini" id="tool-align-tt" title="Top border" ><em class="icon-2x icon-caret-up"></em></a>
+					<a class="btn btn-mini" id="tool-align-tr" title="Top Right corner" ><em class="icon-2x icon-caret-up icon-rotate-45"></em></a>
+					<br>
+					<a class="btn btn-mini" id="tool-align-ll" title="Left border" ><em class="icon-2x icon-caret-left"></em></a>
+					<a class="btn btn-mini" id="tool-align-cc" title="Slider center" ><em class="icon-circle"></em></a>
+					<a class="btn btn-mini" id="tool-align-rr" title="Right border" ><em class="icon-2x icon-caret-right"></em></a>
+					<br>
+					<a class="btn btn-mini" id="tool-align-bl" title="Bottom Left corner" ><em class="icon-2x icon-caret-down icon-rotate-45"></em></a>
+					<a class="btn btn-mini" id="tool-align-bb" title="Bottom border" ><em class="icon-2x icon-caret-down"></em></a>
+					<a class="btn btn-mini" id="tool-align-br" title="Bottom Right corner" ><em class="icon-2x icon-caret-right icon-rotate-45"></em></a>
+				</div>
+				<br>
+				<div class="text-center">
+					<a class="btn btn-mini" id="tool-align-vc" title="Vertical center" >V-Center</a>
+					<a class="btn btn-mini" id="tool-align-hc" title="Horizontal center " >H-Center</a>
+				</div>
+				<br />
+				<!--
+				<label>Arrangement</label>
+				<a class="btn btn-mini" id="tool-order-up" title="Bring forward" >Forward</a>
+				<a class="btn btn-mini" id="tool-order-down" title="Send backward" >Backward</a>
+				-->
+			</div>
+			
+			<!-- Generated Code Modal -->
+			<div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="mod-label" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h3 id="mod-label"><?php echo Mage::helper("ves_layerslider")->__("Layer Slider Markup");?></h3>
+				</div>
+				<div class="modal-body">
+					<p>
+						Paste this markup into your page
+					</p>
+					<pre class="prettyprint" id="generated-markup"></pre>
+					<p>
+						Minimun JavaScript required
+					</p>
+					<pre class="prettyprint" id="generated-js"></pre>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal">
+						Close
+					</button>
+					<button class="btn btn-info" id="format-markup">
+						Format
+					</button>
+				</div>
+			</div>
+			
+			
+			<!-- Preview Modal -->
+
+			<div id="prev-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="prev-mod-label" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h3 id="prev-mod-label"><?php echo Mage::helper("ves_layerslider")->__("Layer Slider Preview");?></h3>
+				</div>
+				<div class="modal-body" id="prev-container">
+				</div>
+			</div>
+
+
+			<!-- Import / Export Modal -->
+
+			<div id="ieport-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ieport-mod-label" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h3 id="ieport-mod-label">Import / Export</h3>
+				</div>
+				<div class="modal-body clearfix" id="ieport-container">
+					<!-- IMPORT AREA -->
+					<p>Paste here the exported string</p>
+					<textarea id="import-target" style="width: 90%;"></textarea>
+					<br />
+					<button class="btn btn-primary" id="do-import">Import</button> 
+					<span id="import-status"></span> 
+					<br />
+					<br />
+					<!-- EXPORT AREA -->
+					<p>Save this in a plain text file.</p>
+					<textarea id="export-target" class="uneditable-textarea" style="width: 90%;"></textarea>
+					<br />
+					<button class="btn btn-primary" id="do-export">Export</button>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal">
+						Close
+					</button>
+				</div>
+			</div>
+			
+		</div>
+
+		<!-- Table of elements -->
+		<div id="toe">
+
+			<div class="toe-data form-inline">
+
+				<fieldset class="preview-slider" data-title="Slider Preview">
+					<a href="#" class="btn btn-warning preview"><?php echo Mage::helper("ves_layerslider")->__("Preview");?></a>
+				</fieldset>
+				
+				<fieldset class="toe-data-in" data-title="animation-in">
+					<label for="in-at"> at <br>
+						<input id="in-at" type="number" placeholder="(ms)" class="input-mini" data-bind='at' data-trigger="focusout">
+					</label>
+
+					<label for="in-from"> from <br>
+						<select id="in-from" class="input-small effect-list" data-bind='from'></select>
+					</label>
+
+					<label for="in-use"> use <br>
+						<select id="in-use" class="input-small easing-list" data-bind='use'></select>
+					</label>
+
+					<label for="in-during"> during <br>
+						<input id="in-during" type="number" placeholder="(ms)" class="input-mini" data-bind='during' data-trigger="focusout">
+					</label>
+				</fieldset>
+				<fieldset class="toe-data-out" data-title="animation-out">
+					<label for="out-at"> at <br>
+						<input id="out-at" type="number" placeholder="(ms)" class="input-mini" data-bind='at' data-trigger="focusout">
+					</label>
+
+					<label for="out-to"> to <br>
+						<select id="out-to" class="input-small effect-list" data-bind='to'></select>
+					</label>
+
+					<label for="out-use"> use <br>
+						<select id="out-use" class="input-small easing-list" data-bind='use'></select>
+					</label>
+
+					<label for="out-during"> during <br>
+						<input id="out-during" type="number" placeholder="(ms)" class="input-mini" data-bind='during' data-trigger="focusout">
+					</label>
+					<label for="out-force"> force<br>
+						<input id="out-force" type="checkbox" data-bind="force" />
+					</label>
+				</fieldset>
+			</div>
+
+			<div class="toe-item">
+			<!--
+				<div class="toe-item-timeline">
+				
+						<a href="#" class="toe-item-action action-visibility"><em class="icon-eye-open"></em></a>
+						<a href="#" class="toe-item-action action-clone"><em class="icon-copy"></em></a>
+						<a href="#" class="toe-item-action action-remove"><em class="icon-remove"></em></a>
+						<div class="toe-item-type">
+							Image
+						</div>
+					    <div class="timeline-wrapper">
+					      <div class="timeline-slider"></div>
+					    </div>
+				
+				</div>
+			-->
+			</div>
+			
+	</div>
+</div>
+	<textarea name="slider_data" style="display:none" id="slider_json_data"><?php echo $params; ?></textarea>
+	<?php echo $this->getBlockHtml('formkey')?>
+	<div style="display:none"></div>
+</form>
+</div>
+<script type="text/javascript">
+    //<![CDATA[
+        openEditorPopup = function(url, name, specs, parent) {
+            if ((typeof popups == "undefined") || popups[name] == undefined || popups[name].closed) {
+                if (typeof popups == "undefined") {
+                    popups = new Array();
+                }
+                var opener = (parent != undefined ? parent : window);
+                popups[name] = opener.open(url, name, specs);
+            } else {
+                popups[name].focus();
+            }
+            return popups[name];
+        }
+
+        closeEditorPopup = function(name) {
+            if ((typeof popups != "undefined") && popups[name] != undefined && !popups[name].closed) {
+                popups[name].close();
+            }
+        }
+    //]]>
+</script>
+
+
+<?php echo $this->getChildHtml('form_after');?>
+
+<?php if ($this->hasFooterButtons()): ?>
+    <div class="content-footer">
+        <p class="form-buttons"><?php echo $this->getButtonsHtml('footer') ?></p>
+    </div>
+<?php endif; ?>
+<script type="text/javascript">
+    editForm = new varienForm('edit_form', '<?php echo $this->getValidationUrl() ?>');
+</script>
+<?php echo $this->getFormScripts() ?>
+
+<!-- Scripts
+================================================== -->
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/js/jquery.js"></script>
+<script type="text/javascript">
+	jQuery.noConflict();
+	if (Prototype.BrowserFeatures.ElementExtensions) {
+    var disablePrototypeJS = function (method, pluginsToDisable) {
+            var handler = function (event) {
+                event.target[method] = undefined;
+                setTimeout(function () {
+                    delete event.target[method];
+                }, 0);
+            };
+            pluginsToDisable.each(function (plugin) { 
+                jQuery(window).on(method + '.bs.' + plugin, handler);
+            });
+        },
+        pluginsToDisable = ['collapse', 'dropdown', 'modal', 'tooltip'];
+    disablePrototypeJS('show', pluginsToDisable);
+    disablePrototypeJS('hide', pluginsToDisable);
+}
+</script>
+
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/js/bootstrap.min.js"></script>
+<!-- Extra plugins -->
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/js/dragslider.js"></script>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/js/style-html.min.js"></script>
+
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/js/jquery.easing.1.3.min.js"></script>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/js/jquery.lush.min.js"></script>
+<!-- Layer Slider Scripts -->
+
+<!-- Layer Builder Scripts -->
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>ves_layerslider/lush/builder/js/lush.builder.min.js"></script>
+
+<script type="text/javascript">
+jQuery('#myTab a').click(function (e) {
+  e.preventDefault()
+  var tabid = jQuery(this).attr("href");
+  if(jQuery(tabid).length > 0){
+  	jQuery(".mytab").hide();
+  	jQuery(tabid).show();
+  }
+})
+/*
+jQuery('.preview').click(function (e) {
+	e.preventDefault();
+	jQuery('#dialog').remove();
+	jQuery('#anchor-content').prepend('<div id="dialog" style="padding: 3px 0px 0px 0px;"><iframe src="<?php echo $this->getPreviewUrl($id);?>" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div>');
+		 
+	jQuery('#dialog').dialog({
+			title: '<?php echo Mage::helper("ves_layerslider")->__("Slider Preview");?>',
+			close: function (event, ui) {
+
+			},	
+			bgiframe: false,
+			width: 1145,
+			height: 500,
+			resizable: false,
+			modal: false
+	});  
+	return false; 
+})
+*/
+</script>

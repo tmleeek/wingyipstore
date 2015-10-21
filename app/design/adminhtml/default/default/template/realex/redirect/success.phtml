@@ -1,0 +1,9 @@
+<?php
+
+	$block = Mage::app()->getLayout()->createBlock('cms/block')->setBlockId('realex_success');	
+
+	$html = Mage::helper('realex')->getCustomerMessage($block, Mage::getModel('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId()), Mage::getModel('realex/realex')->getCollection()->addFieldToFilter('order_id', Mage::getSingleton('checkout/session')->getLastRealOrderId())->getFirstItem());
+
+	echo $html;
+	
+?>

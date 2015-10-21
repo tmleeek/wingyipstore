@@ -1,0 +1,23 @@
+<?php $_helper = $this->helper('recipe'); ?>  
+<?php $_recipe = $this->getRecipe(); ?>   
+<?php $ratingaggregrate=$this->getRating();?>
+<?php $ratingcount=$this->getRatingCount();?>
+
+<?php if($ratingcount):?>
+ <div class="ratings">
+    <div class="rating-box">
+        <div style="width:<?php echo $ratingaggregrate;?>%" class="rating"></div>
+    </div>
+    
+    <p class="rating-links">
+    	<a href="<?php echo $this->getRatingUrl();?>"><?php echo $ratingcount;?> Review(s)</a>
+   	 <span class="separator">|</span>
+   	 <a  href="<?php echo $this->getRatingUrl();?>#review-form"><?php echo $this->__('Add Your Review');?></a>
+      <?php /*?><a onclick="return clickTab('#tab-reviews')" href="<?php echo $this->getRatingUrl();?>#review-form">Add Your Review</a><?php */?>
+    </p>
+</div>
+<?php else:?>
+<div class="ratings">
+<a  href="<?php echo $this->getRatingUrl();?>#review-form"><?php echo $this->__('Be the First Review');?></a>
+</div>
+<?php endif;?>

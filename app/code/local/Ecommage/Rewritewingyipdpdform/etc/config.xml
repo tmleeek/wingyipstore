@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecommage_Rewritewingyipdpdform>
+            <version>0.1.0</version>
+        </Ecommage_Rewritewingyipdpdform>
+    </modules>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <ecommage_rewritewingyipdpdform before="Mage_Adminhtml">Ecommage_Rewritewingyipdpdform_Adminhtml</ecommage_rewritewingyipdpdform>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <global>
+
+    </global>
+</config>

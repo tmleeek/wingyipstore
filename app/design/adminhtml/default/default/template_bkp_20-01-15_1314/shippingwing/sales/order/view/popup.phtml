@@ -1,0 +1,45 @@
+<?php echo $this->getFormInitScripts() ?>
+<script type="text/javascript">
+//var forwardMail = new varienForm('forwardform'); 
+    function openMyPopup() {
+        //var mailType = $('mailtype').value;
+        <?php //$mailtype = '.'+mailType+'.' ?>;
+        //var baseurl = "<?php //echo $this->getUrl('orderstatus/adminhtml_order/popupform'); ?>";
+        var url = "<?php echo $this->getUrl('shipping/adminhtml_order/generateLabel'); ?>";
+        //var url = baseurl+'mailtype/'+mailType+'/order_id/'+'<?php echo $this->getRequest()->getParam('order_id'); ?>';
+        if ($('browser_window') && typeof(Windows) != 'undefined') {
+            Windows.focus('browser_window');
+            return;
+        }
+        
+        var params ={
+         // id : mailType,  
+        } 
+        var dialogWindow = Dialog.info(null, {
+            closable:true,
+            resizable:true,
+            draggable:false,
+            className:'magento',
+            windowClassName:'popup-window',
+            title:'Forward Email',
+            top:50,
+            width:950,
+            height:750,
+            zIndex:1000,
+            recenterAuto:false,
+            hideEffect:Element.hide,
+            showEffect:Element.show,
+            id:'browser_window',
+            url:url,
+            onClose:function (param, el) {
+               // alert('onClose');
+            },
+        });
+    }
+    function closePopup() {
+        Windows.close('browser_window');
+    }
+</script>
+
+
+<?php echo $this->getFormScripts() ?>

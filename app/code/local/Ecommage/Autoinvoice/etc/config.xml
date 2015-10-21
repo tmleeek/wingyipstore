@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ecommage_Autoinvoice>
+            <version>0.1.0</version>
+        </Ecommage_Autoinvoice>
+    </modules>
+    <global>
+        <helpers>
+            <ecommage_autoinvoice>
+                <class>Ecommage_Autoinvoice_Helper</class>
+            </ecommage_autoinvoice>
+        </helpers>
+        <models>
+            <autoinvoice>
+                <class>Ecommage_Autoinvoice_Model</class>
+            </autoinvoice>
+        </models>
+    </global>
+    <adminhtml>
+        <events>
+            <sales_order_save_after>
+                <observers>
+                    <ecommage_autoinvoice>
+                        <class>Ecommage_Autoinvoice_Model_Observer</class>
+                        <method>autoInvoiceCreateOrder</method>
+                    </ecommage_autoinvoice>
+                </observers>
+            </sales_order_save_after>
+
+            <sales_order_status_before>
+                <observers>
+                    <ecommage_autoinvoice>
+                        <class>Ecommage_Autoinvoice_Model_Observer</class>
+                        <method>setStatus</method>
+                    </ecommage_autoinvoice>
+                </observers>
+            </sales_order_status_before>
+        </events>
+    </adminhtml>
+</config>

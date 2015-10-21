@@ -1,0 +1,81 @@
+<!--<script>
+
+function SubmitCreateForm()
+{
+	//check if msg is filled
+	/*if (document.getElementById('description').value == '')	
+		alert('<?php //echo $this->__('Please fill description field'); ?>');
+	else*/
+		document.getElementById('form_create').submit();
+}
+
+</script> -->
+
+<form id="form_create" name="form_create" method="POST" action="<?php echo $this->getSubmitUrl(); ?>">
+
+<div class="page-title">
+    <h1><?php echo $this->__('Request for a new quotation') ?></h1>
+</div>
+<div class="quote-banner">
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('requestquotetext')->toHtml();?>
+</div>
+
+<div class="quotations-rightside-block">
+    <h2><?php echo $this->__('1. Select products from your cart') ?></h2>
+    <p>&nbsp;</p>
+	<table cellspacing="0" class="data-table" id="quotation-request-products">
+<thead>
+        <tr>
+            <th><?php echo $this->__('Product') ?></th>
+            <th width="100"><?php echo $this->__('Qty') ?></th>
+        </tr>
+</thead>
+<tbody>
+	<?php foreach($this->getCartProducts() as $item): ?>
+		<?php if (($item->getProduct()->gettype_id() == 'simple') || ($item->getProduct()->gettype_id() == 'virtual') || ($item->getProduct()->gettype_id() == 'downloadable')): ?>
+            <tr>
+                <td>
+                	<a href="<?php echo $item->getProduct()->getProductUrl(); ?>"><?php echo $item->getName(); ?></a>
+                	<?php echo $this->getProductOptions($item); ?>
+                </td>
+                <td width="100"><input size="5" type="text" name="qty_<?php echo $item->getProduct()->getId(); ?>" id="qty_<?php echo $item->getProduct()->getId(); ?>" value="<?php echo $this->getItemQty($item); ?>"></td>
+            </tr>
+        <?php endif; ?>
+	<?php endforeach; ?>
+</tbody>
+</table>
+
+	<div>
+		<h2><?php echo $this->__('2. Select Shipping Address') ?><em>*</em></h2>    	
+        <div>
+        	<select name="address_id" class="input-text form-control required-entry">
+        	    <?php foreach (Mage::getSingleton('customer/session')->getCustomer()->getAddresses() as $address) :?>
+                    <option value="<?php echo $address->getId();?>"><?php echo $address->format('oneline');?></option>
+                <?php endforeach;?>
+            </select>
+        </div>
+    </div>
+<?php /*?><p>&nbsp;</p>
+
+<h2><?php echo $this->__('2. Type your message') ?></h2>
+
+<p>&nbsp;</p>
+
+<center>
+<textarea cols="110" rows="10" id="description" name="description"></textarea>
+</center><?php */?>
+
+<p>&nbsp;</p>
+
+<h2><?php echo $this->__('3. Send us your inquiry') ?></h2>
+
+
+<p><button type="submit" title="Save" class="button right-side-button"><span><span><?php echo $this->__('Send Inquiry') ?></span></span></button></p>
+
+</div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var createForm = new VarienForm('form_create');
+//]]>
+</script>

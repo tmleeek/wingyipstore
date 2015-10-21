@@ -1,0 +1,24 @@
+<?xml version="1.0"?> 
+<layout>
+<shipping_adminhtml_order_dpd>
+        <reference name="content">            
+                <block type="core/template" name="form" template="shippingwing/dpd/create/form.phtml"/>                 
+        </reference>
+</shipping_adminhtml_order_dpd>		
+<shipping_adminhtml_order_generatelabel>
+	<remove name="head"/>
+	<remove name="footer"/>	
+	<remove name="js"/>	
+	<remove name="profiler"/>	
+	<remove name="before_body_end"/>
+	
+	<reference name="root">
+		<action method="setTemplate"><template>popup.phtml</template></action>
+	</reference>   
+	<reference name="content">
+		<block type="shipping/adminhtml_shippinglabel" name="dpd.label" template="shippingwing/dpd/shippinglabel.phtml"/>
+	</reference>
+</shipping_adminhtml_order_generatelabel>	
+
+	 
+</layout>

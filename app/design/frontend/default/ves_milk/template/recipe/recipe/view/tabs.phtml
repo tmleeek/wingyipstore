@@ -1,0 +1,47 @@
+<?php $_helper = $this->helper('recipe'); ?>  
+<?php $_recipe = $this->getRecipe(); ?>    
+
+
+<div id="tabs" class="htabs clearfix">
+    <div class="tab-desc"><a href="#tab-description" class="description selected"><?php echo $this->__('Cooking method');?></a></div>
+    <div class="tab-desc"><a href="#tab-ingredients" class="ingredients selected"><?php echo $this->__('Ingredients');?></a></div>
+</div>
+<div class="tab-content box-description" id="tab-description" style="display: block;">        
+    <div>
+        <?php echo $_recipe->getDescription() ?>        
+    </div>
+    <br class="clear clr">
+</div>
+<div class="tab-content box-ingredients clearfix" id="tab-ingredients" style="display: block;">        
+    <div>
+        <?php /* ?>
+        <?php $ingredients = $this->getIngredients($_recipe); ?>
+        <?php if($ingredients->count() > 0): ?>
+        <div class="ingredients col-xs-12 col-md-4 col-sm-6">
+            <h4><?php echo $this->__('Ingredients') ?></h4>
+            <ul>
+            <?php foreach($ingredients as $_ingredient): ?>
+                 <li><?php echo $_ingredient->getName() ?></li>
+            <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif ?>  
+        
+        <?php $cupboardIngredients = $this->getCupboardIngredients($_recipe); ?>
+        <?php if($cupboardIngredients->count() > 0): ?>
+        <div class="cupboard_ingredients col-xs-12 col-md-4 col-sm-6">
+            <h4><?php echo $this->__('Cupboard Ingredients') ?></h4>
+            <ul>
+            <?php foreach($cupboardIngredients as $_cupboard): ?>
+                 <li><?php echo $_cupboard->getName() ?></li>
+            <?php endforeach; ?>
+            </ul>
+        </div>
+        <?php endif ?>  
+        <?php */ ?>
+        <?php echo $_recipe->getIngredientsDescription() ?>
+        
+    </div>
+    <br class="clear clr">
+     <div class="clearer"></div>
+</div>

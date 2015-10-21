@@ -1,0 +1,66 @@
+<?php $associatedProducts = $this->getCollection() ?>
+<?php $isAvilable = false?>
+<?php if($associatedProducts->count()): ?>
+<div class="block block-associated">
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Associated Products') ?></span></strong>
+    </div>
+    <div class="block-content">
+        <p id="setlect-all-text" class="block-subtitle"><?php echo $this->__('Check items to add to the cart or') ?>&nbsp;<a href="#" onclick="selectAllRelated(this); return false;"><?php echo $this->__('select all') ?></a></p>
+        <form action="<?php echo $this->getUrl('recipe/cart/addmultiple'); ?>" method="post" id="products_addtocart_form" enctype="multipart/form-data">
+        <ol class="mini-products-list" id="block-associated">
+        <?php foreach($associatedProducts as $_item): ?> 
+            <li class="item">
+                <div class="product">
+                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(50) ?>" width="50" height="50" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" /></a>
+                    <div class="product-details">
+                        <p class="product-name"><a href="<?php echo $_item->getProductUrl() ?>"><?php echo $this->escapeHtml($_item->getName()) ?></a></p>
+                        <?php echo $this->getPriceHtml($_item, true, '-associated') ?>
+                    </div>
+                     <?php if(!$_item->isComposite() && $_item->isSaleable()): ?> 
+                        <?php if (!$_item->getRequiredOptions()): ?> 
+                        <input type="checkbox" class="checkbox products-checkbox" id="products<?php echo $_item->getId() ?>" name="products[]" value="<?php echo $_item->getId() ?>" checked="checked" />
+                        <?php $isAvilable = true ?>
+                        <label for="qty"><?php echo $this->__('Qty') ?>:</label>
+                        <input type="text" name="qty<?php echo $_item->getId(); ?>" id="qty<?php echo $_item->getId(); ?>" maxlength="12" value="<?php echo ($_item->getQty()?$_item->getQty():1) ?>" />
+                        <?php endif; ?>
+                    <?php endif ?>
+                </div>
+            </li>
+        <?php endforeach ?>
+        </ol>
+        <?php if($isAvilable): ?>
+        <button onclick="this.form.submit()" type="button"><span><span><span><?php echo $this->__('Add to Cart') ?></span></span></span></button>
+        <?php else: ?>
+        <script type="text/javascript">Event.observe(window,'load',function(){$('setlect-all-text').hide()});</script>
+        <?php endif ?>
+        
+        </form>
+        <script type="text/javascript">decorateList('block-associated', 'none-recursive')</script>
+    </div>
+    <script type="text/javascript">
+    //<![CDATA[
+    var productsCheckFlag = false;
+    function selectAllRelated(txt){
+        if (productsCheckFlag == false) {
+            $$('.products-checkbox').each(function(elem){
+                elem.checked = true;
+            });
+            productsCheckFlag = true;
+            txt.innerHTML="<?php echo $this->__('unselect all') ?>";
+        } else {
+            $$('.products-checkbox').each(function(elem){
+                elem.checked = false;
+            });
+            productsCheckFlag = false;
+            txt.innerHTML="<?php echo $this->__('select all') ?>";
+        }
+    }
+    //]]>
+    </script>
+</div>
+<?php endif ?>
+
+
+
+

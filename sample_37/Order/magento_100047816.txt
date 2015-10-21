@@ -1,0 +1,89 @@
+[customerdetails]
+Title=
+Firstname=antony
+Surname=ritson (customer)
+Address1=375 Nechells Park Road
+Address2=Nechells
+Address3=
+Fax=
+Town=Birmingham
+Postcode=B7 5NT
+County=West Midlands
+Country=GB
+Email=emailritson@gmail.com
+Telephone=1234556777
+Mobilenumber=0
+Customerref=53177
+Webref=48192
+Orderdate=23122014
+Ordertime=094556
+Ipaddress=82.153.53.242
+Deliveryoption=Shipping Option - UPS Access Point-UPS
+Recipenewsletter=n
+Keepdetailsonfile=n
+
+
+[deliverydetails]
+locno=79
+accountno=888
+contactname=antony ritson (customer)
+Address1=154, Bristol Street GULF GARAGE
+Address2=
+Address3=
+Fax=
+Town=Birmingham
+Postcode=B5 7AP
+County=West Midlands
+Country=GB
+Telephone=1234556777
+Mobilenumber=0
+Email=emailritson@gmail.com
+
+
+[orderdetails]
+Orderlines=2
+Numspecialinstructionlines=
+Specialinstructionsline1=
+goodssubtotalexvat=2.49
+goodssubtotalvat=0.50
+carriagesubtotal=4.99
+grossordervalue=7.98
+
+
+
+[orderline1]
+Productcode=055038
+Recipeindicator=0
+Recipetitle=
+Productdescription=A0006 Yude Azuki Sk Red Beans
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=2.49
+Discountcodes=na
+Qtyordered=1
+Qtysupplied=1
+Sellunit=1
+Linecost=2.49
+vatcode=1 
+vatamount=0
+
+[orderline2]
+Productcode=398305
+Recipeindicator=0
+Recipetitle=
+Productdescription=Shipping Option - UPS Access Point-UPS
+maxpacksize=1
+minpacksize=1
+maxpackcost=1
+minpackcost=0
+Unitcost=4.99
+Discountcodes=na
+Qtyordered=1
+Qtysupplied=1
+Sellunit=1
+Linecost=4.99
+vatcode=3
+vatamount=0.00
+[END]

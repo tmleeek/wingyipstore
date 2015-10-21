@@ -1,0 +1,21 @@
+<?php $rad = rand();?>
+<div class="ves-gallery vesclear">
+	<?php if( $this->getConfig("title","") ): ?>
+	<h4><?php echo $this->__( $this->getConfig("title","") );?></h4>
+	<?php endif; ?>
+	<div class="gallery-wrapper">
+		<ul>
+		<?php foreach( $images as $i => $image) :   ?>
+			<li><div><a class="group1<?php echo $rad;?>" href="<?php echo $image->imageURL;?>" title="<?php echo  $image->filename; ?>">
+				<img src="<?php echo $image->thumbnailURL;?>" title="<?php echo $image->filename;?>"/>
+				</a></div>
+			</li>
+		<?php endforeach;?>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function( $ ){
+	$(".group1<?php echo $rad;?>").colorbox({rel:'group1'});
+});
+</script>

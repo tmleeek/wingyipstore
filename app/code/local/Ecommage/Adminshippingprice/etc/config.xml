@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Ecommage_Adminshippingprice>
+      <version>0.1.0</version>
+    </Ecommage_Adminshippingprice>
+  </modules>
+  <global>
+    <helpers>
+      <adminshippingprice>
+        <class>Ecommage_Adminshippingprice_Helper</class>
+      </adminshippingprice>
+    </helpers>
+	<models>
+	  <adminshippingprice>
+		<class>Ecommage_Adminshippingprice_Model</class>
+		<resourceModel>adminshippingprice_mysql4</resourceModel>
+	  </adminshippingprice>
+	</models>
+  </global>    
+	<default>
+        <carriers>
+            <large_order_shipping>
+                <active>1</active>
+                <model>adminshippingprice/carrier_largeOrderShipping</model>
+                <title>Shipping Quote</title>
+            </large_order_shipping>
+        </carriers>
+    </default>
+</config> 

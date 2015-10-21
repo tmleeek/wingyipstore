@@ -1,0 +1,857 @@
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 2 days"
+</IfModule>
+## EXPIRES CACHING ##
+
+#Gzip
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+#AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+
+
+</ifmodule>
+#End Gzip
+
+<ifModule mod_gzip.c>
+  mod_gzip_on Yes
+  mod_gzip_dechunk Yes
+  mod_gzip_item_include file \.(html?|txt|css|js|php|pl)$
+  mod_gzip_item_include handler ^cgi-script$
+  mod_gzip_item_include mime ^text/.*
+  mod_gzip_item_include mime ^application/x-javascript.*
+  mod_gzip_item_exclude mime ^image/.*
+  mod_gzip_item_exclude rspheader ^Content-Encoding:.*gzip.*
+</ifModule>
+
+############################################
+## uncomment these lines for CGI mode
+## make sure to specify the correct cgi php binary file name
+## it might be /cgi-bin/php-cgi
+
+#    Action php5-cgi /cgi-bin/php5-cgi
+#    AddHandler php5-cgi .php
+
+############################################
+## GoDaddy specific options
+
+#   Options -MultiViews
+
+## you might also need to add this line to php.ini
+##     cgi.fix_pathinfo = 1
+## if it still doesn't work, rename php.ini to php5.ini
+
+############################################
+## this line is specific for 1and1 hosting
+
+    #AddType x-mapp-php5 .php
+    #AddHandler x-mapp-php5 .php
+
+############################################
+## default index file
+
+    DirectoryIndex index.php
+
+<IfModule mod_php5.c>
+
+############################################
+## adjust memory limit
+
+    php_value memory_limit 2048M
+    php_value max_execution_time 18000
+
+############################################
+## disable magic quotes for php request vars
+
+    php_flag magic_quotes_gpc off
+
+############################################
+## disable automatic session start
+## before autoload was initialized
+
+    php_flag session.auto_start off
+
+############################################
+## enable resulting html compression
+
+    #php_flag zlib.output_compression on
+
+###########################################
+# disable user agent verification to not break multiple image upload
+
+    php_flag suhosin.session.cryptua off
+
+###########################################
+# turn off compatibility with PHP4 when dealing with objects
+
+    php_flag zend.ze1_compatibility_mode Off
+
+</IfModule>
+
+<IfModule mod_security.c>
+###########################################
+# disable POST processing to not break multiple image upload
+
+    SecFilterEngine Off
+    SecFilterScanPOST Off
+</IfModule>
+
+<IfModule mod_deflate.c>
+
+############################################
+## enable apache served files compression
+## http://developer.yahoo.com/performance/rules.html#gzip
+
+    # Insert filter on all content
+    ###SetOutputFilter DEFLATE
+    # Insert filter on selected content types only
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+
+    # Netscape 4.x has some problems...
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+
+    # Netscape 4.06-4.08 have some more problems
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+
+    # MSIE masquerades as Netscape, but it is fine
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+    # Don't compress images
+    SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+
+    # Make sure proxies don't deliver the wrong content
+    Header append Vary User-Agent env=!dont-vary
+
+</IfModule>
+
+<IfModule mod_ssl.c>
+
+############################################
+## make HTTPS env vars available for CGI mode
+
+    SSLOptions StdEnvVars
+
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+############################################
+## enable rewrites
+
+    Options +FollowSymLinks
+    RewriteEngine on
+
+    RewriteCond %{SERVER_PORT} 80 
+    RewriteRule ^(.*)$ https://www.wingyipstore.co.uk/$1 [R,L]
+	redirect /t-privacy.aspx/ https://www.wingyipstore.co.uk/privacy-policy/
+	#Rewriterule ^t-privacy.aspx(.*)$ https://www.wingyipstore.co.uk/privacy-policy$1 [r=301,nc]
+    
+    Redirect 301 /signin.aspx https://www.wingyipstore.co.uk/customer/account/login/
+    Redirect 301 /t-about.aspx https://www.wingyipstore.co.uk/about-us
+    Redirect 301 /t-shipping.aspx https://www.wingyipstore.co.uk/delivery-information
+    Redirect 301 /t-termsandconditions.aspx https://www.wingyipstore.co.uk/terms-and-conditions
+    Redirect 301 /t-faq.aspx https://www.wingyipstore.co.uk/customer-service
+    Redirect 301 /t-recipes.aspx https://www.wingyipstore.co.uk/recipes
+    Redirect 301 /t-contact.aspx https://www.wingyipstore.co.uk/contacts
+    Redirect 301 /sitemap2.aspx https://www.wingyipstore.co.uk/catalog/seo_sitemap/category
+    Redirect 301 /c-1-sauces-pastes.aspx https://www.wingyipstore.co.uk/sauces-pastes.html
+    Redirect 301 /c-13-stir-fry-sauces.aspx https://www.wingyipstore.co.uk/sauces-pastes/stir-fry-sauces.html
+    Redirect 301 /c-12-soya-sauces.aspx https://www.wingyipstore.co.uk/sauces-pastes/soya-sauces.html
+    Redirect 301 /c-11-ingredient-sauces.aspx https://www.wingyipstore.co.uk/sauces-pastes/ingredient-sauces.html
+    Redirect 301 /c-10-dipping-sauces.aspx https://www.wingyipstore.co.uk/sauces-pastes/dipping-sauces.html
+    Redirect 301 /c-9-curry-sauces-pastes.aspx https://www.wingyipstore.co.uk/sauces-pastes/curry-sauces-pastes.html
+    Redirect 301 /c-3-soup-snacks-nuts.aspx https://www.wingyipstore.co.uk/soup-snacks-nuts.html
+    Redirect 301 /c-24-soup-mixes.aspx https://www.wingyipstore.co.uk/soup-snacks-nuts/soup-mixes.html
+    Redirect 301 /c-23-snacks-sweet.aspx https://www.wingyipstore.co.uk/soup-snacks-nuts/snacks-sweet.html
+    Redirect 301 /c-22-snacks-savoury.aspx https://www.wingyipstore.co.uk/soup-snacks-nuts/snacks-savoury.html
+    Redirect 301 /c-21-nuts-seeds.aspx https://www.wingyipstore.co.uk/soup-snacks-nuts/nuts-seeds.html
+    Redirect 301 /c-4-oils-vinegars.aspx https://www.wingyipstore.co.uk/oils-vinegars.html
+    Redirect 301 /c-26-vinegars.aspx https://www.wingyipstore.co.uk/oils-vinegars/vinegars.html
+    Redirect 301 /c-27-oils.aspx https://www.wingyipstore.co.uk/oils-vinegars/oils.html
+    Redirect 301 /c-6-noodles-rice-flour.aspx https://www.wingyipstore.co.uk/noodles-rice-flour.html
+    Redirect 301 /c-64-flour-and-flour-products.aspx https://www.wingyipstore.co.uk/noodles-rice-flour/flour-and-flour-products.html
+    Redirect 301 /c-34-noodles.aspx https://www.wingyipstore.co.uk/noodles-rice-flour/noodles.html
+    Redirect 301 /c-36-rice-rice-products.aspx https://www.wingyipstore.co.uk/noodles-rice-flour/rice-rice-products.html
+    Redirect 301 /c-35-noodles-instant.aspx https://www.wingyipstore.co.uk/noodles-rice-flour/noodles-instant.html
+    Redirect 301 /c-60-tinned-preserved.aspx https://www.wingyipstore.co.uk/tinned-preserved.html
+    Redirect 301 /c-66-beans.aspx https://www.wingyipstore.co.uk/tinned-preserved/beans.html
+    Redirect 301 /c-75-meat-seafood.aspx https://www.wingyipstore.co.uk/tinned-preserved/meat-seafood.html
+    Redirect 301 /c-69-seaweed-mushroom-fungus.aspx https://www.wingyipstore.co.uk/tinned-preserved/seaweed-mushroom-fungus.html
+    Redirect 301 /c-68-tofu-beancurd-products.aspx https://www.wingyipstore.co.uk/tinned-preserved/tofu-beancurd-products.html
+    Redirect 301 /c-61-vegetables-and-fruit.aspx https://www.wingyipstore.co.uk/tinned-preserved/vegetables-and-fruit.html
+    Redirect 301 /c-58-ingredients-seasonings.aspx https://www.wingyipstore.co.uk/ingredients-seasonings.html
+    Redirect 301 /c-59-seasonings.aspx https://www.wingyipstore.co.uk/ingredients-seasonings/seasonings.html
+    Redirect 301 /c-63-pickles.aspx https://www.wingyipstore.co.uk/ingredients-seasonings/pickles.html
+    Redirect 301 /c-73-coconut.aspx https://www.wingyipstore.co.uk/ingredients-seasonings/coconut.html
+    Redirect 301 /c-72-spices-spice-mixes.aspx https://www.wingyipstore.co.uk/ingredients-seasonings/spices-spice-mixes.html
+    Redirect 301 /c-71-chilli-products.aspx https://www.wingyipstore.co.uk/ingredients-seasonings/chilli-products.html
+    Redirect 301 /c-70-herbs.aspx https://www.wingyipstore.co.uk/ingredients-seasonings/herbs.html
+    Redirect 301 /c-67-sugar.aspx https://www.wingyipstore.co.uk/ingredients-seasonings/sugar.html
+    Redirect 301 /c-55-beer-wine-beverages.aspx https://www.wingyipstore.co.uk/beer-wine-beverages.html
+    Redirect 301 /c-62-teas.aspx https://www.wingyipstore.co.uk/beer-wine-beverages/teas.html
+    Redirect 301 /c-65-beverages.aspx https://www.wingyipstore.co.uk/beer-wine-beverages/beverages.html
+    Redirect 301 /c-74-beers.aspx https://www.wingyipstore.co.uk/beer-wine-beverages/beers.html
+    Redirect 301 /c-57-wines-cooking.aspx https://www.wingyipstore.co.uk/beer-wine-beverages/wines-cooking.html
+    Redirect 301 /c-56-wines-sake.aspx https://www.wingyipstore.co.uk/beer-wine-beverages/wines-sake.html
+    Redirect 301 /c-8-kitchen-non-food.aspx https://www.wingyipstore.co.uk/kitchen-non-food.html
+    Redirect 301 /c-122-online-gift-card.aspx https://www.wingyipstore.co.uk/kitchen-non-food/online-gift-card.html
+    Redirect 301 /c-83-misc-non-food.aspx https://www.wingyipstore.co.uk/kitchen-non-food/misc-non-food.html
+    Redirect 301 /c-81-gifts.aspx https://www.wingyipstore.co.uk/kitchen-non-food/gifts.html
+    Redirect 301 /c-46-woks-accessories.aspx https://www.wingyipstore.co.uk/kitchen-non-food/woks-accessories.html
+    Redirect 301 /c-45-tableware.aspx https://www.wingyipstore.co.uk/kitchen-non-food/tableware.html
+    Redirect 301 /c-44-steamers-rice-cookers-food-warmers.aspx https://www.wingyipstore.co.uk/kitchen-non-food/steamers-rice-cookers-food-warmers.html
+    Redirect 301 /c-43-disposables.aspx https://www.wingyipstore.co.uk/kitchen-non-food/disposables.html
+    Redirect 301 /c-42-cookery-books.aspx https://www.wingyipstore.co.uk/kitchen-non-food/cookery-books.html
+    Redirect 301 /p-1076-recipe-crispy-aromatic-duck.aspx https://www.wingyipstore.co.uk/recipes/recipe-crispy-aromatic-duck.html
+    Redirect 301 /p-8145-colmans-ok-fruity-sauce.aspx https://www.wingyipstore.co.uk/colman-s-ok-fruity-sauce-335g.html
+    Redirect 301 /p-1159-recipe-beef-hor-fun.aspx https://www.wingyipstore.co.uk/recipes/recipe-beef-hor-fan.html
+    Redirect 301 /p-1080-recipe-salt-and-pepper-ribs.aspx https://www.wingyipstore.co.uk/recipes/recipe-salt-and-pepper-ribs.html
+    Redirect 301 /p-11431-recipe-pork-yuk-sung.aspx https://www.wingyipstore.co.uk/recipes/recipe-pork-yuk-sung.html
+    Redirect 301 /p-1091-recipe-chinese-curry.aspx https://www.wingyipstore.co.uk/recipes/recipe-chinese-curry.html
+    Redirect 301 /p-10452-wing-yip-yellow-bean-sauce.aspx https://www.wingyipstore.co.uk/wing-yip-yellow-bean-sauce-185ml.html
+    Redirect 301 /p-9462-wings-prawn-crackers-2kg.aspx https://www.wingyipstore.co.uk/wing-s-prawn-crackers-2kg-2kg.html
+    Redirect 301 /p-8889-jeenys-shrimp-paste-belachan.aspx https://www.wingyipstore.co.uk/jeeny-s-shrimp-paste-belachan-250g.html
+    Redirect 301 /p-1112-recipe-udon-noodles-with-tempura-prawns.aspx https://www.wingyipstore.co.uk/recipes/recipe-udon-noodles-with-tempura-prawns.html
+    Redirect 301 /p-6-recipe-hoisin-duck-wraps.aspx https://www.wingyipstore.co.uk/recipes/recipe-hoisin-duck-wraps.html
+    Redirect 301 /p-10758-dried-chrysanthemum-tea-eb.aspx https://www.wingyipstore.co.uk/dried-chrysanthemum-tea-e-b-100g.html
+    Redirect 301 /p-9247-maysan-curry-paste-original.aspx https://www.wingyipstore.co.uk/maysan-curry-paste-original-448g.html
+    Redirect 301 /p-9078-lkk-premium-oyster-sauce.aspx https://www.wingyipstore.co.uk/lkk-premium-oyster-sauce-510g.html
+    Redirect 301 /p-8892-jimmys-sate-satay-sauce.aspx https://www.wingyipstore.co.uk/jimmy-s-sate-satay-sauce-360g.html
+    Redirect 301 /p-9185-mae-ploy-green-curry-paste.aspx https://www.wingyipstore.co.uk/mae-ploy-green-curry-paste-1kg.html
+    Redirect 301 /p-9045-lion-skyflakes-crackers.aspx https://www.wingyipstore.co.uk/lion-skyflakes-crackers-850g.html
+    Redirect 301 /p-10535-rick-stein-far-eastern-odyssey.aspx https://www.wingyipstore.co.uk/rick-stein-far-eastern-odyssey-copy.html
+    Redirect 301 /p-1121-recipe-thai-spicy-sweetcorn-fritters.aspx https://www.wingyipstore.co.uk/recipes/recipe-thai-spicy-sweetcorn-fritters.html
+    Redirect 301 /p-9394-nissin-instant-seafood-spicy-cup.aspx https://www.wingyipstore.co.uk/nissin-instant-seafood-spicy-cup-73g.html
+    Redirect 301 /c-44-steamers-rice-cookers-food-warmers.aspx https://www.wingyipstore.co.uk/kitchen-non-food/steamers-rice-cookers-food-warmers.html
+    Redirect 301 /p-11093-recipe-plain-noodles-in-oyster-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-plain-noodles-in-oyster-sauce.html
+    Redirect 301 /p-8948-knorr-chicken-powder.aspx https://www.wingyipstore.co.uk/knorr-chicken-powder-900g.html
+    Redirect 301 /p-7897-bolsts-curry-powder-hot-tin.aspx https://www.wingyipstore.co.uk/bolsts-curry-powder-hot-tin-425g.html
+    Redirect 301 /p-1147-recipe-prawn-toasts.aspx https://www.wingyipstore.co.uk/recipes/recipe-prawn-toasts.html
+    Redirect 301 /p-1059-recipe-crispy-seaweed-with-toasted-sesame-seeds.aspx https://www.wingyipstore.co.uk/recipes/recipe-crispy-seaweed-with-toasted-sesame-seeds.html
+    Redirect 301 /p-1157-recipe-beef-in-black-bean-sauce-on-flat-rice-noodles.aspx https://www.wingyipstore.co.uk/recipes/recipe-beef-in-black-bean-sauce-on-flat-rice-noodles.html
+    Redirect 301 /p-8535-f1043-sb-golden-curry-mild-hot.aspx https://www.wingyipstore.co.uk/f1043-s-b-golden-curry-mild-hot-240g.html
+    Redirect 301 /p-8738-hammonds-brown-chop-sauce.aspx https://www.wingyipstore.co.uk/hammonds-brown-chop-sauce-4-3kg.html
+    Redirect 301 /p-7718-amoy-crushed-yellow-bean-sauce-tin.aspx https://www.wingyipstore.co.uk/amoy-crushed-yellow-bean-sauce-tin-450g.html
+    Redirect 301 /p-1149-recipe-crispy-prawn-fritters.aspx https://www.wingyipstore.co.uk/recipes/recipe-crispy-prawn-fritters.html
+    Redirect 301 /p-9766-rolin-lotus-seed-paste.aspx https://www.wingyipstore.co.uk/rolin-lotus-seed-paste-510g.html
+    Redirect 301 /p-10086-teans-curry-laksa-paste-packet.aspx https://www.wingyipstore.co.uk/teans-curry-laksa-paste-packet-200g.html
+    Redirect 301 /p-10406-wing-yip-chinese-cooking-wine-white.aspx https://www.wingyipstore.co.uk/wing-yip-chinese-cooking-wine-white-350ml.html
+    Redirect 301 /p-9189-mae-pranom-dipping-for-chicken.aspx https://www.wingyipstore.co.uk/mae-pranom-dipping-for-chicken-980g.html
+    Redirect 301 /p-7667-abc-kecap-manis-sweet-soy-sauce.aspx https://www.wingyipstore.co.uk/abc-kecap-manis-sweet-soy-sauce-620ml.html
+    Redirect 301 /p-9023-leslie-cheezy-corn-crunch.aspx https://www.wingyipstore.co.uk/leslie-cheezy-corn-crunch-70g.html
+    Redirect 301 /p-8301-disposable-bamboo-chopstick-rolin.aspx https://www.wingyipstore.co.uk/disposable-bamboo-chopstick-rolin-100pr.html
+    Redirect 301 /p-9026-lo-gan-ma-chilli-in-oil-oily-chilli.aspx https://www.wingyipstore.co.uk/lo-gan-ma-chilli-in-oil-oily-chilli-275g.html
+    Redirect 301 /p-1085-recipe-spicy-szechuan-king-prawns.aspx https://www.wingyipstore.co.uk/recipes/recipe-spicy-szechuan-king-prawns.html
+    Redirect 301 /p-8265-datu-puti-vinegar.aspx https://www.wingyipstore.co.uk/datu-puti-vinegar-1ltr.html
+    Redirect 301 /p-9535-poku-mushroom-pagoda.aspx https://www.wingyipstore.co.uk/poku-mushroom-pagoda.html
+    Redirect 301 /p-7657-a1010-nishiki-rice-japanese.aspx https://www.wingyipstore.co.uk/a1010-nishiki-rice-japanese-10kg.html
+    Redirect 301 /p-10083-teans-chicken-curry-paste-packet.aspx https://www.wingyipstore.co.uk/teans-chicken-curry-paste-packet-200g.html
+    Redirect 301 /p-8836-indomie-mi-goreng-pedas-noodle.aspx https://www.wingyipstore.co.uk/indomie-mi-goreng-pedas-noodle-80g.html
+    Redirect 301 /p-9193-maggi-coconut-milk-powder.aspx https://www.wingyipstore.co.uk/maggi-coconut-milk-powder-150g.html
+    Redirect 301 /p-14-recipe-steamed-sea-bass-in-oyster-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-steamed-sea-bass-in-oyster-sauce.html
+    Redirect 301 /p-1100-recipe-pulut-hitam.aspx https://www.wingyipstore.co.uk/recipes/recipe-pulut-hitam.html
+    Redirect 301 /p-1161-recipe-bak-kut-teh.aspx https://www.wingyipstore.co.uk/recipes/recipe-bak-kut-teh.html
+    Redirect 301 /p-8501-ellsey-white-vinegar.aspx https://www.wingyipstore.co.uk/ellsey-white-vinegar-5ltr.html
+    Redirect 301 /p-9026-lo-gan-ma-chilli-in-oil-oily-chilli.aspx https://www.wingyipstore.co.uk/lo-gan-ma-chilli-in-oil-oily-chilli-275g.html
+    Redirect 301 /p-9198-maggi-instant-noodle-curry-flavour.aspx https://www.wingyipstore.co.uk/maggi-instant-noodle-curry-flavour-79g.html
+    Redirect 301 /p-39-recipe-chicken-and-sweet-corn-soup.aspx https://www.wingyipstore.co.uk/recipes/recipe-chicken-and-sweetcorn-soup.html
+    Redirect 301 /p-29-recipe-prawns-and-asparagus-in-yellow-bean-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-prawns-and-asparagus-in-yellow-bean-sauce.html
+    Redirect 301 /p-11101-red-horse-beer.aspx https://www.wingyipstore.co.uk/red-horse-beer-355ml.html
+    Redirect 301 /p-10491-yeos-satay-sauce.aspx https://www.wingyipstore.co.uk/yeo-s-satay-sauce-250ml.html
+    Redirect 301 /p-8910-kf-lo-han-kuo-beverage.aspx https://www.wingyipstore.co.uk/kf-lo-han-kuo-beverage-168g.html
+    Redirect 301 /p-9881-silk-road-fortune-cookies.aspx https://www.wingyipstore.co.uk/silk-road-fortune-cookies-70g.html
+    Redirect 301 /p-8585-ferns-curry-paste-hot-jar.aspx https://www.wingyipstore.co.uk/ferns-curry-paste-hot-jar-380g.html
+    Redirect 301 /p-9057-lkk-chiu-chow-chilli-oil.aspx https://www.wingyipstore.co.uk/lkk-chiu-chow-chilli-oil-335g.html
+    Redirect 301 /p-10538-aroy-d-coconut-milk-extract.aspx https://www.wingyipstore.co.uk/aroy-d-coconut-milk-extract-400ml.html
+    Redirect 301 /p-9237-manora-uncooked-shrimp-chips.aspx https://www.wingyipstore.co.uk/manora-uncooked-shrimp-chips-500g.html
+    Redirect 301 /p-10594-maggi-liquid-seasoning.aspx https://www.wingyipstore.co.uk/maggi-liquid-seasoning-1kg.html
+    Redirect 301 /p-11143-dried-yeast-ball-eb.aspx https://www.wingyipstore.co.uk/dried-yeast-ball-e-b-200g.html
+    Redirect 301 /p-11529-nissin-soba-noodle-classic-cup.aspx https://www.wingyipstore.co.uk/nissin-soba-noodle-classic-cup-90g.html
+    Redirect 301 /p-10427-wing-yip-oriental-hamper.aspx https://www.wingyipstore.co.uk/wing-yip-oriental-hamper-set.html
+    Redirect 301 /p-7940-bull-head-bbq-sauce.aspx https://www.wingyipstore.co.uk/bull-head-bbq-sauce-737g.html
+    Redirect 301 /p-9534-poku-mushroom-narcissus.aspx https://www.wingyipstore.co.uk/poku-mushroom-narcissus.html
+    Redirect 301 /p-11176-sau-tao-egg-noodle-thin.aspx https://www.wingyipstore.co.uk/sau-tao-egg-noodle-thin-454g.html
+    Redirect 301 /p-10430-wing-yip-oyster-sauce-super-grade.aspx https://www.wingyipstore.co.uk/wing-yip-oyster-sauce-super-grade-150ml.html
+    Redirect 301 /p-8963-koon-yick-soy-chilli-sauce.aspx https://www.wingyipstore.co.uk/koon-yick-soy-chilli-sauce-114g.html
+    Redirect 301 /p-10286-wfy-black-tapioca-pearl.aspx https://www.wingyipstore.co.uk/wfy-black-tapioca-pearl-250g.html
+    Redirect 301 /p-11375-keejays-hk-fruity-curry-sce.aspx https://www.wingyipstore.co.uk/keejays-hk-fruity-curry-sce-285ml.html
+    Redirect 301 /p-10525-yummy-house-abalone-sauce.aspx https://www.wingyipstore.co.uk/yummy-house-abalone-sauce-380g.html
+    Redirect 301 /p-7920-brand-essence-of-chicken.aspx https://www.wingyipstore.co.uk/brand-essence-of-chicken-68ml.html
+    Redirect 301 /p-11149-lin-lin-xo-sauce.aspx https://www.wingyipstore.co.uk/lin-lin-xo-sauce-227g.html
+    Redirect 301 /p-11139-imp-choice-premium-pu-erh-tea.aspx https://www.wingyipstore.co.uk/imp-choice-premium-pu-erh-tea-25x2g.html
+    Redirect 301 /p-10772-dried-lotus-leave-ctf.aspx https://www.wingyipstore.co.uk/dried-lotus-leave-ctf-1kg.html
+    Redirect 301 /p-10292-woh-hup-crush-yellow-bean-sauce.aspx https://www.wingyipstore.co.uk/woh-hup-crush-yellow-bean-sauce-330g.html
+    Redirect 301 /p-8278-deerglutinousriceflour.aspx https://www.wingyipstore.co.uk/deer-glutinous-rice-flour-454g.html
+    Redirect 301 /p-8127-claypot-misa-beef-rendang-mix.aspx https://www.wingyipstore.co.uk/claypot-misa-beef-rendang-mix-120g.html
+    Redirect 301 /p-8395-dried-shrimp-l-jefi.aspx https://www.wingyipstore.co.uk/dried-shrimp-l-jefi-100g.html
+    Redirect 301 /p-9262-mc-salted-black-bean.aspx https://www.wingyipstore.co.uk/mc-salted-black-bean-500g.html
+    Redirect 301 /p-9449-oolong-tea-leaf-don-din.aspx https://www.wingyipstore.co.uk/oolong-tea-leaf-don-din-100g.html
+    Redirect 301 /p-8235-crescent-baking-powder.aspx https://www.wingyipstore.co.uk/crescent-baking-powder-2721g.html
+    Redirect 301 /p-10317-woh-hup-peking-duck-sauce.aspx https://www.wingyipstore.co.uk/woh-hup-peking-duck-sauce-360g.html
+    Redirect 301 /p-9244-maysan-curry-paste-concentrate-extra-hot.aspx https://www.wingyipstore.co.uk/maysan-curry-paste-concentrate-extra-hot-448g.html
+    Redirect 301 /p-10068-tango-orange-can.aspx https://www.wingyipstore.co.uk/tango-orange-can-330ml.html
+    Redirect 301 /p-9417-ns-korean-shin-orient-ramyun.aspx https://www.wingyipstore.co.uk/ns-korean-shin-orient-ramyun-120g.html
+    Redirect 301 /p-10409-wing-yip-cooking-wine-shao-hsing-sty.aspx https://www.wingyipstore.co.uk/wing-yip-cooking-wine-shao-hsing-sty-350ml.html
+    Redirect 301 /p-8679-garden-pop-pan-cracker-curry.aspx https://www.wingyipstore.co.uk/garden-pop-pan-cracker-curry-225g.html
+    Redirect 301 /p-9753-roc-michiu-rice-spirit.aspx https://www.wingyipstore.co.uk/roc-michiu-rice-spirit.html
+    Redirect 301 /p-8765-healthy-boy-sweet-chilli-sauce.aspx https://www.wingyipstore.co.uk/healthy-boy-sweet-chilli-sauce-700ml.html
+    Redirect 301 /p-10351-wing-wing-chinese-sausage.aspx https://www.wingyipstore.co.uk/wing-wing-chinese-sausage-454g.html
+    Redirect 301 /p-10084-teans-crispy-prawn-chilli-jar.aspx https://www.wingyipstore.co.uk/teans-crispy-prawn-chilli-jar-180g.html
+    Redirect 301 /p-9398-nittaya-panang-curry-paste.aspx https://www.wingyipstore.co.uk/nittaya-panang-curry-paste-1kg.html
+    Redirect 301 /p-10481-yeos-hot-bean-sauce.aspx https://www.wingyipstore.co.uk/yeo-s-hot-bean-sauce-250ml.html
+    Redirect 301 /p-9115-lobo-tom-yum-paste.aspx https://www.wingyipstore.co.uk/lobo-tom-yum-paste-30g.html
+    Redirect 301 /p-8296-diet-coke-bottle.aspx https://www.wingyipstore.co.uk/diet-coke-bottle-1-5l.html
+    Redirect 301 /p-9039-lingham-garlic-chilli-sauce.aspx https://www.wingyipstore.co.uk/lingham-garlic-chilli-sauce-280ml.html
+    Redirect 301 /p-9302-mountain-dew-carbon-citrus-drink-from-singapore.aspx https://www.wingyipstore.co.uk/mountain-dew-carbon-citrus-drink-from-singapore.html
+    Redirect 301 /p-10085-teans-crispy-prawn-chilli-tub.aspx https://www.wingyipstore.co.uk/teans-crispy-prawn-chilli-tub-1kg.html
+    Redirect 301 /p-1125-recipe-thai-spicy-sweet-and-sour-fish.aspx https://www.wingyipstore.co.uk/recipes/recipe-thai-spicy-sweet-and-sour-fish-sam-rod.html
+    Redirect 301 /p-8870-j3520-yutaka-prem-sushi-rice.aspx https://www.wingyipstore.co.uk/j3520-yutaka-prem-sushi-rice-5kg.html
+    Redirect 301 /p-9190-maekrua-oyster-sauce.aspx https://www.wingyipstore.co.uk/maekrua-oyster-sauce-600ml.html
+    Redirect 301 /p-10251-vits-instant-noodle-plain.aspx https://www.wingyipstore.co.uk/vits-instant-noodle-plain-10x70g.html
+    Redirect 301 /p-9061-lkk-guilin-chilli-sauce-cl305.aspx https://www.wingyipstore.co.uk/lkk-guilin-chilli-sauce-cl305-368g.html
+    Redirect 301 /p-10035-swanson-clear-chicken-broth.aspx https://www.wingyipstore.co.uk/swanson-clear-chicken-broth-1ltr.html
+    Redirect 301 /p-10487-yeos-malaysian-curry-powder.aspx https://www.wingyipstore.co.uk/yeo-s-malaysian-curry-powder-50g.html
+    Redirect 301 /p-10248-vitasoy-soya-milk-less-sugar.aspx https://www.wingyipstore.co.uk/vitasoy-soya-milk-less-sugar-250ml.html
+    Redirect 301 /p-9113-lobo-roast-red-pork-seasoning.aspx https://www.wingyipstore.co.uk/lobo-roast-red-pork-seasoning-2x50g.html
+    Redirect 301 /p-8748-hancock-wok-13flat-bottom-fbw13c.aspx https://www.wingyipstore.co.uk/hancock-wok-13-flat-bottom-fbw13c-pc.html
+    Redirect 301 /p-9114-lobo-satay-seasoning-mix.aspx https://www.wingyipstore.co.uk/lobo-satay-seasoning-mix-100g.html
+    Redirect 301 /p-9466-pantai-fish-sauce-mam-nem.aspx https://www.wingyipstore.co.uk/pantai-fish-sauce-mam-nem.html
+    Redirect 301 /p-10338-white-rabbit-creamy-candy.aspx https://www.wingyipstore.co.uk/white-rabbit-creamy-candy-180g.html
+    Redirect 301 /p-33-recipe-kung-po-glazed-duck.aspx https://www.wingyipstore.co.uk/recipes/recipe-kung-po-glazed-duck.html
+    Redirect 301 /p-8599-foco-sugar-cane-juice.aspx https://www.wingyipstore.co.uk/foco-sugar-cane-juice-350ml.html
+    Redirect 301 /p-7717-amoy-chilli-sauce.aspx https://www.wingyipstore.co.uk/amoy-chilli-sauce-470g.html
+    Redirect 301 /p-10373-wok-stand-wired-hck10x225c14.aspx https://www.wingyipstore.co.uk/wok-stand-wired-hck10x2-25-c14-pc.html
+    Redirect 301 /p-8622-fu-chi-chilli-bean-sauce-jar.aspx https://www.wingyipstore.co.uk/fu-chi-chilli-bean-sauce-jar-400g.html
+    Redirect 301 /p-10401-wing-yip-bicarbonate-of-soda.aspx https://www.wingyipstore.co.uk/wing-yip-bicarbonate-of-soda-5kg.html
+    Redirect 301 /p-1078-recipe-red-bean-pancakes.aspx https://www.wingyipstore.co.uk/recipes/recipe-red-bean-pancakes.html
+    Redirect 301 /p-9483-pataks-chilli-pickle-hot.aspx https://www.wingyipstore.co.uk/patak-s-chilli-pickle-hot-283g.html
+    Redirect 301 /p-10287-wfy-colour-tapioca-pearl.aspx https://www.wingyipstore.co.uk/wfy-colour-tapioca-pearl-250g.html
+    Redirect 301 /p-9070-lkk-panda-oyster-sauce.aspx https://www.wingyipstore.co.uk/lkk-panda-oyster-sauce-907g.html
+    Redirect 301 /p-8694-gina-mango-nectar-juice.aspx https://www.wingyipstore.co.uk/gina-mango-nectar-juice-240ml.html
+    Redirect 301 /p-8972-ks-tit-koon-yum-tea-tin.aspx https://www.wingyipstore.co.uk/ks-tit-koon-yum-tea-tin-227g.html
+    Redirect 301 /p-1067-recipe-red-thai-curry-with-chicken.aspx https://www.wingyipstore.co.uk//recipes/recipe-red-thai-curry-with-chicken.html
+    Redirect 301 /p-11175-habhal-kicap-manis-sweet-soy.aspx https://www.wingyipstore.co.uk/habhal-kicap-manis-sweet-soy-645ml.html
+    Redirect 301 /p-11492-ggm-gaya-aloe-vera-drink.aspx https://www.wingyipstore.co.uk/ggm-gaya-aloe-vera-drink-500ml.html
+    Redirect 301 /p-9071-lee-kum-kee-peking-duck-sauce.aspx https://www.wingyipstore.co.uk/lee-kum-kee-peking-duck-sauce-383g.html
+    Redirect 301 /p-1073-recipe-egg-fried-rice.aspx https://www.wingyipstore.co.uk/recipes/recipe-special-fried-rice.html
+    Redirect 301 /p-9856-smiling-fish-fried-baby-clams-wchilli.aspx https://www.wingyipstore.co.uk/smiling-fish-fried-baby-clams-w-chilli-70g.html
+    Redirect 301 /p-11161-dollee-pandan-kaya.aspx https://www.wingyipstore.co.uk/dollee-pandan-kaya-400g.html
+    Redirect 301 /p-8708-golden-elephant-jasmine-rice.aspx https://www.wingyipstore.co.uk/golden-elephant-jasmine-rice-9-07kg.html
+    Redirect 301 /p-9478-pataks-bhuna-curry-paste-med.aspx https://www.wingyipstore.co.uk/patak-s-bhuna-curry-paste-med-283g.html
+    Redirect 301 /p-8776-hf-pres-plum-wah-mui.aspx https://www.wingyipstore.co.uk/hf-pres-plum-wah-mui-55g.html
+    Redirect 301 /p-7728-amoy-oyster-sauce-regular-tin.aspx https://www.wingyipstore.co.uk/amoy-oyster-sauce-regular-tin-1820ml.html
+    Redirect 301 /p-10492-yeos-singapore-hot-curry-sauce.aspx https://www.wingyipstore.co.uk/yeo-s-singapore-hot-curry-sauce-400ml.html
+    Redirect 301 /p-9367-noodle-king-instant-noodle-abalone-and-chicken-flavour.aspx https://www.wingyipstore.co.uk/noodle-king-instant-noodle-abalone-and-chicken-flavour-130g.html
+    Redirect 301 /p-10073-tapioca-starch-deer.aspx https://www.wingyipstore.co.uk/tapioca-starch-deer-400g.html
+    Redirect 301 /p-10374-wong-lo-kat-herb-extract-tea.aspx https://www.wingyipstore.co.uk/wong-lo-kat-herb-extract-tea-112-8g.html
+    Redirect 301 /p-8181-corn-starch-kingsford.aspx https://www.wingyipstore.co.uk/corn-starch-kingsford.html
+    Redirect 301 /p-8601-foco-thai-tea-drink.aspx https://www.wingyipstore.co.uk/foco-thai-tea-drink-350ml.html
+    Redirect 301 /p-7720-amoy-dark-soy-sauce.aspx https://www.wingyipstore.co.uk/amoy-dark-soy-sauce-150ml.html
+    Redirect 301 /p-9250-mcchuhousaucebot.aspx https://www.wingyipstore.co.uk/mc-chu-hou-sauce-bot-450g.html
+    Redirect 301 /p-10241-vita-honey-chrysanthemum-tea.aspx https://www.wingyipstore.co.uk/vita-honey-chrysanthemum-tea-250ml.html
+    Redirect 301 /p-8969-ks-po-nee-tea-box.aspx https://www.wingyipstore.co.uk/ks-po-nee-tea-box-454g.html
+    Redirect 301 /p-8634-gdragon-china-oolong-tea.aspx https://www.wingyipstore.co.uk/g-dragon-china-oolong-tea-150g.html
+    Redirect 301 /p-8143-coconut-cream-pride-pkt.aspx https://www.wingyipstore.co.uk/coconut-cream-pride-pkt-198g.html
+    Redirect 301 /p-11412-recipe-chicken-chow-mein.aspx https://www.wingyipstore.co.uk/recipes/recipe-chicken-chow-mein.html
+    Redirect 301 /p-10016-suree-sweet-chilli-sauce.aspx https://www.wingyipstore.co.uk/suree-sweet-chilli-sauce-435ml.html
+    Redirect 301 /p-9752-roc-lychee-chiew.aspx https://www.wingyipstore.co.uk/roc-lychee-chiew-0-6l.html
+    Redirect 301 /p-11350-bull-head-shallot-sauce.aspx https://www.wingyipstore.co.uk/bull-head-shallot-sauce-360g.html
+    Redirect 301 /p-10375-wong-lo-kat-herb-tea.aspx https://www.wingyipstore.co.uk/wong-lo-kat-herb-tea-105g.html
+    Redirect 301 /p-1074-recipe-special-fried-rice.aspx https://www.wingyipstore.co.uk/recipes/recipe-special-fried-rice.html
+    Redirect 301 /p-9069-lkk-panda-oyster-sauce-tin.aspx https://www.wingyipstore.co.uk/lkk-panda-oyster-sauce-tin-2268g.html
+    Redirect 301 /p-8835-indomie-mi-gor-stir-fried-noodle.aspx https://www.wingyipstore.co.uk/indomie-mi-gor-stir-fried-noodle-80g.html
+    Redirect 301 /p-9846-sea-dyke-oolong-tea-at206.aspx https://www.wingyipstore.co.uk/sea-dyke-oolong-tea-at206-125g.html
+    Redirect 301 /p-8714-gs-mei-kuei-lu-chiew.aspx https://www.wingyipstore.co.uk/gs-mei-kuei-lu-chiew-500cc.html
+    Redirect 301 /p-10775-chek-hup-ipoh-white-coffee-3-in-1.aspx https://www.wingyipstore.co.uk/chek-hup-ipoh-white-coffee-3-in-1-15x40g.html
+    Redirect 301 /p-9068-lkk-panda-oyster-sauce.aspx https://www.wingyipstore.co.uk/lkk-panda-oyster-sauce-510g.html
+    Redirect 301 /p-7734-a-one-chicken-flavour-noodle-bowl.aspx https://www.wingyipstore.co.uk/a-one-chicken-flavour-noodle-bowl-75g.html
+    Redirect 301 /p-10319-woh-hup-sambal-oelek-jar.aspx https://www.wingyipstore.co.uk/woh-hup-sambal-oelek-jar-320g.html
+    Redirect 301 /p-1071-recipe-chicken-and-prawn-laksa.aspx https://www.wingyipstore.co.uk/recipes/recipe-chicken-and-prawn-laksa.html
+    Redirect 301 /p-32-recipe-fried-fish-steaks-in-yellow-bean-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-fish-in-yellow-bean-sauce.html
+    Redirect 301 /p-9033-lh-sweet-potato-vermicelli-noodle.aspx https://www.wingyipstore.co.uk/lh-sweet-potato-vermicelli-noodle-400g.html
+    Redirect 301 /p-1057-recipe-salt-and-pepper-king-prawns.aspx https://www.wingyipstore.co.uk/recipes/recipe-salt-and-pepper-king-prawns.html
+    Redirect 301 /p-8939-kim-ve-wong-soy-sauce.aspx https://www.wingyipstore.co.uk/kim-ve-wong-soy-sauce-1ltr.html
+    Redirect 301 /p-8782-ho-yan-hor-kausing-herbal-tea.aspx https://www.wingyipstore.co.uk/ho-yan-hor-kausing-herbal-tea-60g.html
+    Redirect 301 /p-7898-bolsts-curry-powder-mild-tin.aspx https://www.wingyipstore.co.uk/bolsts-curry-powder-mild-tin-425g.html
+    Redirect 301 /p-8101-chopping-board-yellow-12x8x075-7437.aspx https://www.wingyipstore.co.uk/chopping-board-yellow-12x8x0-75-7437-pc.html
+    Redirect 301 /p-9112-lobo-roast-duck-seasoning-mix.aspx https://www.wingyipstore.co.uk/lobo-roast-duck-seasoning-mix-50g.html
+    Redirect 301 /p-10302-woh-hup-indonesian-rendang-curry-paste.aspx https://www.wingyipstore.co.uk/woh-hup-indonesian-rendang-curry-paste-195g.html
+    Redirect 301 /p-11038-bamboo-steamer-12-hancock-bbs12.aspx https://www.wingyipstore.co.uk/bamboo-steamer-12-hancock-bbs12-pc.html
+    Redirect 301 /p-9674-rajah-tandoori-masala-pkt.aspx https://www.wingyipstore.co.uk/rajah-tandoori-masala-pkt-100g.html
+    Redirect 301 /p-9038-lingham-chilli-sauce.aspx https://www.wingyipstore.co.uk/?????? 2 products - Out of Stock & Number.html
+    Redirect 301 /p-9987-sunpat-osmooth-peanut-butter.aspx https://www.wingyipstore.co.uk/sunpat-o-smooth-peanut-butter-340g.html
+    Redirect 301 /p-1096-recipe-pineapple-tarts.aspx https://www.wingyipstore.co.uk/recipes/recipe-pineapple-tarts.html
+    Redirect 301 /p-8763-healthy-boy-sriracha-chilli-sauce.aspx https://www.wingyipstore.co.uk/healthy-boy-sriracha-chilli-sauce-700ml.html
+    Redirect 301 /p-9232-mama-instant-noodle-palo-duck-flavour.aspx https://www.wingyipstore.co.uk/mama-instant-noodle-palo-duck-flavour-55g.html
+    Redirect 301 /p-11490-ching-kee-egg-cookies-roll.aspx https://www.wingyipstore.co.uk/ching-kee-egg-cookies-roll-454g.html
+    Redirect 301 /p-8615-fresh-up-wet-towel-blue-pkt.aspx https://www.wingyipstore.co.uk/fresh-up-wet-towel-blue-pkt-100pc.html
+    Redirect 301 /p-10602-blooming-flower-tea.aspx https://www.wingyipstore.co.uk/blooming-flower-tea-40g.html
+    Redirect 301 /p-10323-wh-singapore-mee-goreng-paste.aspx https://www.wingyipstore.co.uk/wh-singapore-mee-goreng-paste-190g.html
+    Redirect 301 /p-9396-nittaya-green-curry-paste.aspx https://www.wingyipstore.co.uk/nittaya-green-curry-paste-1kg.html
+    Redirect 301 /p-9016-lea-perrin-worcester-sauce.aspx https://www.wingyipstore.co.uk/lea-perrin-worcester-sauce-4ltr.html
+    Redirect 301 /p-11120-c5001-soba-tsuyu-sauce.aspx https://www.wingyipstore.co.uk/c5001-soba-tsuyu-sauce-360ml.html
+    Redirect 301 /p-9501-pataks-tandoori-paste-mild.aspx https://www.wingyipstore.co.uk/patak-s-tandoori-paste-mild-312g.html
+    Redirect 301 /p-9765-rolin-hot-sour-soup.aspx https://www.wingyipstore.co.uk/rolin-hot-sour-soup-540g.html
+    Redirect 301 /p-10270-way-on-chilli-oil-with-shrimp.aspx https://www.wingyipstore.co.uk/way-on-chilli-oil-with-shrimp-110g.html
+    Redirect 301 /p-8785-hong-kong-min-hong-chilli-oil.aspx https://www.wingyipstore.co.uk/hong-kong-min-hong-chilli-oil-210g.html
+    Redirect 301 /p-10646-aluminium-steamer-set-40cm-16rolin.aspx https://www.wingyipstore.co.uk/aluminium-steamer-set-40cm-16-rolin-set.html
+    Redirect 301 /p-9226-maltose-dragon-boat-jar.aspx https://www.wingyipstore.co.uk/maltose-dragon-boat-jar-500g.html
+    Redirect 301 /p-9217-mai-siam-thai-red-curry-paste.aspx https://www.wingyipstore.co.uk/mai-siam-thai-red-curry-paste-220g.html
+    Redirect 301 /p-9819-sake-sawanotsuru.aspx https://www.wingyipstore.co.uk/sake-sawanotsuru-300ml.html
+    Redirect 301 /p-8952-knorr-macaroni-broth-mushroom.aspx https://www.wingyipstore.co.uk/knorr-macaroni-broth-mushroom-80g.html
+    Redirect 301 /p-9610-rajah-fine-curry-paste-mild-jar.aspx https://www.wingyipstore.co.uk/rajah-fine-curry-paste-mild-jar-285g.html
+    Redirect 301 /p-8169-cooks-curry-concentrate-chinese.aspx https://www.wingyipstore.co.uk/cook-s-curry-concentrate-chinese-405g.html
+    Redirect 301 /p-8079-ching-oil-vinegar-drizzler-set.aspx https://www.wingyipstore.co.uk/ching-oil-vinegar-drizzler-set-set.html
+    Redirect 301 /p-8306-dollee-chicken-curry-paste.aspx https://www.wingyipstore.co.uk/dollee-chicken-curry-paste-200g.html
+    Redirect 301 /p-9999-suree-fish-sauce-grade-a.aspx https://www.wingyipstore.co.uk/suree-fish-sauce-grade-a-200ml.html
+    Redirect 301 /p-1154-recipe-chicken-congee.aspx https://www.wingyipstore.co.uk/recipes/recipe-chicken-congee.html
+    Redirect 301 /p-1165-recipe-inchi-kabin.aspx https://www.wingyipstore.co.uk/recipes/recipe-inchi-kabin.html
+    Redirect 301 /p-9298-mldali-tai-fong-red-beancurd.aspx https://www.wingyipstore.co.uk/ml-dali-tai-fong-red-beancurd-397g.html
+    Redirect 301 /p-8735-h6019-hinode-hon-mirin.aspx https://www.wingyipstore.co.uk/h6019-hinode-hon-mirin-600ml.html
+    Redirect 301 /p-10434-wing-yip-pure-sesame-oil.aspx https://www.wingyipstore.co.uk/wing-yip-pure-sesame-oil-150ml.html
+    Redirect 301 /p-11129-sarsons-malt-vinegar-drum.aspx https://www.wingyipstore.co.uk/sarsons-malt-vinegar-drum-5ltr.html
+    Redirect 301 /p-10175-trs-coconut-powder.aspx https://www.wingyipstore.co.uk/trs-coconut-powder-1kg.html
+    Redirect 301 /p-9707-rice-paper-round-16cm-wing.aspx https://www.wingyipstore.co.uk/rice-paper-round-16cm-wing-400g.html
+    Redirect 301 /p-10009-suree-sriracha-sauce-green.aspx https://www.wingyipstore.co.uk/suree-sriracha-sauce-green-435ml.html
+    Redirect 301 /p-8591-flck-rice-powderflour.aspx https://www.wingyipstore.co.uk/flck-rice-powder-flour-450g.html
+    Redirect 301 /p-1104-recipe-brahims-creamy-malaysian-curry.aspx https://www.wingyipstore.co.uk/recipes/recipe-brahims-creamy-malaysian-curry.html
+    Redirect 301 /p-11229-lotte-chocolate-biscuit-stick-original-pepero.aspx https://www.wingyipstore.co.uk/lotte-chocolate-biscuit-stick-original-pepero-47g.html
+    Redirect 301 /p-9830-samyang-kimchi-noodles.aspx https://www.wingyipstore.co.uk/samyang-kimchi-noodles-120g.html
+    Redirect 301 /p-10180-trs-haldi-turmeric-powder.aspx https://www.wingyipstore.co.uk/trs-haldi-turmeric-powder-5kg.html
+    Redirect 301 /p-8258-d5018-satono-yuki-tofu.aspx https://www.wingyipstore.co.uk/d5018-satono-yuki-tofu-300g.html
+    Redirect 301 /p-10483-yeos-laksa-paste.aspx https://www.wingyipstore.co.uk/yeo-s-laksa-paste-185g.html
+    Redirect 301 /p-11297-brands-birds-nest-with-collagen.aspx https://www.wingyipstore.co.uk/brands-bird-s-nest-with-collagen-68ml.html
+    Redirect 301 /p-10821-keenan-touch-flat-toothpicks.aspx https://www.wingyipstore.co.uk/keenan-touch-flat-toothpicks-650pc.html
+    Redirect 301 /p-30-recipe-vegetarian-spring-rolls.aspx https://www.wingyipstore.co.uk/recipes/recipe-vegetarian-spring-rolls.html
+    Redirect 301 /p-4-recipe-spare-ribs-with-5-spice-and-hoisin.aspx https://www.wingyipstore.co.uk/recipes/spare-ribs-with-5-spice-and-hoi-sin.html
+    Redirect 301 /p-9863-shanghai-red-beancurd-jar.aspx https://www.wingyipstore.co.uk/shanghai-red-beancurd-jar-500g.html
+    Redirect 301 /p-11235-yutaka-organic-miso-paste-ytk111.aspx https://www.wingyipstore.co.uk/yutaka-organic-miso-paste-ytk111.html
+    Redirect 301 /p-11172-habhal-kicap-masin-salty-soy.aspx https://www.wingyipstore.co.uk/habhal-kicap-masin-salty-soy-645ml.html
+    Redirect 301 /p-8261-dali-pres-red-beancurd.aspx https://www.wingyipstore.co.uk/dali-pres-red-beancurd-500g.html
+    Redirect 301 /p-11-recipe-paper-wrapped-chicken.aspx https://www.wingyipstore.co.uk/recipes/recipe-paper-wrapped-chicken.html
+    Redirect 301 /p-1169-recipe-chicken-and-bamboo-shoots-in-black-bean-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-chicken-and-bamboo-shoots-in-black-bean-sauce.html
+    Redirect 301 /p-9541-prb-gold-label-light-soy-sauce.aspx https://www.wingyipstore.co.uk/prb-gold-label-light-soy-sauce-500ml.html
+    Redirect 301 /p-31-recipe-yellow-bean-pork-stew.aspx https://www.wingyipstore.co.uk/recipes/recipe-yellow-bean-pork-stew.html
+    Redirect 301 /p-7840-bba-red-food-col-h9326.aspx https://www.wingyipstore.co.uk/bba-red-food-col-h9326-500g.html
+    Redirect 301 /p-10814-noodle-king-instant-wonton-noodle.aspx https://www.wingyipstore.co.uk/noodle-king-instant-wonton-noodle-130g.html
+    Redirect 301 /p-8646-gdragon-self-raising-flour.aspx https://www.wingyipstore.co.uk/g-dragon-self-raising-flour-1-5kg.html
+    Redirect 301 /p-9188-mae-ploy-sweet-chilli-sauce.aspx https://www.wingyipstore.co.uk/mae-ploy-sweet-chilli-sauce-730ml.html
+    Redirect 301 /p-8449-earth-chop-suey-noodle-no1.aspx https://www.wingyipstore.co.uk/earth-chop-suey-noodle-no-1-400g.html
+    Redirect 301 /p-9480-pataks-brinjal-pickle-med.aspx https://www.wingyipstore.co.uk/patak-s-brinjal-pickle-med-312g.html
+    Redirect 301 /p-10352-wing-yip-five-beer-gift-pack.aspx https://www.wingyipstore.co.uk/wing-yip-five-beer-gift-pack-pack.html
+    Redirect 301 /p-8589-flck-potato-starch.aspx https://www.wingyipstore.co.uk/flck-potato-starch-450g.html
+    Redirect 301 /p-11635-driver-white-vinegar-5ltr.aspx https://www.wingyipstore.co.uk/driver-white-vinegar-5ltr-5ltr.html
+    Redirect 301 /p-10490-yeos-salted-soy-beans-jar.aspx https://www.wingyipstore.co.uk/yeo-s-salted-soy-beans-jar-450g.html
+    Redirect 301 /p-9788-royal-umbrella-glutinous-rice.aspx https://www.wingyipstore.co.uk/royal-umbrella-glutinous-rice-5kg.html
+    Redirect 301 /p-9440-oishi-pea-snacks.aspx https://www.wingyipstore.co.uk/oishi-pea-snacks-55g.html
+    Redirect 301 /p-10291-wh-crush-black-bean-sauce-jar.aspx https://www.wingyipstore.co.uk/wh-crush-black-bean-sauce-jar-340g.html
+    Redirect 301 /p-10597-wooden-wok-brush-preema.aspx https://www.wingyipstore.co.uk/wooden-wok-brush-preema-pc.html
+    Redirect 301 /p-10114-tiger-balm-oilment-red-bottle.aspx https://www.wingyipstore.co.uk/tiger-balm-oilment-red-bottle-19g.html
+    Redirect 301 /p-7698-aji-ichiban-dried-plum-lover.aspx https://www.wingyipstore.co.uk/aji-ichiban-dried-plum-lover-90g.html
+    Redirect 301 /p-10743-garden-wafer-strawberry-cream.aspx https://www.wingyipstore.co.uk/garden-wafer-strawberry-cream-200g.html
+    Redirect 301 /p-1079-recipe-lamb-with-courgettes-in-oyster-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-lamb-with-courgettes-in-oyster-sauce.html
+    Redirect 301 /p-9274-mi-lau-thai-instant-noodle-shrimp-flavour.aspx https://www.wingyipstore.co.uk/mi-lau-thai-instant-noodle-shrimp-flavour-80g.html
+    Redirect 301 /p-8764-healthy-boy-sweet-sour-plum-sauce.aspx https://www.wingyipstore.co.uk/healthy-boy-sweet-sour-plum-sauce-700ml.html
+    Redirect 301 /p-8076-ching-kee-cookiephoenix-roll.aspx https://www.wingyipstore.co.uk/ching-kee-cookie-phoenix-roll-800g.html
+    Redirect 301 /p-7732-amoy-white-rice-vinegar.aspx https://www.wingyipstore.co.uk/amoy-white-rice-vinegar-500ml.html
+    Redirect 301 /p-9059-lkk-double-deluxe-soya-sauce.aspx https://www.wingyipstore.co.uk/lkk-double-deluxe-soya-sauce-500ml.html
+    Redirect 301 /p-11479-wing-yip-gift-box.aspx https://www.wingyipstore.co.uk/wing-yip-gift-box-box.html
+    Redirect 301 /p-11423-kaset-thai-jasmine-rice.aspx https://www.wingyipstore.co.uk/kaset-thai-jasmine-rice-2kg.html
+    Redirect 301 /p-8749-hancock-wok-13round-bottom-rbw13.aspx https://www.wingyipstore.co.uk/hancock-wok-13-round-bottom-rbw13-pc.html
+    Redirect 301 /p-8266-datu-puti-vinegar-soy-sauce.aspx https://www.wingyipstore.co.uk/datu-puti-vinegar-soy-sauce-2ltr-pk.html
+    Redirect 301 /p-9493-pataks-madras-curry-paste-hot.aspx https://www.wingyipstore.co.uk/patak-s-madras-curry-paste-hot-283g.html
+    Redirect 301 /p-10000-suree-pad-thai-sauce.aspx https://www.wingyipstore.co.uk/suree-pad-thai-sauce-390g.html
+    Redirect 301 /p-8358-dried-longan-pulp-eb.aspx https://www.wingyipstore.co.uk/dried-longan-pulp-e-b-200g.html
+    Redirect 301 /p-9400-nona-ginger-milk-tea.aspx https://www.wingyipstore.co.uk/nona-ginger-milk-tea-230g.html
+    Redirect 301 /p-1107-recipe-pork-ribs-in-yellowbean-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-pork-ribs-in-yellow-bean-sauce.html
+    Redirect 301 /p-1099-recipe-coconut-milk-agar-pudding.aspx https://www.wingyipstore.co.uk/recipes/recipe-coconut-milk-agar-pudding.html
+    Redirect 301 /p-8704-gold-kili-inst-ginger-dk-pkt.aspx https://www.wingyipstore.co.uk/gold-kili-inst-ginger-dk-pkt-20x18g.html
+    Redirect 301 /p-11394-mae-pranom-fish-chilli-paste.aspx https://www.wingyipstore.co.uk/mae-pranom-fish-chilli-paste-228g.html
+    Redirect 301 /p-9201-maggi-masala-chilli-sauce.aspx https://www.wingyipstore.co.uk/maggi-masala-chilli-sauce-400g.html
+    Redirect 301 /p-9274-mi-lau-thai-instant-noodle-shrimp-flavour.aspx https://www.wingyipstore.co.uk/mi-lau-thai-instant-noodle-shrimp-flavour-80g.html
+    Redirect 301 /p-10023-suree-thai-hot-chilli-sauce.aspx https://www.wingyipstore.co.uk/suree-thai-hot-chilli-sauce-295ml.html
+    Redirect 301 /p-11548-want-want-senbei-rice-cracker.aspx https://www.wingyipstore.co.uk/want-want-senbei-rice-cracker-72g.html
+    Redirect 301 /p-8509-eys-shang-pin-ba-zhen-tang.aspx https://www.wingyipstore.co.uk/eys-shang-pin-ba-zhen-tang-128g.html
+    Redirect 301 /p-10196-trs-special-madras-poppadoms.aspx https://www.wingyipstore.co.uk/trs-special-madras-poppadoms-200g.html
+    Redirect 301 /p-9777-rolin-vegetarian-mock-chicken.aspx https://www.wingyipstore.co.uk/rolin-vegetarian-mock-chicken-283g.html
+    Redirect 301 /p-9340-nang-fah-shrimp-paste.aspx https://www.wingyipstore.co.uk/nang-fah-shrimp-paste-200g.html
+    Redirect 301 /p-11509-recipe-black-sesame-glutinous-rice-balls.aspx https://www.wingyipstore.co.uk/recipes/recipe-black-sesame-glutinous-rice-balls.html
+    Redirect 301 /p-9866-shao-hsing-chiew-bot.aspx https://www.wingyipstore.co.uk/shao-hsing-chiew-bot-0-7ltr.html
+    Redirect 301 /p-7665-abalone-golden-lion-can.aspx https://www.wingyipstore.co.uk/abalone-golden-lion-can-425g.html
+    Redirect 301 /p-7744-aroy-d-grn-jackfruit-ibrine.aspx https://www.wingyipstore.co.uk/aroy-d-grn-jackfruit-i-brine-565g.html
+    Redirect 301 /p-1146-recipe-singapore-noodles.aspx https://www.wingyipstore.co.uk/recipes/recipe-singapore-noodles.html
+    Redirect 301 /p-8148-cook-book-chinese-food-made-easy.aspx https://www.wingyipstore.co.uk/cook-book-chinese-food-made-easy-book.html
+    Redirect 301 /p-1170-recipe-black-tiger-prawns-on-szechuan-noodles.aspx https://www.wingyipstore.co.uk/recipes/recipe-black-tiger-prawns-on-szechuan-noodles.html
+    Redirect 301 /p-10010-suree-sriracha-sauce-yellow-hot.aspx https://www.wingyipstore.co.uk/suree-sriracha-sauce-yellow-hot-435ml.html
+    Redirect 301 /p-11300-brands-birds-nest-with-rock-sugar.aspx https://www.wingyipstore.co.uk/brands-bird-s-nest-with-rock-sugar-68ml.html
+    Redirect 301 /p-11374-keejays-peking-hoisin-bbq-sce.aspx https://www.wingyipstore.co.uk/keejays-peking-hoisin-bbq-sce-285ml.html
+    Redirect 301 /p-9388-nissin-instant-noodle-shoyu-tonkotsu-flavour.aspx https://www.wingyipstore.co.uk/nissin-instant-noodle-shoyu-tonkotsu-flavour-100g.html
+    Redirect 301 /p-1116-recipe-duck-in-plum-sauce-with-lychees.aspx https://www.wingyipstore.co.uk/recipes/recipe-duck-in-plum-sauce-with-lychees.html
+    Redirect 301 /p-8786-honour-black-rice.aspx https://www.wingyipstore.co.uk/honour-black-rice-454g.html
+    Redirect 301 /p-7650-a0006-yude-azuki-sk-red-beans.aspx https://www.wingyipstore.co.uk/a0006-yude-azuki-sk-red-beans-210g.html
+    Redirect 301 /p-7846-bing-quan-ladies-soya-drink.aspx https://www.wingyipstore.co.uk/bing-quan-ladies-soya-drink-400g.html
+    Redirect 301 /p-10067-tak-on-tong-chinese-herb-tea.aspx https://www.wingyipstore.co.uk/tak-on-tong-chinese-herb-tea-110g.html
+    Redirect 301 /p-11403-recipe-cantonese-egg-custard-tarts.aspx https://www.wingyipstore.co.uk/recipes/recipe-cantonese-egg-custard-tarts.html
+    Redirect 301 /p-8230-cpj-sake-cup-710-69.aspx https://www.wingyipstore.co.uk/cpj-sake-cup-710-69-pc.html
+    Redirect 301 /p-7833-bba-deep-orange-food-colour-h5507.aspx https://www.wingyipstore.co.uk/bba-deep-orange-food-colour-h5507-500g.html
+    Redirect 301 /p-10235-vip-food-box-no3-185x105x60mm.aspx https://www.wingyipstore.co.uk/vip-food-box-no-3-185x105x60mm-300pc.html
+    Redirect 301 /p-8794-hp-brown-sauce.aspx https://www.wingyipstore.co.uk/hp-brown-sauce-4-6kg.html
+    Redirect 301 /p-8124-clay-pot-1-handle-with-wire-surround-and-lid-24cm-s7.aspx https://www.wingyipstore.co.uk/clay-pot-1-handle-with-wire-surround-and-lid-24cm-s7-pc.html
+    Redirect 301 /p-10776-stone-mortar-pestle-7.aspx https://www.wingyipstore.co.uk/stone-mortar-pestle-7.html
+    Redirect 301 /p-11360-ksf-ice-tea-with-lemon-flavour.aspx https://www.wingyipstore.co.uk/ksf-ice-tea-with-lemon-flavour-600ml.html
+    Redirect 301 /p-11439-recipe-vegetable-festive-potstickers.aspx https://www.wingyipstore.co.uk/recipes/recipe-vegetable-festive-potstickers.html
+    Redirect 301 /p-8689-garden-wafer-peanut-cream.aspx https://www.wingyipstore.co.uk/garden-wafer-peanut-cream-200g.html
+    Redirect 301 /p-9498-pataks-mixed-pickle-hot.aspx https://www.wingyipstore.co.uk/patak-s-mixed-pickle-hot-283g.html
+    Redirect 301 /p-10448-wing-yip-sweet-sour-sauce-drum.aspx https://www.wingyipstore.co.uk/wing-yip-sweet-sour-sauce-drum-2-2ltr.html
+    Redirect 301 /p-10258-wah-loong-hui-sup-tea.aspx https://www.wingyipstore.co.uk/wah-loong-hui-sup-tea-113g.html
+    Redirect 301 /p-8369-dried-orange-peel-liquorice.aspx https://www.wingyipstore.co.uk/dried-orange-peel-liquorice-28g.html
+    Redirect 301 /p-8676-garden-malkist-cracker-tray.aspx https://www.wingyipstore.co.uk/garden-malkist-cracker-tray-324g.html
+    Redirect 301 /p-9614-rajah-fine-lime-pickle-hot-jar.aspx https://www.wingyipstore.co.uk/rajah-fine-lime-pickle-hot-jar-285g.html
+    Redirect 301 /p-17-recipe-crispy-fish-in-sweet-and-sour-sauce-with-lychees.aspx https://www.wingyipstore.co.uk/recipes/recipe-crispy-fish-in-sweet-and-sour-sauce-with-lychees.html
+    Redirect 301 /p-8262-datu-puti-soy-sauce.aspx https://www.wingyipstore.co.uk/datu-puti-soy-sauce-1ltr.html
+    Redirect 301 /p-8838-induction-cooker-mceek-18a.aspx https://www.wingyipstore.co.uk/induction-cooker-mceek-18a-pc.html
+    Redirect 301 /p-8598-foco-roasted-coconut-juice-can.aspx https://www.wingyipstore.co.uk/foco-roasted-coconut-juice-can-350ml.html
+    Redirect 301 /p-10479-yeos-ezy-cook-noodle.aspx https://www.wingyipstore.co.uk/yeo-s-ezy-cook-noodle-400g.html
+    Redirect 301 /p-9233-mama-instant-noodle-pork-flavour.aspx https://www.wingyipstore.co.uk/mama-instant-noodle-pork-flavour-60g.html
+    Redirect 301 /p-10089-teans-prawn-noodle-paste-jar.aspx https://www.wingyipstore.co.uk/teans-prawn-noodle-paste-jar-200g.html
+    Redirect 301 /p-9506-pataks-vindaloo-paste-hot.aspx https://www.wingyipstore.co.uk/patak-s-vindaloo-paste-hot-283g.html
+    Redirect 301 /p-11335-super-korean-ginseng-tea.aspx https://www.wingyipstore.co.uk/super-korean-ginseng-tea-90g.html
+    Redirect 301 /p-18-recipe-red-pepper-beef-in-black-bean-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-red-pepper-beef-in-black-bean-sauce.html
+    Redirect 301 /p-10062-taisun-lychee-jelly-drink.aspx https://www.wingyipstore.co.uk/taisun-lychee-jelly-drink-320g.html
+    Redirect 301 /p-10135-tilda-thai-fragrant-rice.aspx https://www.wingyipstore.co.uk/tilda-thai-fragrant-rice-1kg.html
+    Redirect 301 /p-9546-prb-superior-dark-soy-sauce.aspx https://www.wingyipstore.co.uk/prb-superior-dark-soy-sauce-8ltr.html
+    Redirect 301 /p-7653-a1-instant-curry-paste-for-meat.aspx https://www.wingyipstore.co.uk/a1-instant-curry-paste-for-meat-230g.html
+    Redirect 301 /p-1101-recipe-fresh-fruit-salad-with-honey-lime-agar-agar.aspx https://www.wingyipstore.co.uk/recipes/recipe-fresh-fruit-salad-with-honey-and-lime-agar-agar.html
+    Redirect 301 /p-11220-square-container-freezer-2litre-3113400-c53.aspx https://www.wingyipstore.co.uk/square-container-freezer-2litre-3113400-c53-pc.html
+    Redirect 301 /p-9138-longevity-sweeten-condensed-milk.aspx https://www.wingyipstore.co.uk/longevity-sweeten-condensed-milk-397g.html
+    Redirect 301 /p-10127-tilda-long-grain-rice.aspx https://www.wingyipstore.co.uk/tilda-long-grain-rice-2kg.html
+    Redirect 301 /p-8700-gogi-tempura-flour.aspx https://www.wingyipstore.co.uk/gogi-tempura-flour-150g.html
+    Redirect 301 /p-10238-vita-chrysanthemum-tea.aspx https://www.wingyipstore.co.uk/vita-chrysanthemum-tea-250ml.html
+    Redirect 301 /p-11334-famous-house-mixed-oat-congee.aspx https://www.wingyipstore.co.uk/famous-house-mixed-oat-congee-370g.html
+    Redirect 301 /p-8000-chefs-choice-coconut-cream.aspx https://www.wingyipstore.co.uk/chef-s-choice-coconut-cream-400ml.html
+    Redirect 301 /p-12158-aluminium-steamer-set-30cm-12rolin.aspx https://www.wingyipstore.co.uk/aluminium-steamer-set-30cm-12-rolin-set.html
+    Redirect 301 /p-10757-dried-red-dates-gaisum-eb.aspx https://www.wingyipstore.co.uk/dried-red-dates-gaisum-e-b-200g .html
+    Redirect 301 /p-10138-tippy-salapao-mix.aspx https://www.wingyipstore.co.uk/tippy-salapao-mix-250g.html
+    Redirect 301 /p-9213-mai-siam-thai-coconut-milk.aspx https://www.wingyipstore.co.uk/mai-siam-thai-coconut-milk-400ml.html
+    Redirect 301 /p-10592-kingfisher-crab-meat-in-brine.aspx https://www.wingyipstore.co.uk/kingfisher-crab-meat-in-brine-170g.html
+    Redirect 301 /p-10480-yeos-grass-jelly-drink-can.aspx https://www.wingyipstore.co.uk/yeo-s-grass-jelly-drink-can-300ml.html
+    Redirect 301 /p-1122-recipe-massaman-beef-curry.aspx https://www.wingyipstore.co.uk/recipes/recipe-massaman-beef-curry.html
+    Redirect 301 /p-10476-yeos-chrysanthemum-tea-box.aspx https://www.wingyipstore.co.uk/yeo-s-chrysanthemum-tea-box-250ml.html
+    Redirect 301 /p-11140-bamboo-steamer-lid-12-hancock.aspx https://www.wingyipstore.co.uk/bamboo-steamer-lid-12-hancock-pc.html
+    Redirect 301 /p-9022-leng-heng-sour-pickled-mustard.aspx https://www.wingyipstore.co.uk/leng-heng-sour-pickled-mustard-350g.html
+    Redirect 301 /p-7712-aluminium-steamer-set-35cm-14rolin.aspx https://www.wingyipstore.co.uk/aluminium-steamer-set-35cm-14-rolin-set.html
+    Redirect 301 /p-11234-jdb-canned-herbal-tea.aspx https://www.wingyipstore.co.uk/jdb-canned-herbal-tea-310ml.html
+    Redirect 301 /p-9594-rajah-chilli-powder-pkt.aspx https://www.wingyipstore.co.uk/rajah-chilli-powder-pkt-100g.html
+    Redirect 301 /p-8593-foco-coconut-drink-wpulp.aspx https://www.wingyipstore.co.uk/foco-coconut-drink-w-pulp-350ml.html
+    Redirect 301 /p-9809-s06-80z-delipack-cup-lid.aspx https://www.wingyipstore.co.uk/s06-80z-delipack-cup-lid-50-set.html
+    Redirect 301 /p-9191-maggi-chilli-garlic-sauce.aspx https://www.wingyipstore.co.uk/maggi-chilli-garlic-sauce-305g.html
+    Redirect 301 /p-9411-ns-korean-kimchi-ramyun.aspx https://www.wingyipstore.co.uk/ns-korean-kimchi-ramyun-120g.html
+    Redirect 301 /p-10433-wing-yip-plum-sauce.aspx https://www.wingyipstore.co.uk/wing-yip-plum-sauce-270ml.html
+    Redirect 301 /p-1105-recipe-malaysian-beef-rendang.aspx https://www.wingyipstore.co.uk/recipes/recipe-malaysian-beef-rendang.html
+    Redirect 301 /p-1155-recipe-pork-in-dark-soy-babi-tauyu.aspx https://www.wingyipstore.co.uk/recipes/recipe-pork-in-dark-soy---babi-tauyu.html
+    Redirect 301 /p-11507-yaus-zum-dipping-sauce.aspx https://www.wingyipstore.co.uk/yau-s-zum-dipping-sauce-280g.html
+    Redirect 301 /p-1092-recipe-chinese-new-year-cake-neen-gow.aspx https://www.wingyipstore.co.uk/recipes/recipe-chinese-new-year-cake-neen-gow.html
+    Redirect 301 /p-9843-schweppes-cream-soda-can.aspx https://www.wingyipstore.co.uk/schweppes-cream-soda-can-330ml.html
+    Redirect 301 /p-10245-vita-sugar-cane-drink-na931.aspx https://www.wingyipstore.co.uk/vita-sugar-cane-drink-na931-250ml.html
+    Redirect 301 /p-9360-nb2-keep-warm-bag-m-navy.aspx https://www.wingyipstore.co.uk/nb2-keep-warm-bag-m-navy-pc.html
+    Redirect 301 /p-11019-brahims-sauce-fmeat-rendang.aspx https://www.wingyipstore.co.uk/brahim-s-sauce-f-meat-rendang-180g.html
+    Redirect 301 /p-10214-ufc-banana-sauce-regular.aspx https://www.wingyipstore.co.uk/ufc-banana-sauce-regular-320g.html
+    Redirect 301 /p-11417-recipe-chicken-satay-with-peanut-dipping-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-chicken-satay-with-peanut-dipping-sauce.html
+    Redirect 301 /p-1083-recipe-coconut-ice-cream.aspx https://www.wingyipstore.co.uk/recipes/recipe-coconut-ice-cream.html
+    Redirect 301 /p-9187-mae-ploy-red-curry-paste.aspx https://www.wingyipstore.co.uk/mae-ploy-red-curry-paste-400g.html
+    Redirect 301 /p-8737-h9002-kikko-plum-wine.aspx https://www.wingyipstore.co.uk/h9002-kikko-plum-wine-750ml.html
+    Redirect 301 /p-8769-healthy-boy-thin-soy-sauce.aspx https://www.wingyipstore.co.uk/healthy-boy-thin-soy-sauce-700ml.html
+    Redirect 301 /p-10174-trs-cinnamon-stick-dalchini.aspx https://www.wingyipstore.co.uk/trs-cinnamon-stick-dalchini-2kg.html
+    Redirect 301 /p-10593-maggi-chilli-sauce-extra-hot.aspx https://www.wingyipstore.co.uk/maggi-chilli-sauce-extra-hot-320g.html
+    Redirect 301 /p-9521-piao-1-tea-pot-500cc-gl-865.aspx https://www.wingyipstore.co.uk/piao-1-tea-pot-500cc-gl-865-pc.html
+    Redirect 301 /p-9228-mama-instant-noodle-chicken-flavour.aspx https://www.wingyipstore.co.uk/mama-instant-noodle-chicken-flavour-55g.html
+    Redirect 301 /p-8680-garden-pop-pan-cracker-spring-onion.aspx https://www.wingyipstore.co.uk/garden-pop-pan-cracker-spring-onion-225g.html
+    Redirect 301 /p-1166-recipe-chinese-almond-cookies.aspx https://www.wingyipstore.co.uk/recipes/recipe-chinese-almond-cookies.html
+    Redirect 301 /p-11227-amoy-chicken-powder.aspx https://www.wingyipstore.co.uk/amoy-chicken-powder-1kg.html
+    Redirect 301 /p-7801-b8013f0656-qp-mayonnaise-kewpie.aspx https://www.wingyipstore.co.uk/b8013-f0656-qp-mayonnaise-kewpie-500g.html
+    Redirect 301 /p-9779-rolin-vegetarian-mock-pork.aspx https://www.wingyipstore.co.uk/rolin-vegetarian-mock-pork-283g.html
+    Redirect 301 /p-10474-yeos-chilli-hot-sauce.aspx https://www.wingyipstore.co.uk/yeo-s-chilli-hot-sauce-300ml.html
+    Redirect 301 /p-9601-rajah-citric-acid-pkt.aspx https://www.wingyipstore.co.uk/rajah-citric-acid-pkt-100g.html
+    Redirect 301 /p-8596-foco-mango-juice-drink-can.aspx https://www.wingyipstore.co.uk/foco-mango-juice-drink-can-350ml.html
+    Redirect 301 /p-9299-mls-ground-fried-fish.aspx https://www.wingyipstore.co.uk/mls-ground-fried-fish-200g.html
+    Redirect 301 /p-10217-unif-ice-tea-bot.aspx https://www.wingyipstore.co.uk/unif-ice-tea-bot-500ml.html
+    Redirect 301 /p-10020-suree-tamarind-paste.aspx https://www.wingyipstore.co.uk/suree-tamarind-paste-227g.html
+    Redirect 301 /p-11596-bull-head-clam-broth-cube.aspx https://www.wingyipstore.co.uk/bull-head-clam-broth-cube-66g.html
+    Redirect 301 /p-9622-rajah-fine-vindaloo-paste.aspx https://www.wingyipstore.co.uk/rajah-fine-vindaloo-paste-285g.html
+    Redirect 301 /p-9375-nissin-instant-5-spice-beef-noodle-cup.aspx https://www.wingyipstore.co.uk/nissin-instant-5-spice-beef-noodle-cup-72g.html
+    Redirect 301 /p-9238-marca-pina-soy-sauce.aspx https://www.wingyipstore.co.uk/marca-pina-soy-sauce-750ml.html
+    Redirect 301 /p-1099-recipe-coconut-milk-agar-pudding.aspx https://www.wingyipstore.co.uk/recipes/recipe-coconut-milk-agar-pudding.html
+    Redirect 301 /p-10249-vits-air-dried-noodle-broad.aspx https://www.wingyipstore.co.uk/vits-air-dried-noodle-broad-400g.html
+    Redirect 301 /p-35-recipe-hot-and-sour-soup.aspx https://www.wingyipstore.co.uk/recipes/recipe-hot-and-sour-soup.html
+    Redirect 301 /p-10082-teans-chicken-curry-paste-jar.aspx https://www.wingyipstore.co.uk/teans-chicken-curry-paste-jar-200g.html
+    Redirect 301 /p-1168-recipe-beef-and-broccoli-in-oyster-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-beef-and-broccoli-in-oyster-sauce.html
+    Redirect 301 /p-11564-gge-noodle-snack-wheat-cracker-bbq-cube.aspx https://www.wingyipstore.co.uk/gge-noodle-snack-wheat-cracker-bbq-cube-80g.html
+    Redirect 301 /p-8506-eys-american-ginseng-soup-mix.aspx https://www.wingyipstore.co.uk/eys-american-ginseng-soup-mix-102g.html
+    Redirect 301 /p-9960-ss-wok-cover-13-34cm-hckl.aspx https://www.wingyipstore.co.uk/ss-wok-cover-13-34cm-hckl-pc.html
+    Redirect 301 /p-11447-tung-chun-hoi-sin-sauce.aspx https://www.wingyipstore.co.uk/tung-chun-hoi-sin-sauce-454g.html
+    Redirect 301 /p-7950-c1008-sb-sansho-noko-pepper.aspx https://www.wingyipstore.co.uk/c1008-sb-sansho-noko-pepper-12g.html
+    Redirect 301 /p-9060-lkk-drunken-chicken-sauce.aspx https://www.wingyipstore.co.uk/lkk-drunken-chicken-sauce-410ml.html
+    Redirect 301 /p-9942-ss-pork-needle-wwooden-hdle.aspx https://www.wingyipstore.co.uk/ss-pork-needle-w-wooden-hdle-pc.html
+    Redirect 301 /p-9058-lkk-crushed-ylw-bean-sauce-tin.aspx https://www.wingyipstore.co.uk/lkk-crushed-ylw-bean-sauce-tin-470g.html
+    Redirect 301 /p-9756-rolin-bamboo-rice-ladle-s-23cm.aspx https://www.wingyipstore.co.uk/rolin-bamboo-rice-ladle-s-23cm-pc.html
+    Redirect 301 /p-11476-nang-fah-minced-crab-in-spice.aspx https://www.wingyipstore.co.uk/nang-fah-minced-crab-in-spice-160g.html
+    Redirect 301 /p-1108-recipe-chinese-ribs-in-hoisin-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-chinese-ribs-in-hoisin-sauce.html
+    Redirect 301 /p-9329-n0075-myojo-udon-soup-beef.aspx https://www.wingyipstore.co.uk/n0075-myojo-udon-soup-beef-205g.html
+    Redirect 301 /p-7690-agv-chilli-sauce.aspx https://www.wingyipstore.co.uk/agv-chilli-sauce-165g.html
+    Redirect 301 /p-9609-rajah-fine-curry-paste-hot-jar.aspx https://www.wingyipstore.co.uk/rajah-fine-curry-paste-hot-jar-285g.html
+    Redirect 301 /p-8944-kirin-beer-ichiban-bottle.aspx https://www.wingyipstore.co.uk/kirin-beer-ichiban-bottle-330ml.html
+    Redirect 301 /p-9504-pataks-tikka-paste-mild.aspx https://www.wingyipstore.co.uk/patak-s-tikka-paste-mild-300g.html
+    Redirect 301 /p-11321-10-online-gift-voucher.aspx https://www.wingyipstore.co.uk/10-online-gift-voucher.html
+    Redirect 301 /p-8861-j2201d5001-mori-tofu-firm.aspx https://www.wingyipstore.co.uk/j2201-d5001-mori-tofu-firm-349g.html
+    Redirect 301 /p-8869-j3500-yutaka-prem-sushi-rice.aspx https://www.wingyipstore.co.uk/j3500-yutaka-prem-sushi-rice-20kg.html
+    Redirect 301 /p-10770-deer-young-coconut-meatsyrup.aspx https://www.wingyipstore.co.uk/deer-young-coconut-meat-syrup-440g.html
+    Redirect 301 /p-8382-dried-red-medlar-da-shan.aspx https://www.wingyipstore.co.uk/dried-red-medlar-da-shan-150g.html
+    Redirect 301 /p-25-recipe-kung-po-chicken-with-chillies-and-cashews.aspx https://www.wingyipstore.co.uk/recipes/recipe-kung-po-chicken-with-chillies-and-cashews.html
+    Redirect 301 /p-11322-20-online-gift-voucher.aspx https://www.wingyipstore.co.uk/20-online-gift-voucher.html
+    Redirect 301 /p-8129-claypot-nyonya-chicken-curry-mix.aspx https://www.wingyipstore.co.uk/claypot-nyonya-chicken-curry-mix-100g.html
+    Redirect 301 /p-8592-foco-aloe-vera-drink-can.aspx https://www.wingyipstore.co.uk/foco-aloe-vera-drink-can-350ml.html
+    Redirect 301 /p-8816-imperial-dragon-rice-bowl-45-288-99.aspx https://www.wingyipstore.co.uk/imperial-dragon-rice-bowl-4-5-288-99-pc.html
+    Redirect 301 /p-11491-ching-kee-phoenix-roll.aspx https://www.wingyipstore.co.uk/ching-kee-phoenix-roll-454g.html
+    Redirect 301 /p-11040-chef-choice-green-curry-paste.aspx https://www.wingyipstore.co.uk/chef-choice-green-curry-paste-400g.html
+    Redirect 301 /p-26-recipe-sticky-kung-po-ribs-and-wings.aspx https://www.wingyipstore.co.uk/recipes/recipe-sticky-kung-po-ribs-and-wings.html
+    Redirect 301 /p-9167-lucky-yellow-rock-sugar.aspx https://www.wingyipstore.co.uk/lucky-yellow-rock-sugar-454g.html
+    Redirect 301 /p-11531-nissin-soba-noodle-teriyaki-cup.aspx https://www.wingyipstore.co.uk/nissin-soba-noodle-teriyaki-cup-90g.html
+    Redirect 301 /p-10809-wy33-ms1000a-rectangle-mircowaveable-container-and-lid.aspx https://www.wingyipstore.co.uk/wy33-ms1000a-rectangle-mircowaveable-container-and-lid-50set.html
+    Redirect 301 /p-11354-hwf-korean-style-pepper-sauce.aspx https://www.wingyipstore.co.uk/hwf-korean-style-pepper-sauce-500g.html
+    Redirect 301 /p-9772-rolin-red-bean-paste.aspx https://www.wingyipstore.co.uk/rolin-red-bean-paste-510g.html
+    Redirect 301 /p-10486-yeos-malay-curry-mild-sc053.aspx https://www.wingyipstore.co.uk/yeo-s-malay-curry-mild-sc053-400ml.html
+    Redirect 301 /p-11563-yuki-love-taro-flavour-mochi.aspx https://www.wingyipstore.co.uk/yuki-love-taro-flavour-mochi-180g.html
+    Redirect 301 /p-10436-wing-yip-rice-noodle-5mm.aspx https://www.wingyipstore.co.uk/wing-yip-rice-noodle-5mm-2kg.html
+    Redirect 301 /p-1068-recipe-nasi-lemak.aspx https://www.wingyipstore.co.uk/recipes/recipe-nasi-lemak.html
+    Redirect 301 /p-9-recipe-oyster-chicken-with-mange-tout.aspx https://www.wingyipstore.co.uk/recipes/oyster-chicken-with-mange-tout.html
+    Redirect 301 /p-9759-rolin-broad-bean-thread-vermicelli.aspx https://www.wingyipstore.co.uk/rolin-broad-bean-thread-vermicelli-300g.html
+    Redirect 301 /p-8123-clay-pot-1-handle-with-wire-surround-and-lid-22cm-s6.aspx https://www.wingyipstore.co.uk/clay-pot-1-handle-with-wire-surround-and-lid-22cm-s6-pc.html
+    Redirect 301 /p-10771-tapioca-pearl-large-ctf.aspx https://www.wingyipstore.co.uk/tapioca-pearl-large-ctf-400g.html
+    Redirect 301 /p-8435-eb-star-aniseed-powder.aspx https://www.wingyipstore.co.uk/e-b-star-aniseed-powder-400g.html
+    Redirect 301 /p-8279-deerlemongrasspowderpkt.aspx https://www.wingyipstore.co.uk/deer-lemon-grass-powder-pkt-28g.html
+    Redirect 301 /p-8728-h2014-ozeki-sake.aspx https://www.wingyipstore.co.uk/h2014-ozeki-sake-750ml.html
+    Redirect 301 /p-9384-nissin-instant-noodle-prawn-flavour.aspx https://www.wingyipstore.co.uk/nissin-instant-noodle-prawn-flavour-100g.html
+    Redirect 301 /p-11438-recipe-pork-and-prawn-wonton.aspx https://www.wingyipstore.co.uk/recipes/recipe-pork-and-prawn-wonton.html
+    Redirect 301 /p-9317-nchoice-green-tea-cake.aspx https://www.wingyipstore.co.uk/n-choice-green-tea-cake-227g.html
+    Redirect 301 /p-11355-wangzhihe-traditional-red-beancurd.aspx https://www.wingyipstore.co.uk/wangzhihe-traditional-red-beancurd-250g.html
+    Redirect 301 /p-10160-torto-nat-black-sesame-spread.aspx https://www.wingyipstore.co.uk/torto-nat-black-sesame-spread-170g.html
+    Redirect 301 /p-1098-recipe-tom-yam-soup.aspx https://www.wingyipstore.co.uk/recipes/recipe-tom-yam-soup.html
+    Redirect 301 /p-11573-dee-thai-crispy-roll-pandan.aspx https://www.wingyipstore.co.uk/dee-thai-crispy-roll-pandan-150g.html
+    Redirect 301 /p-9894-skyflakes-biscuit-handy-pk-24s.aspx https://www.wingyipstore.co.uk/skyflakes-biscuit-handy-pk-24s-24x25g.html
+    Redirect 301 /p-1072-recipe-mee-siam.aspx https://www.wingyipstore.co.uk/recipes/recipe-mee-siam.html
+    Redirect 301 /p-10825-unif-green-tea.aspx https://www.wingyipstore.co.uk/unif-green-tea-500ml.html
+    Redirect 301 /p-10697-flck-wheat-starch.aspx https://www.wingyipstore.co.uk/flck-wheat-starch-450g.html
+    Redirect 301 /p-9889-singha-thai-beer-bottle.aspx https://www.wingyipstore.co.uk/singha-thai-beer-bottle-330ml.html
+    Redirect 301 /p-9776-rolin-vegetarian-mock-abalone.aspx https://www.wingyipstore.co.uk/rolin-vegetarian-mock-abalone-283g.html
+    Redirect 301 /p-11301-brands-essence-of-chicken.aspx https://www.wingyipstore.co.uk/brand-s-essence-of-chicken-68ml.html
+    Redirect 301 /p-8623-fu-chi-chilli-sauce.aspx https://www.wingyipstore.co.uk/fu-chi-chilli-sauce-400g.html
+    Redirect 301 /p-9755-rolin-bamboo-rice-ladle-l-28cm.aspx https://www.wingyipstore.co.uk/rolin-bamboo-rice-ladle-l-28cm-pc.html
+    Redirect 301 /p-10750-eb-assorted-spices.aspx https://www.wingyipstore.co.uk/e-b-assorted-spices-227g.html
+    Redirect 301 /p-11112-bamboo-steamer-lid-square-8-hancock.aspx https://www.wingyipstore.co.uk/bamboo-steamer-lid-square-8-hancock-pc.html
+    Redirect 301 /p-1120-recipe-oriental-prawn-cocktail.aspx https://www.wingyipstore.co.uk/recipes/recipe-oriental-prawn-cocktail.html
+    Redirect 301 /p-10537-silk-road-fortune-cookies.aspx https://www.wingyipstore.co.uk/silk-road-fortune-cookies-70g.html
+    Redirect 301 /p-9066-lkk-minced-garlic.aspx https://www.wingyipstore.co.uk/lkk-minced-garlic-326g.html
+    Redirect 301 /p-10828-namjai-red-curry-paste.aspx https://www.wingyipstore.co.uk/namjai-red-curry-paste-1kg.html
+    Redirect 301 /p-9392-nissin-instant-seafood-noodle-cup.aspx https://www.wingyipstore.co.uk/nissin-instant-seafood-noodle-cup-75g.html
+    Redirect 301 /p-7699-aji-ichiban-pres-prune-slice.aspx https://www.wingyipstore.co.uk/aji-ichiban-pres-prune-slice-80g.html
+    Redirect 301 /p-9976-straw-mushroom-lucky.aspx https://www.wingyipstore.co.uk/straw-mushroom-lucky.html
+    Redirect 301 /p-9110-lobo-orient-fried-rice-season-25g.aspx https://www.wingyipstore.co.uk/lobo-orient-fried-rice-season-25g-25g.html
+    Redirect 301 /p-1077-recipe-pancakes.aspx https://www.wingyipstore.co.uk/recipes/recipe-pancakes.html
+    Redirect 301 /p-38-recipe-mee-goreng.aspx https://www.wingyipstore.co.uk/recipes/recipe-mee-goreng.html
+    Redirect 301 /p-1137-recipe-crispy-beef.aspx https://www.wingyipstore.co.uk/recipes/recipe-crispy-beef.html
+    Redirect 301 /p-1064-recipe-hokkien-mee.aspx https://www.wingyipstore.co.uk/recipes/recipe-hokkien-mee.html
+    Redirect 301 /p-13-recipe-beef-and-three-mushrooms-with-oyster-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-beef-and-three-mushrooms-with-oyster-sauce.html
+    Redirect 301 /p-1109-recipe-skewered-prawns-in-sweet-sour-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-skewered-sweet-and-sour-bbq-prawns.html
+    Redirect 301 /p-27-recipe-crispy-bean-curd-salad-with-kung-po-dressing.aspx https://www.wingyipstore.co.uk/recipes/recipe-crispy-bean-curd-salad-with-kung-po-dressing.html
+    Redirect 301 /p-1149-recipe-crispy-prawn-fritters.aspx https://www.wingyipstore.co.uk/recipes/recipe-crispy-prawn-fritters.html
+    Redirect 301 /p-12176-recipe-glynn-purnells-crispy-scallop-and-prawn-balls-with-a-sticky-aromatic-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-glynn-purnells-crispy-scallop-and-prawn-balls-with-a-sticky-aromatic-sauce.html
+    Redirect 301 /p-12175-recipe-glynn-purnells-grilled-szechuan-style-chicken-skewers.aspx https://www.wingyipstore.co.uk/recipes/recipe-glynn-purnells-grilled-szechuan-style-chicken-skewers.html
+    Redirect 301 /p-12177-recipel-mango-pineapple-and-ginger-smoothie.aspx https://www.wingyipstore.co.uk/recipes/recipe-mango-pineapple-and-ginger-smoothie.html
+    Redirect 301 /p-12179-recipe-mixed-berries-smoothie.aspx https://www.wingyipstore.co.uk/recipes/recipe-mixed-berries-smoothie.html
+    Redirect 301 /p-12178-recipe-strawberry-banana-and-chilli-smoothie.aspx https://www.wingyipstore.co.uk/recipes/recipe-strawberry-banana-and-chilli-smoothie.html
+    Redirect 301 /p-1119-recipe-thai-beef-salad.aspx https://www.wingyipstore.co.uk/recipes/recipe-thai-beef-salad.html
+    Redirect 301 /p-1126-recipe-thai-spicy-pork-stirfry.aspx https://www.wingyipstore.co.uk/recipes/recipe-thai-spicy-pork-stir-fry.html
+    Redirect 301 /p-1168-recipe-beef-and-broccoli-in-oyster-sauce.aspx https://www.wingyipstore.co.uk/recipes/recipe-beef-and-broccoli-in-oyster-sauce.html
+    Redirect 301 /p-19-recipe-chicken-in-black-bean-with-beans.aspx https://www.wingyipstore.co.uk/recipes/recipe-chicken-in-black-bean-sauce-with-green-beans.html
+    Redirect 301 /p-1150-recipe-salt-and-pepper-squid.aspx https://www.wingyipstore.co.uk/recipes/recipe-salt-and-pepper-squid.html
+    Redirect 301 /p-1095-recipe-sushi.aspx https://www.wingyipstore.co.uk/recipes/recipe-sushi.html
+    Redirect 301 /p-26-recipe-sticky-kung-po-ribs-and-wings.aspx https://www.wingyipstore.co.uk/recipes/recipe-sticky-bbq-chicken-wings.html
+
+    #RewriteCond %{HTTPS} off
+    # First rewrite to HTTPS:
+    # Don't put www. here. If it is already there it will be included, if not
+    # the subsequent rule will catch it.
+    #RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    # Now, rewrite any request to the wrong domain to use www.
+    #RewriteCond %{HTTP_HOST} !^www\.
+    #RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+############################################
+## you can put here your magento root folder
+## path relative to web root
+
+    #RewriteBase /magento/
+
+############################################
+## uncomment next line to enable light API calls processing
+
+#    RewriteRule ^api/([a-z][0-9a-z_]+)/?$ api.php?type=$1 [QSA,L]
+
+############################################
+## rewrite API2 calls to api.php (by now it is REST only)
+
+    RewriteRule ^api/rest api.php?type=rest [QSA,L]
+
+############################################
+## workaround for HTTP authorization
+## in CGI environment
+
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+############################################
+## TRACE and TRACK HTTP methods disabled to prevent XSS attacks
+
+    RewriteCond %{REQUEST_METHOD} ^TRAC[EK]
+    RewriteRule .* - [L,R=405]
+
+############################################
+## redirect for mobile user agents
+
+    #RewriteCond %{REQUEST_URI} !^/mobiledirectoryhere/.*$
+    #RewriteCond %{HTTP_USER_AGENT} "android|blackberry|ipad|iphone|ipod|iemobile|opera mobile|palmos|webos|googlebot-mobile" [NC]
+    #RewriteRule ^(.*)$ /mobiledirectoryhere/ [L,R=302]
+
+############################################
+## always send 404 on missing files in these folders
+
+    RewriteCond %{REQUEST_URI} !^/(media|skin|js)/
+
+############################################
+## never rewrite for existing files, directories and links
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+
+############################################
+## rewrite everything else to index.php
+
+    RewriteRule .* index.php [L]
+
+</IfModule>
+
+
+############################################
+## Prevent character encoding issues from server overrides
+## If you still have problems, use the second line instead
+
+    AddDefaultCharset Off
+    #AddDefaultCharset UTF-8
+
+<IfModule mod_expires.c>
+
+############################################
+## Add default Expires header
+## http://developer.yahoo.com/performance/rules.html#expires
+
+    ExpiresDefault "access plus 1 year"
+
+</IfModule>
+
+############################################
+## By default allow all access
+
+    Order allow,deny
+    Allow from all
+
+###########################################
+## Deny access to release notes to prevent disclosure of the installed Magento version
+
+    <Files RELEASE_NOTES.txt>
+        order allow,deny
+        deny from all
+    </Files>
+
+############################################
+## If running in cluster environment, uncomment this
+## http://developer.yahoo.com/performance/rules.html#etags
+
+    #FileETag none
+
+php_flag apc.cache_by_default Off
+
+## BEGIN_NITROGENTO_DEFLATE
+
+<IfModule mod_deflate.c>
+ SetOutputFilter DEFLATE
+ AddOutputFilterByType DEFLATE text/*
+ BrowserMatch ^Mozilla/4 gzip-only-text/html
+ BrowserMatch ^Mozilla/4\.0[678] no-gzip
+ BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+ SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+ SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+ SetEnvIfNoCase Request_URI \.pdf$ no-gzip dont-vary
+ SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
+</IfModule>
+
+<IfModule mod_headers.c>
+ Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+## END_NITROGENTO_DEFLATE
+
+## BEGIN_NITROGENTO_EXPIRE
+
+<IfModule mod_expires.c>
+ ExpiresActive On
+ ExpiresDefault "access plus 1 year"
+  # IMAGES
+ ExpiresByType image/jpg "access plus 1 year"
+ ExpiresByType image/jpeg "access plus 1 year"
+ ExpiresByType image/png "access plus 1 year"
+ ExpiresByType image/gif "access plus 1 year"
+ AddType image/x-icon .ico 
+ ExpiresByType image/ico "access plus 1 year"
+ ExpiresByType image/icon "access plus 1 year"
+ ExpiresByType image/x-icon "access plus 1 year"
+  # FAVICON
+ ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+  # CSS
+ ExpiresByType text/css "access plus 1 month"
+  # HTML
+ ExpiresByType text/html "access plus 0 seconds"
+ ExpiresByType application/xhtml+xml "access plus 0 seconds"
+  # JAVASCRIPTS
+ ExpiresByType application/javascript "access plus 1 month"
+ ExpiresByType text/javascript "access plus 1 month"
+ ExpiresByType application/x-javascript "access plus 1 month"
+  # FLASH
+ ExpiresByType application/x-shockwave-flash "access plus 1 year"
+</IfModule>
+
+## END_NITROGENTO_EXPIRE
+
+## BEGIN_NITROGENTO_ETAGS
+
+FileETag Size
+
+## END_NITROGENTO_ETAGS

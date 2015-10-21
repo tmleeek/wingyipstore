@@ -1,0 +1,38 @@
+<?php $categoryCollection = $this->getCollection() ?>
+<?php if($categoryCollection->count()): ?>
+<?php $cnt=0;?>
+<div class="category-wapper">
+
+    <div class="category-products">  
+        <div class="products-block" id="products-grid">
+			<?php foreach($categoryCollection as $_category):?> 
+            	<?php if($cnt==0):?><div class="row products-grid"> <?php endif;?>
+            	<div class="col-xs-12 col-lg-4 col-sm-4 col-6 _item <?php if($cnt==0):?>first<?php elseif($cnt==2):?>last <?php endif;?>">
+                    <div class="product-cat-block">
+                        <a href="<?php echo $this->getRecipeCategoryUrl($_category)?>" title="<?php echo $_category->getName() ?>">
+                            <div class="image" style="background-image: url(<?php echo $this->getImage($_category);?>);"></div>
+                           <?php /*?> <img src="<?php echo $this->getImage($_category);?>" alt="<?php echo $_category->getName() ?>" title="<?php echo $_category->getName() ?>" /><?php */?>
+                            <div class="name"><span><?php echo $_category->getName() ?>	</span></div>
+                        </a>
+                    </div>
+                </div>
+            	<?php $cnt++?>
+                <?php if($cnt==3):?></div> <?php $cnt=0; endif;?>
+            <?php endforeach?>
+            <?php if($cnt >0): ?>
+        	    <?php for(;$cnt <3;$cnt++):?>
+                    <div class="col-xs-12 col-lg-4 col-sm-4 col-6 _item <?php if($cnt==2):?>last <?php endif;?>">
+                    </div>
+                <?php endfor;?>
+            <?php if($cnt==3):?></div><?php $cnt=0; endif;?>
+            <?php endif; ?>
+        </div>
+    </div>
+
+</div>
+
+<?php endif ?>
+
+
+
+

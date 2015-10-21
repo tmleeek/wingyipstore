@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <sales_email_order_items>       
+        <reference name="order_totals">
+            <block type="blended/sales_order_blended" name="blendedcalculate" />          
+        </reference>        
+    </sales_email_order_items>
+
+     <!--<sales_email_order_invoice_items>
+        <reference name="invoice_totals">
+            <block type="totaldiscount/sales_order_invoice_totals_discount" name="totaldiscount" />            
+        </reference>              
+    </sales_email_order_invoice_items>   -->
+</layout>

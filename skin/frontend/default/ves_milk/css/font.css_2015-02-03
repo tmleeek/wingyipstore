@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'Museo100-Regular';
+    src: url('../fonts/Museo100-Regular.eot?') format('eot'), 
+         url('../fonts/Museo100-Regular.woff') format('woff'), 
+         url('../fonts/Museo100-Regular.ttf')  format('truetype'),
+         url('../fonts/Museo100-Regular.svg#Museo100-Regular') format('svg');
+}
+@font-face {
+    font-family: 'Museo-300';
+    src: url('../fonts/Museo-300.eot?') format('eot'), 
+         url('../fonts/Museo-300.otf')  format('opentype'),
+         url('../fonts/Museo-300.woff') format('woff'), 
+         url('../fonts/Museo-300.ttf')  format('truetype'),
+         url('../fonts/Museo-300.svg#Museo-300') format('svg');
+}
+@font-face {
+    font-family: 'Museo-500';
+    src: url('../fonts/Museo-500.eot?') format('eot'), 
+         url('../fonts/Museo-500.otf')  format('opentype'),
+         url('../fonts/Museo-500.woff') format('woff'), 
+         url('../fonts/Museo-500.ttf')  format('truetype'),
+         url('../fonts/Museo-500.svg#Museo-500') format('svg');
+}
+
+@font-face {
+    font-family: 'aachen_btbold';
+    src: url('../fonts/font_-_truetype_-_aachen_bold_bt-webfont.eot');
+    src: url('../fonts/font_-_truetype_-_aachen_bold_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/font_-_truetype_-_aachen_bold_bt-webfont.woff') format('woff'),
+         url('../fonts/font_-_truetype_-_aachen_bold_bt-webfont.ttf') format('truetype'),
+         url('../fonts/font_-_truetype_-_aachen_bold_bt-webfont.svg#aachen_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'aachen_btroman';
+    src: url('../fonts/font_-_truetype_-_aachen_bt-webfont.eot');
+    src: url('../fonts/font_-_truetype_-_aachen_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/font_-_truetype_-_aachen_bt-webfont.woff') format('woff'),
+         url('../fonts/font_-_truetype_-_aachen_bt-webfont.ttf') format('truetype'),
+         url('../fonts/font_-_truetype_-_aachen_bt-webfont.svg#aachen_btroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'franklin_gothic_demiIt';
+    src: url('../fonts/frankgs-demiit-calc-webfont.eot');
+    src: url('../fonts/frankgs-demiit-calc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/frankgs-demiit-calc-webfont.woff') format('woff'),
+         url('../fonts/frankgs-demiit-calc-webfont.ttf') format('truetype'),
+         url('../fonts/frankgs-demiit-calc-webfont.svg#itc_franklin_gothic_stddemiIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'franklin_gothic_medium';
+    src: url('../fonts/frankgs-med-calc-webfont.eot');
+    src: url('../fonts/frankgs-med-calc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/frankgs-med-calc-webfont.woff') format('woff'),
+         url('../fonts/frankgs-med-calc-webfont.ttf') format('truetype'),
+         url('../fonts/frankgs-med-calc-webfont.svg#itc_franklin_gothic_stdmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'franklin_gothic_MdIt';
+    src: url('../fonts/frankgs-medit-calc-webfont.eot');
+    src: url('../fonts/frankgs-medit-calc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/frankgs-medit-calc-webfont.woff') format('woff'),
+         url('../fonts/frankgs-medit-calc-webfont.ttf') format('truetype'),
+         url('../fonts/frankgs-medit-calc-webfont.svg#itc_franklin_gothic_stdMdIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'franklin_gothic_demi';
+    src: url('../fonts/frankgs-demi-calc-webfont.eot');
+    src: url('../fonts/frankgs-demi-calc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/frankgs-demi-calc-webfont.woff') format('woff'),
+         url('../fonts/frankgs-demi-calc-webfont.ttf') format('truetype'),
+         url('../fonts/frankgs-demi-calc-webfont.svg#itc_franklin_gothic_stddemi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'franklin_gothic_book';
+    src: url('../fonts/frankgs-book-calc-webfont.eot');
+    src: url('../fonts/frankgs-book-calc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/frankgs-book-calc-webfont.woff') format('woff'),
+         url('../fonts/frankgs-book-calc-webfont.ttf') format('truetype'),
+         url('../fonts/frankgs-book-calc-webfont.svg#itc_franklin_gothic_stdbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'franklin_gothic_BkIt';
+    src: url('../fonts/frankgs-bookit-calc-webfont.eot');
+    src: url('../fonts/frankgs-bookit-calc-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/frankgs-bookit-calc-webfont.woff') format('woff'),
+         url('../fonts/frankgs-bookit-calc-webfont.ttf') format('truetype'),
+         url('../fonts/frankgs-bookit-calc-webfont.svg#itc_franklin_gothic_stdBkIt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

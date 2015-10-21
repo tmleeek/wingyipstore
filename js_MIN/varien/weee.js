@@ -1,0 +1,1 @@
+function taxToggle(e,a,s){"none"==$(e).style.display?($(e).show(),$(a).addClassName(s)):($(e).hide(),$(a).removeClassName(s))}

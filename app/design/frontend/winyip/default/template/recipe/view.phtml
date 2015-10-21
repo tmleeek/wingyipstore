@@ -1,0 +1,110 @@
+<?php $_helper = $this->helper('recipe'); ?>  
+<?php $_recipe = $this->getRecipe(); ?>      
+
+<div class="product-view">
+    <div class="product-essential">
+        <div class="product-shop">
+            <div class="product-name">
+                <h1><?php echo $_recipe->getName() ?></h1>
+            </div>
+            
+            <div class="short-description">
+                <h2><?php echo $this->__('Quick Overview') ?></h2>
+                <div class="std"><?php echo $_recipe->getShortDescription() ?></div>
+            </div>
+            
+            <?php $ingredients = $this->getIngredients($_recipe); ?>
+            <?php if($ingredients->count() > 0): ?>
+            <div class="ingredients">
+                <h2><?php echo $this->__('Ingredients') ?></h2>
+                <ul>
+                <?php foreach($ingredients as $_ingredient): ?>
+                     <li><?php echo $_ingredient->getName() ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+            <?php endif ?>
+            
+            <?php $cupboardIngredients = $this->getCupboardIngredients($_recipe); ?>
+            <?php if($cupboardIngredients->count() > 0): ?>
+            <div class="cupboard_ingredients">
+                <h2><?php echo $this->__('Cupboard Ingredients') ?></h2>
+                <ul>
+                <?php foreach($cupboardIngredients as $_cupboard): ?>
+                     <li><?php echo $_cupboard->getName() ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+            <?php endif ?>
+            
+            <?php $cuisines = $this->getCuisine($_recipe); ?>
+            <?php if($cuisines->count() > 0): ?>
+            <div class="cuisines">
+                <h2><?php echo $this->__('Cuisine Type') ?></h2>
+                <ul>
+                <?php foreach($cuisines as $_cuisine): ?>
+                     <li><?php echo $_cuisine->getName() ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+            <?php endif ?>
+            
+            <?php $categories = $this->getCategories($_recipe); ?>
+            <?php if($categories->count() > 0): ?>
+            <div class="categories">
+                <h2><?php echo $this->__('Categories') ?></h2>
+                <ul>
+                <?php foreach($categories as $_category): ?>
+                     <li><?php echo $_category->getName() ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+            <?php endif ?>
+            
+            <?php $cookingmethods = $this->getCookingmethod($_recipe); ?>
+            <?php if($cookingmethods->count() > 0): ?>
+            <div class="cookingmethod">
+                <h2><?php echo $this->__('Cooking Method') ?></h2>
+                <ul>
+                <?php foreach($cookingmethods as $_cooking): ?>
+                     <li><?php echo $_cooking->getName() ?></li>
+                <?php endforeach; ?>
+                </ul>
+            </div>
+            <?php endif ?>
+            
+            <div class="description">
+                <h2><?php echo $this->__('Detail Overview') ?></h2>
+                <div class="std"><?php echo $_recipe->getDescription() ?></div>
+            </div>
+            
+        </div>
+        <div class="product-img-box">
+            <img src="<?php echo $_helper->resizeImage(265,265,$_recipe->getImage()) ?>" alt="<?php echo $_recipe->getName(); ?>" />
+            <?php if($_recipe->getVideo()): ?>
+                <p>
+                    <a class="fancybox-media" href="<?php echo $_recipe->getVideo() ?>" rel="media-gallery"><?php echo $this->__("click "); ?></a>
+                    <?php echo $this->__("here, to play the video") ?>
+                </p>
+            <?php endif; ?>
+        </div>  
+    </div>
+    <div class="associated">
+        <?php echo $this->getChildHtml("recipe_associated") ?>
+    </div>  
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function() {   
+    jQuery('.fancybox-media').fancybox({  
+        openEffect  : 'none',
+        closeEffect : 'none',
+        helpers : {
+            media : {}
+        }
+    });
+});
+</script>
+
+
+
+

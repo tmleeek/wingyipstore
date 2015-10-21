@@ -1,0 +1,170 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+$helper = Mage::helper("ves_tempcp/framework")->getFramework( );
+$themeConfig = $helper->getConfig();
+$contact_customhtml = $themeConfig->get("contact_customhtml","", true);
+$store = Mage::getStoreConfig('general/store_information/name');
+$address = Mage::getStoreConfig('general/store_information/address');
+$email = Mage::getStoreConfig('contacts/email/recipient_email');
+$address = !empty($address)?$address:'Camera storeBirmingham (Head Quarters) 375 Nechells Park Road, Nechells, Birmingham, B7 5NT';
+$address = $themeConfig->get('location_address', $address);
+$telephone = Mage::getStoreConfig('general/store_information/phone');
+$fax = "";
+?>
+<div class="wrapper">
+    <h4><?php echo Mage::helper('contacts')->__('Store Location'); ?></h4>
+                <?php //start contact map ?>
+                <div class="contact-location"> 
+                    <div id="footer-info"></div>
+                </div>
+                <?php  if(  $contact_customhtml ){ ?>
+                    <div class="contact-info">
+                        <div class="content">       
+                            <div class="media">
+                                <div class="fa fa-home pull-left"></div>
+                                <div class="address media-body">
+                                    <a href="<?php echo Mage::getBaseUrl(); ?>contacts" target="_blank">More information</a>
+                                    <?php /*echo $address;*/ ?>
+                                </div>
+                            </div>
+<!--                            <div class="contact-customhtml">-->
+<!--                                --><?php //echo $contact_customhtml; ?>
+<!--                            </div>-->
+                            <?php /*if ($telephone) { ?>
+                            <div class="media">
+                                <i class="fa fa-phone pull-left"></i>
+                                <div class="media-body">                          
+                                    <?php echo $telephone; ?>                                                       
+                                </div>
+                            </div>
+                            <?php } ?>
+                            <div class="media">
+                                <i class="fa fa-envelope"></i>
+                                <div class="media-body">
+                                    <?php echo $email; ?>
+                                </div>
+                            </div><?php */ ?>
+                        </div>  
+                    </div>
+                <?php } ?> 
+                <?php // Jquery googlemap api v3 ?>
+                <?php /* ?>
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;language=en"></script>
+                <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS); ?>venustheme/ves_tempcp/gmap/gmap3.min.js"></script>
+                <script type="text/javascript" src="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);  ?>venustheme/ves_tempcp/gmap/gmap3.infobox.js"></script>
+                <?php */ ?>
+                <script type="text/javascript">
+                    var mapDiv, map, infobox;
+                    var lat = <?php echo $themeConfig->get('location_latitude', '40.705423'); ?>;
+                    var lon = <?php echo $themeConfig->get('location_longitude', '-74.008616'); ?>;
+                    jQuery(document).ready(function($) {
+                        var _map_icon = null;
+                        
+                        var style = [
+
+                            {
+                              "featureType": "landscape",
+                              "stylers": [
+                                { "color": "#474b50" }
+                              ]
+                            },{
+                              "featureType": "poi",
+                              "stylers": [
+                                { "visibility": "off" }
+                              ]
+                            },{
+                              "featureType": "road",
+                              "elementType": "geometry",
+                              "stylers": [
+                                { "color": "#34343a" }
+                              ]
+                            },{
+                              "featureType": "administrative",
+                              "elementType": "labels.text.fill",
+                              "stylers": [
+                                { "lightness": 100 }
+                              ]
+                            },{
+                              "featureType": "administrative",
+                              "elementType": "labels.text.stroke",
+                              "stylers": [
+                                { "visibility": "off" }
+                              ]
+                            },{
+                              "featureType": "road",
+                              "elementType": "labels",
+                              "stylers": [
+                                { "visibility": "off" }
+                              ]
+                            },{
+                              "featureType": "transit",
+                              "stylers": [
+                                { "visibility": "off" }
+                              ]
+                            },{
+                              "featureType": "water",
+                              "elementType": "geometry",
+                              "stylers": [
+                                { "hue": "#ffc300" },
+                                { "color": "#55b8e2" }
+                              ]
+                            },{
+                            }
+
+                     ];
+                    
+                        mapDiv = $("#footer-info");
+                        mapDiv.height(400).gmap3({
+                            map:{
+                                options:{
+                                    center:[lat,lon],
+                                    zoom: 5,
+                                    styles: style
+                                }
+                            },
+                            marker:{
+                                values:[
+                                    {latLng:[lat, lon]},
+                                    {latLng:[53.486258, -2.229858]},
+                                    {latLng:[51.3631439, -0.1182037]},
+                                    {latLng:[51.566901, -0.22891]}
+                                ],
+                                options:{
+                                    draggable: false,
+                                    icon: "<?php echo $this->getSkinUrl('images/map-pin-mini.png'); ?>"
+                                }
+                            }
+                        });
+                    });
+                </script>
+                <?php //end contact map ?>
+            </div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+//]]>
+</script>

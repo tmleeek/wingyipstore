@@ -1,0 +1,21 @@
+<?php $courses = $this->getCollection(); ?>
+<?php if(count($courses)>0): ?>
+<div class="block"> 
+    <div class="block-title">
+        <strong><span><?php echo $this->__('Recipe Courses') ?></span></strong>
+    </div>
+    <div class="block-content">
+        <ul>
+            <?php foreach($courses as $_course):?> 
+                <li>
+                    <a href="<?php echo $this->getRecipeCourseUrl($_course)?>" title="<?php echo $_course->getName() ?>"><?php echo $_course->getName() ?></a>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+</div>
+<?php endif ?>
+
+
+
+

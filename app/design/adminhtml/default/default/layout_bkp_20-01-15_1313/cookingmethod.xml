@@ -1,0 +1,10 @@
+<?xml version="1.0"?> 
+<layout>
+    <cookingmethod_adminhtml_cookingmethod_new>
+        <update handle="editor"/>
+    </cookingmethod_adminhtml_cookingmethod_new>
+    
+    <cookingmethod_adminhtml_cookingmethod_edit>
+        <update handle="editor"/>
+    </cookingmethod_adminhtml_cookingmethod_edit>
+</layout>

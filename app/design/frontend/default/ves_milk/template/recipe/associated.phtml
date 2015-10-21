@@ -1,0 +1,47 @@
+
+<?php $associatedProducts = $this->getCollection() ?>
+<?php
+    $helper = Mage::helper("ves_tempcp/framework")->getFramework( );
+    if(!$helper || !is_object($helper)) {
+        $themeName =  Mage::getDesign()->getTheme('frontend');
+        $themeConfig = Mage::helper('ves_tempcp/theme')->getCurrentTheme();
+
+    } else {
+        $themeConfig = $helper->getConfig();
+    }
+    $ajax_cart = $themeConfig->get("enable_ajaxcart", 0); 
+?>
+<?php $isAvilable = false?>
+<?php if($associatedProducts->count()): ?>
+    <div class="tabs-group product-included">
+      <div id="tabs" class="htabs clearfix">
+         <div><a class="selected" href="#">Products included in the recipe</a></div>
+      </div>
+      <div class="tab-content box-description">
+         <ul>
+            <?php foreach($associatedProducts as $_item): ?> 
+                <li class="clearfix">
+		           <div class="left">
+                      <div class="product-included-img"><img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(50) ?>" alt="" /></div>
+                      <div class="product-included-title"><?php echo $this->escapeHtml($_item->getName()) ?></div>
+                   </div>
+                   <div class="right">
+                      <?php echo Mage::getSingleton('core/layout')->createBlock('catalog/product')->setTemplate('catalog/product/price.phtml')->setProduct($_item)->toHtml();  ?>
+                      <div class="product-included-count"><div class="qty quantity-adder add-product"><div class="quantity-number pull-left"><input type="text" name="qty" id="qty<?php echo $_item->getId() ?>" maxlength="10" value="<?php echo ($_item->getQty()?$_item->getQty():1) ?>" title="Qty" class="input-text qty"></div><div class="quantity-wrapper pull-left"><span class="add-up add-action fa fa-plus"></span><span class="add-down add-action fa fa-minus"></span></div><div style="clear:both"></div></div></div>
+                      <div class="product-included-add"><div class="add-to-cart"><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="<?php if($ajax_cart) { ?>addToCart('<?php echo $this->getAddToCartUrl($_item) ?>')<?php } else { ?>setLocation('<?php echo $this->getAddToCartUrl($_item) ?>')<?php } ?>"><span><i class="fa fa-shopping-cart"></i><?php echo $this->__('Add to Cart') ?></span></button></div>
+                      <!--<div class="product-included-add"><button type="submit" title="Add to Cart" class="button btn-cart"><i class="fa fa-shopping-cart"></i><span><?php echo $this->__('Add to Cart')?></span></button></div>-->
+                   </div>
+                </li>
+           
+            <?php endforeach; ?>
+          </ul>
+      </div>
+   </div> 
+<?php endif ?>
+<script type="text/javascript">
+jQuery('#tabs a').tabs();
+</script>  
+
+
+
+

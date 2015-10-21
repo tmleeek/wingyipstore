@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <modules>
+        <Bubble_CodeReview>
+            <version>1.1.0</version>
+        </Bubble_CodeReview>
+    </modules>
+    <global>
+        <helpers>
+            <bubble_codereview>
+                <class>Bubble_CodeReview_Helper</class>
+            </bubble_codereview>
+        </helpers>
+        <events>
+            <controller_front_send_response_before>
+                <observers>
+                    <bubble_codereview>
+                        <class>Bubble_CodeReview_Model_Observer</class>
+                        <method>onSendResponseBefore</method>
+                    </bubble_codereview>
+                </observers>
+            </controller_front_send_response_before>
+        </events>
+    </global>
+    <frontend>
+        <routers>
+            <bubble>
+                <use>standard</use>
+                <args>
+                    <module>Bubble_CodeReview</module>
+                    <frontName>bubble</frontName>
+                </args>
+            </bubble>
+        </routers>
+    </frontend>
+</config>

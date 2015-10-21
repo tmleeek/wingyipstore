@@ -1,0 +1,104 @@
+<?php
+$controller = $this->getRequest()->getControllerName();
+$action = $this->getRequest()->getActionName();
+$module = $this->getRequest()->getModuleName();
+$current_page = $module.'/'.$controller.'/'.$action;
+if($current_page == 'checkout/onepage/index'){
+    $allowSubtotal=Mage::getStoreConfig('quotation/quotation_request/minimum_subtotal');
+    $flag = false;
+    if (!Mage::helper('quotation')->currentCustomerCanRequestQuote())
+        $flag = false;
+    elseif (Mage::getStoreConfig('quotation/quotation_request/allow_cart') == 1)
+        $flag = true;
+
+    $totals = Mage::getSingleton('checkout/cart')->getQuote()->getTotals();
+    $subtotal = $totals["subtotal"]->getValue();
+
+    if ($flag && $subtotal > $allowSubtotal && !Mage::getModel('checkout/session')->getQuoteAction()){
+        ?>
+        <script type="text/javascript">
+            window.location.replace("<?php echo Mage::getUrl('Quotation/Quote/RequestFromCart/'); ?>");
+        </script>
+    <?php
+    }
+}
+?>
+<div id="header-main" class="header-main">
+    <div class="container">
+    <div class="header-container">
+        <div class="header-right inner">
+            <div class="pull-right">
+                <div class="inner-toggle">
+                    <div class="cart-top">
+                        <?php echo Mage::helper("ves_tempcp/framework")->getMinicartHtml(); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar-toggle">
+            <div class="topLinks pull-right">
+                <!--span class="welcome-msg"><?php //echo $this->getChildHtml('welcome') ?> <?php //echo $this->getAdditionalHtml() ?></span-->
+                <?php echo $this->getChildHtml('topLinks') ?>
+            </div>
+        </div>
+        </div>
+            <?php if ($this->getIsHomePage()):?>
+                <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo">
+                     <strong><?php echo $this->getLogoAlt() ?></strong>
+                        <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
+                </a>
+                <?php else:?>
+                    <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+                <?php endif?>
+                <?php if($topContainer =  $this->getChildHtml('topContainer')){ ?>
+                    <div class="top-container">
+                        <div class="container">
+                            <?php echo $topContainer; ?>
+                        </div>
+                     </div>
+            <?php } ?>
+        <div id="topbar">
+                <div class="top-links pull-right">
+                    <div class="dropdown-toplinks">
+                        <span class="fa fa-globe"></span>
+                        <span>Top Links</span>
+                    </div>
+                    <?php echo $this->getChildHtml('topLinks') ?>
+                </div>
+                <div class="store-available pull-right">
+                    <?php /*
+                    <div class="store-language">
+                        <?php echo $this->getChildHtml('store_language') ?>
+                    </div>
+                    */ ?>
+                    <div class="top-currency" id="dLabel">
+                        <?php echo $this->getChildHtml('top_currency') ?>
+                    </div>
+                 </div>
+                <div class="top-search header-search">
+                    <?php echo $this->getChildHtml('topSearch') ?>
+                </div>
+        </div>
+    </div>
+    </div>
+</div>
+<?php if($topmenu = $this->getChildHtml('topMenu')){ ?>
+    <div id="ves-mainnav" class="nav-main">
+        <div class="container">
+            <div class="nav-container">
+                <div class="row">
+                    <?php /*cftn*/ ?>
+                    <div class="cftn_menu">
+                        <div class="col-lg-9 col-sm-9 col-xs-9 cftn_menu_col">
+                            <?php echo $topmenu; ?>
+                        </div>
+                        <div class="col-lg-3 col-sm-3 col-xs-3">
+                            <div class="top-search cftn_tablet_search">
+                                <?php echo $this->getChildHtml('topSearch') ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>

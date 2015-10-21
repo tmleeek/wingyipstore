@@ -1,0 +1,163 @@
+'*' - matches any; 'xyz*' - matches any that begins on 'xyz' and not longer than %d.,'*' - matches any; 'xyz*' - matches any that begins on 'xyz' and not longer than %d.
+-- Please Select --,-- Please Select --
+Add New Class,Add New Class
+Add New VAT Rate,Add New VAT Rate
+Add New VAT Rule,Add New VAT Rule
+After Discount,After Discount
+An error occurred while deleting this rate.,An error occurred while deleting this rate.
+An error occurred while deleting this rate. Incorrect rate ID.,An error occurred while deleting this rate. Incorrect rate ID.
+An error occurred while deleting this VAT class.,An error occurred while deleting this VAT class.
+An error occurred while deleting this VAT rule.,An error occurred while deleting this VAT rule.
+An error occurred while saving this VAT class.,An error occurred while saving this VAT class.
+An error occurred while saving this VAT class. A class with the same name,An error occurred while saving this VAT class. A class with the same name
+Apply Customer VAT,Apply Customer VAT
+Apply Discount On Prices,Apply Discount On Prices
+Apply VAT On,Apply VAT On
+"Apply discount on price including VAT is calculated based on store VAT, if ""Apply VAT after Discount"" is selected.","Apply discount on price including VAT is calculated based on store VAT, if ""Apply VAT after Discount"" is selected."
+Are you sure you want to do this?,Are you sure you want to do this?
+Back,Back
+Before Discount,Before Discount
+CSV,CSV
+Calculate off subtotal only,Calculate off subtotal only
+Calculation Settings,Calculation Settings
+Catalog Prices,Catalog Prices
+Class Name,Class Name
+"Click here to go to <a href=""%s"">VAT configuration</a> and change your settings.","Click here to go to <a href=""%s"">VAT configuration</a> and change your settings."
+Code,Code
+Country,Country
+Custom price if available,Custom price if available
+Customer VAT Class,Customer VAT Class
+Customer VAT Class Information,Customer VAT Class Information
+Customer VAT Classes,Customer VAT Classes
+Default Country,Default Country
+Default Post Code,Default Post Code
+Default State,Default State
+Default VAT Destination Calculation,Default VAT Destination Calculation
+Delete Class,Delete Class
+Delete Rate,Delete Rate
+Delete Rule,Delete Rule
+Display Full VAT Summary,Display Full VAT Summary
+Display Prices,Display Prices
+Display Product Prices In Catalog,Display Product Prices In Catalog
+Display Shipping Amount,Display Shipping Amount
+Display Shipping Prices,Display Shipping Prices
+Display Subtotal,Display Subtotal
+Display Zero VAT Subtotal,Display Zero VAT Subtotal
+Edit Class,Edit Class
+Edit Class '%s',Edit Class '%s'
+Edit Rule,Edit Rule
+Edit VAT Rate,Edit VAT Rate
+Enable Cross Border Trade,Enable Cross Border Trade
+Excel XML,Excel XML
+Excl. VAT,Excl. VAT
+Excl. VAT:,Excl. VAT:
+Excluding VAT,Excluding VAT
+Export VAT Rates,Export VAT Rates
+Grand Total (Excl. VAT),Grand Total (Excl. VAT)
+Grand Total (Excl.VAT),Grand Total (Excl.VAT)
+Grand Total (Incl. VAT),Grand Total (Incl. VAT)
+Grand Total (Incl.VAT),Grand Total (Incl.VAT)
+Grand Total Excl. VAT,Grand Total Excl. VAT
+Grand Total Incl. VAT,Grand Total Incl. VAT
+Ignore this notification,Ignore this notification
+Import / Export VAT Rates,Import / Export VAT Rates
+Import VAT Rates,Import VAT Rates
+Inc. VAT,Inc. VAT
+Incl. VAT,Incl. VAT
+Incl. VAT:,Incl. VAT:
+Include VAT In Grand Total,Include VAT In Grand Total
+Including VAT,Including VAT
+Including and Excluding VAT,Including and Excluding VAT
+Invalid file format upload attempt,Invalid file format upload attempt
+Invalid file upload attempt,Invalid file upload attempt
+Manage Customer VAT Classes,Manage Customer VAT Classes
+Manage Product VAT Classes,Manage Product VAT Classes
+Manage VAT Rates,Manage VAT Rates
+Manage VAT Rules,Manage VAT Rules
+Manage VAT Zones & Rates,Manage VAT Zones & Rates
+Maximum zip code length is 9.,Maximum zip code length is 9.
+Name,Name
+New Class,New Class
+New Rule,New Rule
+New VAT Rate,New VAT Rate
+No,No
+None,None
+One of the country has invalid code.,One of the country has invalid code.
+"Orders, Invoices, Credit Memos Display Settings","Orders, Invoices, Credit Memos Display Settings"
+Original price only,Original price only
+Please fill all required fields with valid information.,Please fill all required fields with valid information.
+"Please see <a href=""%s"">source</a> for more details.","Please see <a href=""%s"">source</a> for more details."
+Price Display Settings,Price Display Settings
+Priority,Priority
+Product VAT Class,Product VAT Class
+Product VAT Class Information,Product VAT Class Information
+Product VAT Classes,Product VAT Classes
+Range From,Range From
+Range To,Range To
+Range To should be equal or greater than Range From.,Range To should be equal or greater than Range From.
+Rate,Rate
+Rate Percent,Rate Percent
+Rate Percent should be a positive number.,Rate Percent should be a positive number.
+Reset,Reset
+Row Total,Row Total
+Sales,Sales
+Save Class,Save Class
+Save Rate,Save Rate
+Save Rule,Save Rule
+Save and Continue Edit,Save and Continue Edit
+Shipping & Handling (Excl.VAT),Shipping & Handling (Excl.VAT)
+Shipping & Handling (Incl.VAT),Shipping & Handling (Incl.VAT)
+Shipping & Handling VAT,Shipping & Handling VAT
+Shipping (Excl. VAT),Shipping (Excl. VAT)
+Shipping (Incl. VAT),Shipping (Incl. VAT)
+Shipping Excl. VAT (%s),Shipping Excl. VAT (%s)
+Shipping Incl. VAT (%s),Shipping Incl. VAT (%s)
+Shipping Prices,Shipping Prices
+Shopping Cart Display Settings,Shopping Cart Display Settings
+Sort Order,Sort Order
+State,State
+State/Region,State/Region
+Subtotal (Excl. VAT),Subtotal (Excl. VAT)
+Subtotal (Excl.VAT),Subtotal (Excl.VAT)
+Subtotal (Incl. VAT),Subtotal (Incl. VAT)
+Subtotal (Incl.VAT),Subtotal (Incl.VAT)
+Subtotal only,Subtotal only
+VAT,VAT
+VAT Calculation Based On,VAT Calculation Based On
+VAT Calculation Method Based On,VAT Calculation Method Based On
+VAT Class for Shipping,VAT Class for Shipping
+VAT Classes,VAT Classes
+VAT Identifier,VAT Identifier
+VAT Rate,VAT Rate
+VAT Rate Information,VAT Rate Information
+VAT Rule Information,VAT Rule Information
+VAT Rules,VAT Rules
+VAT Section,VAT Section
+VAT Titles,VAT Titles
+VAT rate cannot be removed. It exists in VAT rule,VAT rate cannot be removed. It exists in VAT rule
+"VAT rates at the same priority are added, others are compounded.","VAT rates at the same priority are added, others are compounded."
+The VAT class has been deleted.,The VAT class has been deleted.
+The VAT class has been saved.,The VAT class has been saved.
+The VAT rate has been deleted.,The VAT rate has been deleted.
+The VAT rate has been imported.,The VAT rate has been imported.
+The VAT rate has been saved.,The VAT rate has been saved.
+The VAT rule has been deleted.,The VAT rule has been deleted.
+This class no longer exists,This class no longer exists
+This rule no longer exists,This rule no longer exists
+This rule no longer exists.,This rule no longer exists.
+Total,Total
+Unit Price,Unit Price
+Warning VAT configuration can result in rounding errors,Warning VAT configuration can result in rounding errors
+Warning VAT configuration can result in unexpected FPT prices on applicable devices,Warning VAT configuration can result in unexpected FPT prices on applicable devices
+Warning VAT discount configuration might result in different discounts than a customer might expect,Warning VAT discount configuration might result in different discounts than a customer might expect
+"When catalog price includes VAT, enable this setting will fix the price no matter what the customer's VAT rate is.","When catalog price includes VAT, enable this setting will fix the price no matter what the customer's VAT rate is."
+Whether catalog prices entered by admin include VAT.,Whether catalog prices entered by admin include VAT.
+Whether shipping amounts entered by admin or obtained from gateways include VAT.,Whether shipping amounts entered by admin or obtained from gateways include VAT.
+Yes,Yes
+You cannot delete this VAT class as it is used for %d customer groups.,You cannot delete this VAT class as it is used for %d customer groups.
+You cannot delete this VAT class as it is used for %d products.,You cannot delete this VAT class as it is used for %d products.
+You cannot delete this VAT class as it is used in VAT Rules. You have to delete the rules it is used in first.,You cannot delete this VAT class as it is used in VAT Rules. You have to delete the rules it is used in first.
+Zip code should not contain characters other than digits.,Zip code should not contain characters other than digits.
+Zip/Post Code,Zip/Post Code
+Zip/Post is Range,Zip/Post is Range
+for store(s),for store(s)

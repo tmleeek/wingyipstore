@@ -1,0 +1,56 @@
+<?php $recipeCollection = $this->getCollection() ?>
+<?php $count = $recipeCollection->count() ?>
+<?php if(!$count): ?>
+    <p class="note-msg"><?php echo $this->__('There are no recipes matching the selection.') ?></p>
+<?php else: ?>
+    <div class="category-products">
+        <?php /* ?>
+        <div class="toolbar">
+            <div class="sorter">
+                <div class="sort-by">
+                    <label><?php echo $this->__('Sort By') ?></label>
+                    <select onchange="setLocation(this.value)" title="<?php echo $this->__('Sort By') ?>">
+                        <?php foreach($this->getAvailableOrders() as $_key=>$_order): ?>
+                            <option value="<?php echo $this->getOrderUrl($_key, 'asc') ?>"<?php if($this->isOrderCurrent($_key)): ?> selected="selected"<?php endif; ?>>
+                                <?php echo $this->__($_order) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <?php if($this->getCurrentDirection() == 'desc'): ?>
+                        <a href="<?php echo $this->getOrderUrl(null, 'asc') ?>" class="sort-by-switcher sort-by-switcher--desc" title="<?php echo $this->__('Set Ascending Direction') ?>"><?php echo $this->__('Set Ascending Direction') ?></a>
+                    <?php else: ?>
+                        <a href="<?php echo $this->getOrderUrl(null, 'desc') ?>" class="sort-by-switcher sort-by-switcher--asc" title="<?php echo $this->__('Set Descending Direction') ?>"><?php echo $this->__('Set Descending Direction') ?></a>
+                    <?php endif; ?>
+                </div>
+            </div>
+           
+        </div>
+        <?php */ ?>
+        <?php //echo $this->getChildHtml('pager'); ?> 
+        <ol class="products-list " id="products-list">
+            <?php $_iterator = 0?>
+            <?php foreach($recipeCollection as $_recipe):?>    
+                <li class="row item<?php if( ++$_iterator == $count ): ?> last<?php endif; ?>">
+               
+                <a class="product-image col-md-3 col-lg-3" href="<?php echo $this->getRecipeUrl($_recipe); ?>" title="<?php echo $_recipe->getName(); ?>"><img src="<?php echo $this->helper('recipe')->resizeImage(180,180,$_recipe->getImage()); ?>" width="180" height="180" alt="<?php echo $_recipe->getName(); ?>" /></a>
+                
+                <div class="product-shop col-md-9 col-lg-9">
+                    <div class="f-fix"> 
+                         <a class="product-title" href="<?php echo $this->getRecipeUrl($_recipe); ?>" title="<?php echo $_recipe->getName(); ?>"><h2 class="product-name"><?php echo $_recipe->getName(); ?></h2></a>
+                        <div class="desc std"><?php echo $_recipe->getDescription(); ?></div>
+                    </div>
+                </div>
+                </li>
+            <?php endforeach; ?>
+        </ol>
+        <div class="toolbar-bottom">
+            <div class="toolbar">
+            <?php echo $this->getPagerHtml() ?> 
+            </div>
+        </div>
+        
+    </div>
+<?php endif; ?> 
+
+
+
