@@ -1,0 +1,1031 @@
+2015-10-21T11:00:00+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 72: parser error : Opening and ending tag mismatch: default line 36 and layout  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-21T11:00:00+00:00 ERR (3): Warning: simplexml_load_string(): </layout>  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-21T11:00:00+00:00 ERR (3): Warning: simplexml_load_string():          ^  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-21T11:00:00+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 73: parser error : Premature end of data in tag layout line 30  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-21T11:00:00+00:00 ERR (3): Warning: simplexml_load_string():   in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-21T11:00:00+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:00:02+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:05+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:05+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:05:06+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:07:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:10:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:07+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:07+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:07+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:07+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:07+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:07+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:07+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:07+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:08+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:10+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:13+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:15+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:23+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:11:54+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:09+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:12:36+00:00 ERR (3): Warning: opendir(/var/www/wingyip.dev/wingyipstore/app/design/frontend/default/default/template/ves/productcarousel2): failed to open dir: No such file or directory  in /var/www/wingyip.dev/wingyipstore/app/code/community/Ves/ProductCarousel2/Model/System/Config/Source/ListTheme.php on line 7
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:13:37+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:32+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:18:45+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-21T11:20:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T10:27:48+00:00 ERR (3): Warning: opendir(/var/www/wingyip.dev/wingyipstore/app/design/frontend/default/default/template/ves/productcarousel2): failed to open dir: No such file or directory  in /var/www/wingyip.dev/wingyipstore/app/code/community/Ves/ProductCarousel2/Model/System/Config/Source/ListTheme.php on line 7
+2015-10-22T14:27:53+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 72: parser error : Opening and ending tag mismatch: default line 36 and layout  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-22T14:27:53+00:00 ERR (3): Warning: simplexml_load_string(): </layout>  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-22T14:27:53+00:00 ERR (3): Warning: simplexml_load_string():          ^  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-22T14:27:53+00:00 ERR (3): Warning: simplexml_load_string(): Entity: line 73: parser error : Premature end of data in tag layout line 30  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-22T14:27:53+00:00 ERR (3): Warning: simplexml_load_string():   in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-22T14:27:53+00:00 ERR (3): Warning: simplexml_load_string(): ^  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Layout/Update.php on line 450
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined index: category_id  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 75
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined index: course_id  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 80
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined index: order  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 84
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined index: order  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 87
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined index: dir  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 87
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: imagePathFull  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 48
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: imagePathFull  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 48
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: imagePathFull  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 48
+2015-10-22T14:27:54+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:54+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:55+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:56+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:56+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:56+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:56+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:56+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:56+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:56+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T14:27:57+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-22T16:10:43+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-22T16:23:02+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:18:58+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-23T08:19:17+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T08:21:31+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T08:21:38+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T08:22:16+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T08:22:29+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T08:25:41+00:00 ERR (3): Notice: Undefined variable: product  in /var/www/wingyip.dev/wingyipstore/app/code/local/Newedge/NextopiaFeed/controllers/IndexController.php on line 20
+2015-10-23T08:31:35+00:00 ERR (3): Warning: imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T08:31:35+00:00 ERR (3): Warning: imagecreatefromjpeg(): '/var/www/wingyip.dev/wingyipstore/media/catalog/product/s/2/s2h2927.jpg' is not a valid JPEG file  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T08:31:35+00:00 ERR (3): Warning: imagejpeg() expects parameter 1 to be resource, boolean given  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 166
+2015-10-23T08:33:02+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T08:34:34+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T09:01:19+00:00 ERR (3): Warning: imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T09:01:19+00:00 ERR (3): Warning: imagecreatefromjpeg(): '/var/www/wingyip.dev/wingyipstore/media/catalog/product/s/2/s2h2927.jpg' is not a valid JPEG file  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T09:01:19+00:00 ERR (3): Warning: imagejpeg() expects parameter 1 to be resource, boolean given  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 166
+2015-10-23T09:02:37+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:52
+[1] /var/www/wingyip.dev/wingyipstore/lib/Zend/Controller/Response/Abstract.php:768
+[2] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Response/Http.php:84
+[3] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Controller/Varien/Front.php:184
+[4] /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/App.php:354
+[5] /var/www/wingyip.dev/wingyipstore/app/Mage.php:684
+[6] /var/www/wingyip.dev/wingyipstore/index.php:87
+</pre>
+2015-10-23T10:37:05+00:00 ERR (3): Warning: imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T10:37:05+00:00 ERR (3): Warning: imagecreatefromjpeg(): '/var/www/wingyip.dev/wingyipstore/media/catalog/product/s/2/s2h2927.jpg' is not a valid JPEG file  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T10:37:05+00:00 ERR (3): Warning: imagejpeg() expects parameter 1 to be resource, boolean given  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 166
+2015-10-23T10:37:14+00:00 ERR (3): Warning: imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T10:37:14+00:00 ERR (3): Warning: imagecreatefromjpeg(): '/var/www/wingyip.dev/wingyipstore/media/catalog/product/s/2/s2h2927.jpg' is not a valid JPEG file  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T10:37:14+00:00 ERR (3): Warning: imagejpeg() expects parameter 1 to be resource, boolean given  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 166
+2015-10-23T10:37:26+00:00 ERR (3): Warning: imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T10:37:26+00:00 ERR (3): Warning: imagecreatefromjpeg(): '/var/www/wingyip.dev/wingyipstore/media/catalog/product/s/2/s2h2927.jpg' is not a valid JPEG file  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 60
+2015-10-23T10:37:26+00:00 ERR (3): Warning: imagejpeg() expects parameter 1 to be resource, boolean given  in /var/www/wingyip.dev/wingyipstore/lib/Varien/Image/Adapter/Gd2.php on line 166
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: category_id  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 75
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: category_id  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 75
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: course_id  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 80
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: course_id  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 80
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: order  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 84
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: order  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 84
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: order  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 87
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: order  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 87
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: dir  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 87
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined index: dir  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Homelist.php on line 87
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: imagePathFull  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 48
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: imagePathFull  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 48
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 106 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:37:39+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:37:39+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Model/Review.php on line 22 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:39+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:40+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:41+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:37:44+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:28+00:00 ERR (3): Notice: Undefined index: category_id  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 75
+2015-10-26T09:38:28+00:00 ERR (3): Notice: Undefined index: course_id  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 80
+2015-10-26T09:38:28+00:00 ERR (3): Notice: Undefined index: order  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 84
+2015-10-26T09:38:28+00:00 ERR (3): Notice: Undefined index: order  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/List.php on line 87
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined index: _type  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Design/Package.php on line 322
+2015-10-26T09:38:30+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/View.php on line 85 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:38:30+00:00 ERR (3): Warning: Missing argument 1 for Mage_Core_Model_Abstract::load(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/View.php on line 85 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 222
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 224
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined variable: id  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Abstract.php on line 225
+2015-10-26T09:38:30+00:00 ERR (3): Strict Notice: Only variables should be passed by reference  in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Helper/Data.php on line 43
+2015-10-26T09:38:30+00:00 ERR (3): Warning: Missing argument 3 for Mage_Core_Model_Resource_Db_Collection_Abstract::addExpressionFieldToSelect(), called in /var/www/wingyip.dev/wingyipstore/app/code/local/Wingyip/Recipe/Block/Review/List.php on line 49 and defined  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 349
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 352
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353
+2015-10-26T09:38:30+00:00 ERR (3): Notice: Undefined variable: fields  in /var/www/wingyip.dev/wingyipstore/app/code/core/Mage/Core/Model/Resource/Db/Collection/Abstract.php on line 353

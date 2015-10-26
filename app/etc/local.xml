@@ -41,9 +41,9 @@
             <default_setup>
                 <connection>
                     <host><![CDATA[localhost]]></host>
-                    <username><![CDATA[wingyip_live]]></username>
-                    <password><![CDATA[pe3ieyeo6rieTh0aeBikoo4o]]></password>
-                    <dbname><![CDATA[magento_wingyipstore_live]]></dbname>
+                    <username><![CDATA[root]]></username>
+                    <password><![CDATA[s9ghu78m]]></password>
+                    <dbname><![CDATA[Mage_wingyip]]></dbname>
                     <initStatements><![CDATA[SET NAMES utf8]]></initStatements>
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
