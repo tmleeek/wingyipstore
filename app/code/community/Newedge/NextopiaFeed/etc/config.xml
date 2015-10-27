@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Newedge_NextopiaFeed>
+            <version>0.1.0</version>    <!-- Version number of your module -->
+        </Newedge_NextopiaFeed>
+    </modules>
+    <frontend>
+        <routers>
+            <mymodule>
+                <use>standard</use>
+                <args>
+                    <module>Newedge_NextopiaFeed</module>
+                    <frontName>NextopiaFeed</frontName>
+                </args>
+            </mymodule>
+        </routers>
+    </frontend>
+</config>
